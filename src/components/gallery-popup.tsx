@@ -41,7 +41,7 @@ export function GalleryPopup({ product, isOpen, onOpenChange }: GalleryPopupProp
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="w-screen h-screen max-w-full sm:max-w-full top-0 left-0 translate-x-0 translate-y-0 rounded-none border-0 p-6 flex flex-col">
+      <DialogContent className="w-screen max-w-full h-[90vh] rounded-lg border-0 p-6 flex flex-col">
         <DialogHeader>
           <DialogTitle className="text-3xl font-headline">{product.title}</DialogTitle>
           <DialogDescription>{product.description}</DialogDescription>
@@ -89,5 +89,3 @@ export function GalleryPopup({ product, isOpen, onOpenChange }: GalleryPopupProp
     </Dialog>
   );
 }
-
-    
