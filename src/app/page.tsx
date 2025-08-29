@@ -7,12 +7,12 @@ import ScrollStack, {
 import '@/components/scroll-stack.css';
 
 const backgroundImages = [
-  'https://picsum.photos/1920/1080?random=10',
-  'https://picsum.photos/1920/1080?random=11',
-  'https://picsum.photos/1920/1080?random=12',
-  'https://picsum.photos/1920/1080?random=13',
-  'https://picsum.photos/1920/1080?random=14',
-  'https://picsum.photos/1920/1080?random=15',
+  'https://placehold.co/1920x1080/E0F7FA/E0F7FA', // Light Cyan
+  'https://placehold.co/1920x1080/FFE0B2/FFE0B2', // Light Orange
+  'https://placehold.co/1920x1080/C8E6C9/C8E6C9', // Light Green
+  'https://placehold.co/1920x1080/FFCDD2/FFCDD2', // Light Pink
+  'https://placehold.co/1920x1080/D1C4E9/D1C4E9', // Light Purple
+  'https://placehold.co/1920x1080/F0F4C3/F0F4C3', // Light Lime
 ];
 
 
@@ -28,7 +28,7 @@ export default function SublikatWireframe() {
             layout="fill"
             objectFit="cover"
             className="background-image"
-            data-ai-hint="abstract background"
+            data-ai-hint="solid color"
           />
         ))}
       </div>
