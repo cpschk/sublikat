@@ -127,10 +127,10 @@ export default function SublikatWireframe() {
                   }}
                   className="w-full max-w-4xl"
                 >
-                  <CarouselContent className="-ml-4">
+                  <CarouselContent>
                     {products.map((product) => (
-                        <CarouselItem key={product.id} className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                            <div className="p-1" onClick={() => handleCardClick(product)}>
+                        <CarouselItem key={product.id} className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 p-1 md:p-4">
+                            <div onClick={() => handleCardClick(product)}>
                                 <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 hover:shadow-xl hover:scale-105 rounded-lg flex flex-col h-80 w-60 mx-auto">
                                 <Image src="https://picsum.photos/100/100" alt="Peeking cat" width={60} height={60} className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2" data-ai-hint="peeking cat" />
                                 <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
@@ -231,3 +231,5 @@ export default function SublikatWireframe() {
     </>
   );
 }
+
+    
