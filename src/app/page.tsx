@@ -50,14 +50,14 @@ export default function SublikatWireframe() {
         {/* These items will be part of the stack */}
         <ScrollStackItem>
           <section
-            className="border border-black p-12 text-center bg-blue-200"
+            className="border border-black p-12 text-center bg-blue-200 h-full flex flex-col justify-center items-center"
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
           >
             <h1 className="text-2xl font-bold mb-4">Hero: Título Principal</h1>
             <p className="mb-6">
               Aquí va la descripción del concepto de AR y personalización. ¡Haz que tus ideas cobren vida!
             </p>
-            <Image src="https://picsum.photos/800/400" alt="Hero Image" width={800} height={400} className="w-full h-auto object-cover rounded-lg mb-6" data-ai-hint="abstract technology" />
+            <Image src="https://picsum.photos/800/400" alt="Hero Image" width={800} height={400} className="w-full h-auto object-cover rounded-lg mb-6 max-w-3xl" data-ai-hint="abstract technology" />
             <div className="border border-black p-4 inline-block bg-white">
               <p>Botón de Llamada a la Acción (CTA)</p>
             </div>
@@ -74,7 +74,7 @@ export default function SublikatWireframe() {
             <h2 className="text-xl font-semibold mb-4 text-center">
               Historia: Quiénes Somos
             </h2>
-            <div className="flex flex-col md:flex-row gap-6 items-center w-full max-w-4xl">
+            <div className="flex flex-col md:flex-row gap-6 items-center w-full max-w-4xl px-4">
               <div className="w-full md:w-1/2">
                 <Image src="https://picsum.photos/600/600" alt="About us" width={600} height={600} className="w-full h-auto object-cover rounded-lg" data-ai-hint="creative team" />
               </div>
@@ -89,13 +89,13 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
-            className="border border-black p-8 bg-gray-300"
+            className="border border-black p-8 bg-gray-300 h-full flex flex-col justify-center items-center"
             title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
           >
             <h2 className="text-xl font-semibold mb-6 text-center">
               Productos Personalizados
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl px-4">
               <div className="border border-black p-4 bg-white rounded-lg text-center">
                 <Image src="https://picsum.photos/400/300?random=1" alt="Product 1" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="custom mug" />
                 <p>Taza AR</p>
@@ -116,13 +116,13 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
-            className="border border-black p-8 bg-gray-100"
+            className="border border-black p-8 bg-gray-100 h-full flex flex-col justify-center items-center"
             title="Animación: el gato trae cartas o globos de diálogo con mensajes de clientes. Globos emergentes con efecto pop-up."
           >
             <h2 className="text-xl font-semibold mb-6 text-center">
               Testimonios de Clientes
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl px-4">
               <div className="border border-black p-4 bg-white rounded-lg text-center flex flex-col items-center">
                 <Image src="https://picsum.photos/200/200?random=4" alt="Client 1" width={200} height={200} className="w-24 h-24 object-cover rounded-full mx-auto mb-4" data-ai-hint="happy person" />
                 <p>"¡Me encantó el resultado! Mi taza quedó increíble."</p>
@@ -166,20 +166,23 @@ export default function SublikatWireframe() {
         <hr className="border-t-4 border-black my-8" />
 
         <ScrollStackItem>
-          <footer
-            className="border border-black p-6 text-center bg-gray-100 flex flex-col items-center justify-center h-full"
-            title="Animación: el gato duerme con sus lentes puestos. Respiración sutil o ronroneo animado."
-          >
-            <Image src="https://picsum.photos/300/200" alt="Sleeping Cat" width={300} height={200} className="w-auto h-24 object-contain rounded-lg mb-4" data-ai-hint="sleeping cat" />
-            <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-4xl">
-              <div className="border border-black p-2 mb-4 md:mb-0 bg-white">
-                <p>Información de Contacto y Copyright</p>
+          <div className="h-full flex flex-col">
+            <div className="h-[80%]"></div>
+            <footer
+              className="h-[20%] border border-black p-6 bg-gray-100 flex items-center justify-center"
+              title="Animación: el gato duerme con sus lentes puestos. Respiración sutil o ronroneo animado."
+            >
+              <div className="flex justify-around items-center w-full max-w-4xl">
+                <div className="border border-black p-2 bg-white">
+                  <p>Información de Contacto y Copyright</p>
+                </div>
+                <Image src="https://picsum.photos/300/200" alt="Sleeping Cat" width={300} height={200} className="w-auto h-16 object-contain rounded-lg" data-ai-hint="sleeping cat" />
+                <div className="border border-black p-2 bg-white">
+                  <p>Íconos de Redes Sociales</p>
+                </div>
               </div>
-              <div className="border border-black p-2 bg-white">
-                <p>Íconos de Redes Sociales</p>
-              </div>
-            </div>
-          </footer>
+            </footer>
+          </div>
         </ScrollStackItem>
       </ScrollStack>
     </>
