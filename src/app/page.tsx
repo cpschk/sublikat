@@ -12,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { Heart } from 'lucide-react';
 
 const backgroundImages = [
   'https://placehold.co/1920x1080/E0F7FA/E0F7FA', // Light Cyan
@@ -112,7 +113,8 @@ export default function SublikatWireframe() {
                   <CarouselContent>
                     <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-1">
-                        <div className="border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                           <Heart className="absolute top-4 right-4 h-6 w-6 text-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
                             <span className="text-white font-bold text-sm">T</span>
                           </div>
@@ -123,7 +125,8 @@ export default function SublikatWireframe() {
                     </CarouselItem>
                     <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-1">
-                        <div className="border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                          <Heart className="absolute top-4 right-4 h-6 w-6 text-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
                             <span className="text-white font-bold text-sm">P</span>
                           </div>
@@ -134,7 +137,8 @@ export default function SublikatWireframe() {
                     </CarouselItem>
                     <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-1">
-                        <div className="border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                          <Heart className="absolute top-4 right-4 h-6 w-6 text-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
                             <span className="text-white font-bold text-sm">L</span>
                           </div>
@@ -145,7 +149,8 @@ export default function SublikatWireframe() {
                     </CarouselItem>
                     <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-1">
-                        <div className="border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                           <Heart className="absolute top-4 right-4 h-6 w-6 text-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
                             <span className="text-white font-bold text-sm">P</span>
                           </div>
@@ -156,7 +161,8 @@ export default function SublikatWireframe() {
                     </CarouselItem>
                     <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-1">
-                        <div className="border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                           <Heart className="absolute top-4 right-4 h-6 w-6 text-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
                             <span className="text-white font-bold text-sm">S</span>
                           </div>
@@ -167,7 +173,8 @@ export default function SublikatWireframe() {
                     </CarouselItem>
                     <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-1">
-                        <div className="border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                          <Heart className="absolute top-4 right-4 h-6 w-6 text-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
                             <span className="text-white font-bold text-sm">O</span>
                           </div>
@@ -259,3 +266,5 @@ export default function SublikatWireframe() {
     </>
   );
 }
+
+    
