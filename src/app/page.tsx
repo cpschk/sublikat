@@ -7,7 +7,7 @@ import '@/components/scroll-stack.css';
 
 export default function SublikatWireframe() {
   return (
-    <ScrollStack stackPosition="10%">
+    <ScrollStack stackPosition="10%" itemStackDistance={0} itemDistance={0}>
       {/* This header will scroll normally */}
       <header
         className="border border-black p-4 flex justify-between items-center bg-gray-100 mb-8"
