@@ -24,12 +24,12 @@ const backgroundImages = [
 ];
 
 const products: Product[] = [
-    { id: 'taza-ar', title: 'Taza AR', description: 'Taza con experiencia de realidad aumentada', image: 'https://picsum.photos/400/400?random=10', iconLetter: 'T' },
-    { id: 'polera-personalizada', title: 'Polera Personalizada', description: 'Diseño único para tu estilo', image: 'https://picsum.photos/400/400?random=11', iconLetter: 'P' },
-    { id: 'llavero', title: 'Llavero', description: 'Accesorio con diseño exclusivo', image: 'https://picsum.photos/400/400?random=12', iconLetter: 'L' },
-    { id: 'poster', title: 'Póster', description: 'Arte para tu pared', image: 'https://picsum.photos/400/400?random=13', iconLetter: 'P' },
-    { id: 'stickers', title: 'Stickers', description: 'Para personalizar cualquier superficie', image: 'https://picsum.photos/400/400?random=14', iconLetter: 'S' },
-    { id: 'otros', title: 'Otros', description: 'Productos personalizados a tu medida', image: 'https://picsum.photos/400/400?random=15', iconLetter: 'O' },
+    { id: 'taza-ar', title: 'Taza AR', description: 'Taza con experiencia de realidad aumentada', images: ['https://picsum.photos/600/600?random=10', 'https://picsum.photos/600/600?random=20', 'https://picsum.photos/600/600?random=30', 'https://picsum.photos/600/600?random=40'], iconLetter: 'T' },
+    { id: 'polera-personalizada', title: 'Polera Personalizada', description: 'Diseño único para tu estilo', images: ['https://picsum.photos/600/600?random=11', 'https://picsum.photos/600/600?random=21', 'https://picsum.photos/600/600?random=31'], iconLetter: 'P' },
+    { id: 'llavero', title: 'Llavero', description: 'Accesorio con diseño exclusivo', images: ['https://picsum.photos/600/600?random=12', 'https://picsum.photos/600/600?random=22'], iconLetter: 'L' },
+    { id: 'poster', title: 'Póster', description: 'Arte para tu pared', images: ['https://picsum.photos/600/600?random=13', 'https://picsum.photos/600/600?random=23', 'https://picsum.photos/600/600?random=33', 'https://picsum.photos/600/600?random=43', 'https://picsum.photos/600/600?random=53'], iconLetter: 'P' },
+    { id: 'stickers', title: 'Stickers', description: 'Para personalizar cualquier superficie', images: ['https://picsum.photos/600/600?random=14', 'https://picsum.photos/600/600?random=24', 'https://picsum.photos/600/600?random=34'], iconLetter: 'S' },
+    { id: 'otros', title: 'Otros', description: 'Productos personalizados a tu medida', images: ['https://picsum.photos/600/600?random=15'], iconLetter: 'O' },
 ];
 
 
@@ -127,7 +127,7 @@ export default function SublikatWireframe() {
                   }}
                   className="w-full max-w-4xl"
                 >
-                  <CarouselContent>
+                  <CarouselContent className="-ml-4">
                     {products.map((product) => (
                         <CarouselItem key={product.id} className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                             <div className="p-1" onClick={() => handleCardClick(product)}>
@@ -231,3 +231,5 @@ export default function SublikatWireframe() {
     </>
   );
 }
+
+    

@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import {
   Dialog,
@@ -9,12 +9,14 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@/components/ui/dialog';
+import { cn } from '@/lib/utils';
+
 
 export type Product = {
   id: string;
   title: string;
   description: string;
-  image: string;
+  images: string[];
   iconLetter: string;
 };
 
@@ -25,6 +27,16 @@ interface GalleryPopupProps {
 }
 
 export function GalleryPopup({ product, isOpen, onOpenChange }: GalleryPopupProps) {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (product?.images?.length) {
+      setSelectedImage(product.images[0]);
+    } else {
+        setSelectedImage(null);
+    }
+  }, [product]);
+
   if (!product) return null;
 
   return (
@@ -34,27 +46,48 @@ export function GalleryPopup({ product, isOpen, onOpenChange }: GalleryPopupProp
           <DialogTitle className="text-3xl font-headline">{product.title}</DialogTitle>
           <DialogDescription>{product.description}</DialogDescription>
         </DialogHeader>
-        <div className="grid gap-8 py-4 flex-1 md:grid-cols-2">
-          <div className="relative w-full h-full min-h-[300px] rounded-lg overflow-hidden">
-            <Image
-              src={product.image}
-              alt={product.title}
-              fill
-              className="object-cover"
-              data-ai-hint="product image"
-            />
+        <div className="grid gap-4 py-4 flex-1 md:grid-rows-[3fr_1fr] md:grid-cols-1">
+          <div className="relative w-full h-full min-h-[40vh] rounded-lg overflow-hidden flex items-center justify-center bg-muted">
+            {selectedImage && (
+                <Image
+                src={selectedImage}
+                alt={`Imagen principal de ${product.title}`}
+                fill
+                className="object-contain"
+                data-ai-hint="product image"
+                />
+            )}
           </div>
-          {/* Future gallery thumbnails can go here */}
-          <div className="mt-4 flex flex-col justify-center">
-            <h4 className="font-semibold text-lg mb-2">Detalles del Producto</h4>
-            <p className="text-sm text-muted-foreground">
-              Aquí puedes añadir más detalles sobre el producto, una descripción más larga,
-              opciones de personalización, precios, etc. Este es un buen lugar para
-              convencer al cliente de que este es el producto perfecto para él.
-            </p>
+          
+          <div className="flex flex-col">
+            <h4 className="font-semibold text-lg mb-2 text-center">Galería</h4>
+            <div className="flex-1 overflow-x-auto overflow-y-hidden">
+                <div className="flex items-center justify-center gap-4 p-4">
+                {product.images.map((image, index) => (
+                    <div
+                    key={index}
+                    className={cn(
+                        "relative w-24 h-24 md:w-32 md:h-32 rounded-md overflow-hidden cursor-pointer shrink-0 transition-all duration-200",
+                        selectedImage === image ? 'ring-4 ring-primary ring-offset-2' : 'ring-2 ring-transparent hover:ring-primary/50'
+                    )}
+                    onClick={() => setSelectedImage(image)}
+                    >
+                    <Image
+                        src={image}
+                        alt={`Miniatura ${index + 1} de ${product.title}`}
+                        fill
+                        className="object-cover"
+                        data-ai-hint="product thumbnail"
+                    />
+                    </div>
+                ))}
+                </div>
+            </div>
           </div>
         </div>
       </DialogContent>
     </Dialog>
   );
 }
+
+    
