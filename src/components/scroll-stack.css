@@ -13,10 +13,10 @@ body {
 
 .scroll-stack-card {
   position: sticky;
-  top: 10vh;
-  width: 80vw; /* 100% - 10% on each side */
-  height: 80vh; /* 100% - 10% on top and bottom */
-  margin: 0 auto;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
   transform-origin: center top;
   will-change: transform, filter;
   -webkit-backface-visibility: hidden;
@@ -25,7 +25,7 @@ body {
   backdrop-filter: blur(10px); /* Frosted glass effect */
   -webkit-backdrop-filter: blur(10px);
   padding: 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
