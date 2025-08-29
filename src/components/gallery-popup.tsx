@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import {
   Dialog,
@@ -9,8 +9,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@/components/ui/dialog';
-import { cn } from '@/lib/utils';
-
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 export type Product = {
   id: string;
@@ -27,16 +26,6 @@ interface GalleryPopupProps {
 }
 
 export function GalleryPopup({ product, isOpen, onOpenChange }: GalleryPopupProps) {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (product?.images?.length) {
-      setSelectedImage(product.images[0]);
-    } else {
-        setSelectedImage(null);
-    }
-  }, [product]);
-
   if (!product) return null;
 
   return (
@@ -46,45 +35,26 @@ export function GalleryPopup({ product, isOpen, onOpenChange }: GalleryPopupProp
           <DialogTitle className="text-3xl font-headline">{product.title}</DialogTitle>
           <DialogDescription>{product.description}</DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4 flex-1 md:grid-rows-[3fr_1fr] md:grid-cols-1">
-          <div className="relative w-full h-full min-h-[40vh] rounded-lg overflow-hidden flex items-center justify-center bg-muted">
-            {selectedImage && (
-                <Image
-                src={selectedImage}
-                alt={`Imagen principal de ${product.title}`}
-                fill
-                className="object-contain"
-                data-ai-hint="product image"
-                />
-            )}
-          </div>
-          
-          <div className="flex flex-col">
-            <h4 className="font-semibold text-lg mb-2 text-center">Galería</h4>
-            <div className="flex-1 overflow-x-auto overflow-y-hidden">
-                <div className="flex items-center justify-center gap-4 p-4">
-                {product.images.map((image, index) => (
-                    <div
-                    key={index}
-                    className={cn(
-                        "relative w-24 h-24 md:w-32 md:h-32 rounded-md overflow-hidden cursor-pointer shrink-0 transition-all duration-200",
-                        selectedImage === image ? 'ring-4 ring-primary ring-offset-2' : 'ring-2 ring-transparent hover:ring-primary/50'
-                    )}
-                    onClick={() => setSelectedImage(image)}
-                    >
-                    <Image
-                        src={image}
-                        alt={`Miniatura ${index + 1} de ${product.title}`}
-                        fill
-                        className="object-cover"
-                        data-ai-hint="product thumbnail"
-                    />
-                    </div>
-                ))}
+        <ScrollArea className="flex-1 rounded-md -mx-6">
+          <div className="px-6 py-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              {product.images.map((image, index) => (
+                <div
+                  key={index}
+                  className="relative aspect-square rounded-md overflow-hidden group"
+                >
+                  <Image
+                    src={image}
+                    alt={`Imagen ${index + 1} de ${product.title}`}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    data-ai-hint="product image"
+                  />
                 </div>
+              ))}
             </div>
           </div>
-        </div>
+        </ScrollArea>
       </DialogContent>
     </Dialog>
   );
