@@ -32,8 +32,8 @@ export default function SublikatWireframe() {
             key={index}
             src={src}
             alt={`Background ${index + 1}`}
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{objectFit: "cover"}}
             className="background-image"
             data-ai-hint="solid color"
           />
@@ -95,60 +95,40 @@ export default function SublikatWireframe() {
         <hr className="border-t-4 border-black my-8" />
 
         <ScrollStackItem>
-        <section
-            className="border border-black p-8 bg-gray-300 h-full flex flex-col justify-center items-center"
-            title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
-          >
-            <h2 className="text-xl font-semibold mb-6 text-center">
-              Productos Personalizados
-            </h2>
-            <div className="w-full max-w-5xl px-4">
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                className="w-full"
-              >
-                <CarouselContent>
-                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                    <div className="p-1">
-                      <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col">
-                        <Image src="https://picsum.photos/400/300?random=1" alt="Product 1" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="custom mug" />
-                        <p className="mt-auto pt-2">Taza AR</p>
-                      </div>
+            <section
+                className="border border-black p-8 bg-gray-300 h-full flex flex-col justify-center items-center"
+                title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
+            >
+                <h2 className="text-xl font-semibold mb-6 text-center">
+                    Productos Personalizados
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl px-4">
+                    <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col transition-all duration-300 cursor-pointer hover:bg-gray-50">
+                        <Image src="https://picsum.photos/400/300?random=1" alt="Taza AR" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="custom mug" />
+                        <h3 className="font-semibold text-center mb-2 mt-auto pt-2">Taza AR</h3>
                     </div>
-                  </CarouselItem>
-                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                    <div className="p-1">
-                      <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col">
-                        <Image src="https://picsum.photos/400/300?random=2" alt="Product 2" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="graphic t-shirt" />
-                        <p className="mt-auto pt-2">Polera Personalizada</p>
-                      </div>
+                    <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col transition-all duration-300 cursor-pointer hover:bg-gray-50">
+                        <Image src="https://picsum.photos/400/300?random=2" alt="Polera Personalizada" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="graphic t-shirt" />
+                        <h3 className="font-semibold text-center mb-2 mt-auto pt-2">Polera Personalizada</h3>
                     </div>
-                  </CarouselItem>
-                  <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                    <div className="p-1">
-                      <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col">
-                        <Image src="https://picsum.photos/400/300?random=3" alt="Product 3" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="keychain design" />
-                        <p className="mt-auto pt-2">Llavero</p>
-                      </div>
+                    <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col transition-all duration-300 cursor-pointer hover:bg-gray-50">
+                        <Image src="https://picsum.photos/400/300?random=3" alt="Llavero" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="keychain design" />
+                        <h3 className="font-semibold text-center mb-2 mt-auto pt-2">Llavero</h3>
                     </div>
-                  </CarouselItem>
-                   <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                    <div className="p-1">
-                      <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col">
-                        <Image src="https://picsum.photos/400/300?random=7" alt="Product 4" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="custom phone case" />
-                        <p className="mt-auto pt-2">Carcasa de Teléfono</p>
-                      </div>
+                     <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col transition-all duration-300 cursor-pointer hover:bg-gray-50">
+                        <Image src="https://picsum.photos/400/300?random=7" alt="Póster" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="custom poster" />
+                        <h3 className="font-semibold text-center mb-2 mt-auto pt-2">Póster</h3>
                     </div>
-                  </CarouselItem>
-                </CarouselContent>
-                <CarouselPrevious className="ml-12" />
-                <CarouselNext className="mr-12"/>
-              </Carousel>
-            </div>
-          </section>
+                    <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col transition-all duration-300 cursor-pointer hover:bg-gray-50">
+                        <Image src="https://picsum.photos/400/300?random=8" alt="Stickers" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="sticker pack" />
+                        <h3 className="font-semibold text-center mb-2 mt-auto pt-2">Stickers</h3>
+                    </div>
+                    <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col transition-all duration-300 cursor-pointer hover:bg-gray-50">
+                        <Image src="https://picsum.photos/400/300?random=9" alt="Otros" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="custom products" />
+                        <h3 className="font-semibold text-center mb-2 mt-auto pt-2">Otros</h3>
+                    </div>
+                </div>
+            </section>
         </ScrollStackItem>
 
         <hr className="border-t-4 border-black my-8" />
@@ -227,5 +207,3 @@ export default function SublikatWireframe() {
     </>
   );
 }
-
-    
