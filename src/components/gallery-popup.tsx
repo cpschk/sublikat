@@ -29,13 +29,13 @@ export function GalleryPopup({ product, isOpen, onOpenChange }: GalleryPopupProp
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-2xl">
+      <DialogContent className="w-screen h-screen max-w-full sm:max-w-full top-0 left-0 translate-x-0 translate-y-0 rounded-none border-0 p-6 flex flex-col">
         <DialogHeader>
           <DialogTitle className="text-3xl font-headline">{product.title}</DialogTitle>
           <DialogDescription>{product.description}</DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="relative aspect-square w-full rounded-lg overflow-hidden">
+        <div className="grid gap-8 py-4 flex-1 md:grid-cols-2">
+          <div className="relative w-full h-full min-h-[300px] rounded-lg overflow-hidden">
             <Image
               src={product.image}
               alt={product.title}
@@ -45,7 +45,7 @@ export function GalleryPopup({ product, isOpen, onOpenChange }: GalleryPopupProp
             />
           </div>
           {/* Future gallery thumbnails can go here */}
-          <div className="mt-4">
+          <div className="mt-4 flex flex-col justify-center">
             <h4 className="font-semibold text-lg mb-2">Detalles del Producto</h4>
             <p className="text-sm text-muted-foreground">
               Aquí puedes añadir más detalles sobre el producto, una descripción más larga,
