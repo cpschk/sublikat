@@ -12,7 +12,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import { Heart } from 'lucide-react';
 
 const backgroundImages = [
   'https://placehold.co/1920x1080/E0F7FA/E0F7FA', // Light Cyan
@@ -113,7 +112,7 @@ export default function SublikatWireframe() {
                   <CarouselContent>
                     <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-1">
-                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col overflow-hidden">
+                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
                            <Image src="https://picsum.photos/100/100" alt="Peeking cat" width={60} height={60} className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2" data-ai-hint="peeking cat" />
                           <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
                             <span className="text-white font-bold text-sm">T</span>
@@ -125,7 +124,7 @@ export default function SublikatWireframe() {
                     </CarouselItem>
                     <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-1">
-                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col overflow-hidden">
+                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
                           <Image src="https://picsum.photos/100/100" alt="Peeking cat" width={60} height={60} className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2" data-ai-hint="peeking cat" />
                           <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
                             <span className="text-white font-bold text-sm">P</span>
@@ -137,7 +136,7 @@ export default function SublikatWireframe() {
                     </CarouselItem>
                     <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-1">
-                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col overflow-hidden">
+                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
                           <Image src="https://picsum.photos/100/100" alt="Peeking cat" width={60} height={60} className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2" data-ai-hint="peeking cat" />
                           <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
                             <span className="text-white font-bold text-sm">L</span>
@@ -149,7 +148,7 @@ export default function SublikatWireframe() {
                     </CarouselItem>
                     <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-1">
-                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col overflow-hidden">
+                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
                            <Image src="https://picsum.photos/100/100" alt="Peeking cat" width={60} height={60} className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2" data-ai-hint="peeking cat" />
                           <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
                             <span className="text-white font-bold text-sm">P</span>
@@ -161,7 +160,7 @@ export default function SublikatWireframe() {
                     </CarouselItem>
                     <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-1">
-                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col overflow-hidden">
+                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
                            <Image src="https://picsum.photos/100/100" alt="Peeking cat" width={60} height={60} className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2" data-ai-hint="peeking cat" />
                           <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
                             <span className="text-white font-bold text-sm">S</span>
@@ -173,7 +172,7 @@ export default function SublikatWireframe() {
                     </CarouselItem>
                     <CarouselItem className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-1">
-                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col overflow-hidden">
+                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
                           <Image src="https://picsum.photos/100/100" alt="Peeking cat" width={60} height={60} className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2" data-ai-hint="peeking cat" />
                           <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
                             <span className="text-white font-bold text-sm">O</span>
@@ -266,3 +265,5 @@ export default function SublikatWireframe() {
     </>
   );
 }
+
+    
