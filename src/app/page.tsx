@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import ScrollStack, {
   ScrollStackItem,
 } from '@/components/scroll-stack';
@@ -27,12 +28,13 @@ export default function SublikatWireframe() {
           className="border border-black p-12 text-center bg-blue-200"
           title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
         >
-          <h1 className="text-2xl font-bold mb-4">[Hero: Título Principal]</h1>
+          <h1 className="text-2xl font-bold mb-4">Hero: Título Principal</h1>
           <p className="mb-6">
-            [Descripción del concepto de AR y personalización]
+            Aquí va la descripción del concepto de AR y personalización. ¡Haz que tus ideas cobren vida!
           </p>
+           <Image src="https://picsum.photos/800/400" alt="Hero Image" width={800} height={400} className="w-full h-auto object-cover rounded-lg mb-6" data-ai-hint="abstract technology" />
           <div className="border border-black p-4 inline-block bg-white">
-            <p>[Botón de Llamada a la Acción (CTA)]</p>
+            <p>Botón de Llamada a la Acción (CTA)</p>
           </div>
         </section>
       </ScrollStackItem>
@@ -45,14 +47,14 @@ export default function SublikatWireframe() {
           title="Animación: el gato lee un libro o se muestra reflexivo mirando el texto. Pestañeo lento y movimiento suave de cola."
         >
           <h2 className="text-xl font-semibold mb-4">
-            [Historia: Quiénes Somos]
+            Historia: Quiénes Somos
           </h2>
           <div className="flex flex-col md:flex-row gap-6 items-center">
-            <div className="border border-black p-4 w-full md:w-1/2 bg-white">
-              <p>[Espacio para imagen o animación del gato leyendo]</p>
+            <div className="w-full md:w-1/2">
+               <Image src="https://picsum.photos/600/600" alt="About us" width={600} height={600} className="w-full h-auto object-cover rounded-lg" data-ai-hint="creative team" />
             </div>
-            <div className="border border-black p-4 w-full md:w-1/2 bg-white">
-              <p>[Texto descriptivo sobre la marca y su misión]</p>
+            <div className="w-full md:w-1/2">
+              <p>Somos un equipo apasionado por la creatividad y la tecnología. Nuestra misión es darte las herramientas para que puedas expresar tu estilo único en productos que te acompañen todos los días. Creemos en la magia de la personalización.</p>
             </div>
           </div>
         </section>
@@ -66,26 +68,20 @@ export default function SublikatWireframe() {
           title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
         >
           <h2 className="text-xl font-semibold mb-6 text-center">
-            [Productos Personalizados]
+            Productos Personalizados
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="border border-black p-4 bg-white">
-              <p>[Tarjeta de Producto 1: Taza AR]</p>
+             <div className="border border-black p-4 bg-white rounded-lg text-center">
+              <Image src="https://picsum.photos/400/300?random=1" alt="Product 1" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="custom mug" />
+              <p>Taza AR</p>
             </div>
-            <div className="border border-black p-4 bg-white">
-              <p>[Tarjeta de Producto 2: Polera Personalizada]</p>
+             <div className="border border-black p-4 bg-white rounded-lg text-center">
+               <Image src="https://picsum.photos/400/300?random=2" alt="Product 2" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="graphic t-shirt" />
+              <p>Polera Personalizada</p>
             </div>
-            <div className="border border-black p-4 bg-white">
-              <p>[Tarjeta de Producto 3: Llavero]</p>
-            </div>
-            <div className="border border-black p-4 bg-white">
-              <p>[Tarjeta de Producto 4: Póster]</p>
-            </div>
-            <div className="border border-black p-4 bg-white">
-              <p>[Tarjeta de Producto 5: Stickers]</p>
-            </div>
-            <div className="border border-black p-4 bg-white">
-              <p>[Tarjeta de Producto 6: Otros]</p>
+             <div className="border border-black p-4 bg-white rounded-lg text-center">
+               <Image src="https://picsum.photos/400/300?random=3" alt="Product 3" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="keychain design" />
+              <p>Llavero</p>
             </div>
           </div>
         </section>
@@ -99,17 +95,20 @@ export default function SublikatWireframe() {
           title="Animación: el gato trae cartas o globos de diálogo con mensajes de clientes. Globos emergentes con efecto pop-up."
         >
           <h2 className="text-xl font-semibold mb-6 text-center">
-            [Testimonios de Clientes]
+            Testimonios de Clientes
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="border border-black p-4 bg-white">
-              <p>[Testimonio de cliente 1]</p>
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="border border-black p-4 bg-white rounded-lg text-center">
+               <Image src="https://picsum.photos/200/200?random=4" alt="Client 1" width={200} height={200} className="w-24 h-24 object-cover rounded-full mx-auto mb-4" data-ai-hint="happy person" />
+              <p>"¡Me encantó el resultado! Mi taza quedó increíble."</p>
             </div>
-            <div className="border border-black p-4 bg-white">
-              <p>[Testimonio de cliente 2]</p>
+            <div className="border border-black p-4 bg-white rounded-lg text-center">
+                <Image src="https://picsum.photos/200/200?random=5" alt="Client 2" width={200} height={200} className="w-24 h-24 object-cover rounded-full mx-auto mb-4" data-ai-hint="smiling customer" />
+              <p>"El proceso fue súper fácil y divertido. Lo recomiendo."</p>
             </div>
-            <div className="border border-black p-4 bg-white">
-              <p>[Testimonio de cliente 3]</p>
+            <div className="border border-black p-4 bg-white rounded-lg text-center">
+               <Image src="https://picsum.photos/200/200?random=6" alt="Client 3" width={200} height={200} className="w-24 h-24 object-cover rounded-full mx-auto mb-4" data-ai-hint="satisfied user" />
+              <p>"La calidad es excelente y la función AR es genial."</p>
             </div>
           </div>
         </section>
@@ -119,19 +118,22 @@ export default function SublikatWireframe() {
 
       <ScrollStackItem>
         <section
-          className="border border-black p-8 bg-gray-200"
+          className="border border-black p-8 bg-gray-200 flex flex-col md:flex-row gap-6 items-center"
           title="Animación: el gato entrega un sobre o usa un portátil. Animación de tap con su patita sobre el formulario."
         >
-          <h2 className="text-xl font-semibold mb-6 text-center">
-            [Formulario de Contacto]
-          </h2>
-          <div className="border border-black p-4 bg-white">
-            <p>
-              [Placeholder para campos del formulario (nombre, email, mensaje)]
-            </p>
+          <div className="w-full md:w-1/2">
+             <h2 className="text-xl font-semibold mb-6 text-center">Formulario de Contacto</h2>
+            <div className="border border-black p-4 bg-white">
+              <p>
+                [Placeholder para campos del formulario (nombre, email, mensaje)]
+              </p>
+            </div>
+            <div className="border border-black p-2 mt-4 inline-block bg-white">
+              <p>Botón de Enviar</p>
+            </div>
           </div>
-          <div className="border border-black p-2 mt-4 inline-block bg-white">
-            <p>[Botón de Enviar]</p>
+          <div className="w-full md:w-1/2">
+             <Image src="https://picsum.photos/600/500" alt="Contact us" width={600} height={500} className="w-full h-auto object-cover rounded-lg" data-ai-hint="cat mail" />
           </div>
         </section>
       </ScrollStackItem>
@@ -140,15 +142,16 @@ export default function SublikatWireframe() {
 
       <ScrollStackItem>
         <footer
-          className="border border-black p-6 text-center bg-gray-100"
+          className="border border-black p-6 text-center bg-gray-100 flex flex-col items-center"
           title="Animación: el gato duerme con sus lentes puestos. Respiración sutil o ronroneo animado."
         >
-          <div className="flex flex-col md:flex-row justify-between items-center">
+           <Image src="https://picsum.photos/300/200" alt="Sleeping Cat" width={300} height={200} className="w-auto h-24 object-contain rounded-lg mb-4" data-ai-hint="sleeping cat" />
+           <div className="flex flex-col md:flex-row justify-between items-center w-full">
             <div className="border border-black p-2 mb-4 md:mb-0 bg-white">
-              <p>[Información de Contacto y Copyright]</p>
+              <p>Información de Contacto y Copyright</p>
             </div>
             <div className="border border-black p-2 bg-white">
-              <p>[Íconos de Redes Sociales]</p>
+              <p>Íconos de Redes Sociales</p>
             </div>
           </div>
         </footer>
