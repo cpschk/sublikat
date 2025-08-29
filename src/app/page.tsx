@@ -36,6 +36,8 @@ export default function SublikatWireframe() {
           </div>
         </section>
       </ScrollStackItem>
+      
+      <hr className="border-t-4 border-black my-8" />
 
       <ScrollStackItem>
         <section
@@ -55,6 +57,8 @@ export default function SublikatWireframe() {
           </div>
         </section>
       </ScrollStackItem>
+
+      <hr className="border-t-4 border-black my-8" />
 
       <ScrollStackItem>
         <section
@@ -87,6 +91,8 @@ export default function SublikatWireframe() {
         </section>
       </ScrollStackItem>
 
+      <hr className="border-t-4 border-black my-8" />
+
       <ScrollStackItem>
         <section
           className="border border-black p-8 bg-gray-100"
@@ -109,6 +115,8 @@ export default function SublikatWireframe() {
         </section>
       </ScrollStackItem>
 
+      <hr className="border-t-4 border-black my-8" />
+
       <ScrollStackItem>
         <section
           className="border border-black p-8 bg-gray-200"
@@ -127,6 +135,8 @@ export default function SublikatWireframe() {
           </div>
         </section>
       </ScrollStackItem>
+
+      <hr className="border-t-4 border-black my-8" />
 
       <ScrollStackItem>
         <footer
