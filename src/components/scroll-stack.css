@@ -10,7 +10,10 @@ body {
 
 .scroll-stack-card {
   position: sticky;
-  top: 20%;
+  top: 10vh;
+  width: 90vw;
+  height: 80vh;
+  margin: 0 auto;
   transform-origin: center top;
   will-change: transform, filter;
   -webkit-backface-visibility: hidden;
