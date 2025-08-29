@@ -3,7 +3,7 @@ import React from 'react';
 import ScrollStack, {
   ScrollStackItem,
 } from '@/components/scroll-stack';
-import './scroll-stack.css';
+import '@/components/scroll-stack.css';
 
 export default function SublikatWireframe() {
   return (
