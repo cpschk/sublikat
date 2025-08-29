@@ -53,6 +53,10 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
   const lastTransformsRef = useRef(new Map<number, any>());
   const isUpdatingRef = useRef(false);
 
+  const backgroundImagesRef = useRef<HTMLElement[]>([]);
+  const lastVisibleImageIndexRef = useRef(0);
+
+
   const calculateProgress = useCallback(
     (scrollTop: number, start: number, end: number) => {
       if (scrollTop < start) return 0;
@@ -86,6 +90,8 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       '.scroll-stack-end'
     ) as HTMLElement;
     const endElementTop = endElement ? endElement.offsetTop : 0;
+    
+    let currentVisibleImageIndex = -1;
 
     cardsRef.current.forEach((card, i) => {
       if (!card) return;
@@ -127,6 +133,12 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       } else if (scrollTop > pinEnd) {
         translateY = pinEnd - cardTop + stackPositionPx + itemStackDistance * i;
       }
+      
+      const cardMidPoint = cardTop - (containerHeight / 2);
+      if (scrollTop >= cardMidPoint) {
+        // This card's section index corresponds to the background image index
+        currentVisibleImageIndex = i;
+      }
 
       const newTransform = {
         translateY: Math.round(translateY * 100) / 100,
@@ -163,6 +175,14 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         }
       }
     });
+
+    if (backgroundImagesRef.current.length > 0 && currentVisibleImageIndex !== lastVisibleImageIndexRef.current) {
+        backgroundImagesRef.current.forEach((img, index) => {
+            img.style.opacity = index === currentVisibleImageIndex ? '1' : '0';
+        });
+        lastVisibleImageIndexRef.current = currentVisibleImageIndex;
+    }
+
 
     isUpdatingRef.current = false;
   }, [
@@ -221,6 +241,11 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       scroller.querySelectorAll('.scroll-stack-card')
     ) as HTMLElement[];
     cardsRef.current = cards;
+
+    backgroundImagesRef.current = Array.from(
+        document.querySelectorAll('.background-image')
+    ) as HTMLElement[];
+
     const transformsCache = lastTransformsRef.current;
 
     cards.forEach((card, i) => {
@@ -239,6 +264,15 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     setupLenis();
 
     updateCardTransforms();
+    
+    // Set initial background
+    if (backgroundImagesRef.current.length > 0) {
+        backgroundImagesRef.current.forEach((img, index) => {
+            img.style.opacity = index === 0 ? '1' : '0';
+        });
+        lastVisibleImageIndexRef.current = 0;
+    }
+
 
     return () => {
       if (animationFrameRef.current) {

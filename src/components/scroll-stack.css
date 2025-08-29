@@ -6,19 +6,24 @@ body {
 .scroll-stack-scroller {
   height: 100vh;
   overflow-y: scroll;
+  /* Make sure the scroller is on top of the background images */
+  position: relative;
+  z-index: 1;
 }
 
 .scroll-stack-card {
   position: sticky;
   top: 10vh;
-  width: 90vw;
-  height: 80vh;
+  width: 80vw; /* 100% - 10% on each side */
+  height: 80vh; /* 100% - 10% on top and bottom */
   margin: 0 auto;
   transform-origin: center top;
   will-change: transform, filter;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
-  background: white;
+  background: rgba(255, 255, 255, 0.85); /* White with some transparency */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px);
   padding: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -26,4 +31,30 @@ body {
 
 .scroll-stack-end {
   height: 50vh;
+}
+
+/* New styles for background images */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0; /* Behind the content */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* This logic will be handled by the scroll component, but we can set the first one to be visible */
+.background-image:first-child {
+  opacity: 1;
 }
