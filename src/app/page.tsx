@@ -7,7 +7,7 @@ import '@/components/scroll-stack.css';
 
 export default function SublikatWireframe() {
   return (
-    <ScrollStack>
+    <ScrollStack stackPosition="10%">
       {/* This header will scroll normally */}
       <header
         className="border border-black p-4 flex justify-between items-center bg-gray-100 mb-8"
@@ -62,7 +62,7 @@ export default function SublikatWireframe() {
 
       <ScrollStackItem>
         <section
-          className="border border-black p-8 bg-gray-200"
+          className="border border-black p-8 bg-gray-300"
           title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
         >
           <h2 className="text-xl font-semibold mb-6 text-center">
