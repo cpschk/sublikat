@@ -102,32 +102,84 @@ export default function SublikatWireframe() {
                 <h2 className="text-xl font-semibold mb-6 text-center">
                     Productos Personalizados
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl px-4">
-                    <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col transition-all duration-300 cursor-pointer hover:bg-gray-50">
-                        <Image src="https://picsum.photos/400/300?random=1" alt="Taza AR" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="custom mug" />
-                        <h3 className="font-semibold text-center mb-2 mt-auto pt-2">Taza AR</h3>
-                    </div>
-                    <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col transition-all duration-300 cursor-pointer hover:bg-gray-50">
-                        <Image src="https://picsum.photos/400/300?random=2" alt="Polera Personalizada" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="graphic t-shirt" />
-                        <h3 className="font-semibold text-center mb-2 mt-auto pt-2">Polera Personalizada</h3>
-                    </div>
-                    <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col transition-all duration-300 cursor-pointer hover:bg-gray-50">
-                        <Image src="https://picsum.photos/400/300?random=3" alt="Llavero" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="keychain design" />
-                        <h3 className="font-semibold text-center mb-2 mt-auto pt-2">Llavero</h3>
-                    </div>
-                     <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col transition-all duration-300 cursor-pointer hover:bg-gray-50">
-                        <Image src="https://picsum.photos/400/300?random=7" alt="Póster" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="custom poster" />
-                        <h3 className="font-semibold text-center mb-2 mt-auto pt-2">Póster</h3>
-                    </div>
-                    <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col transition-all duration-300 cursor-pointer hover:bg-gray-50">
-                        <Image src="https://picsum.photos/400/300?random=8" alt="Stickers" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="sticker pack" />
-                        <h3 className="font-semibold text-center mb-2 mt-auto pt-2">Stickers</h3>
-                    </div>
-                    <div className="border border-black p-4 bg-white rounded-lg text-center h-full flex flex-col transition-all duration-300 cursor-pointer hover:bg-gray-50">
-                        <Image src="https://picsum.photos/400/300?random=9" alt="Otros" width={400} height={300} className="w-full h-auto object-cover rounded-md mb-2" data-ai-hint="custom products" />
-                        <h3 className="font-semibold text-center mb-2 mt-auto pt-2">Otros</h3>
-                    </div>
-                </div>
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                  className="w-full max-w-4xl"
+                >
+                  <CarouselContent>
+                    <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                      <div className="p-1">
+                        <div className="border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                          <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                            <span className="text-white font-bold text-sm">T</span>
+                          </div>
+                          <h3 className="font-semibold text-center mb-2">Taza AR</h3>
+                          <p className="text-sm text-center text-gray-600">Taza con experiencia de realidad aumentada</p>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                      <div className="p-1">
+                        <div className="border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                          <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                            <span className="text-white font-bold text-sm">P</span>
+                          </div>
+                          <h3 className="font-semibold text-center mb-2">Polera Personalizada</h3>
+                          <p className="text-sm text-center text-gray-600">Diseño único para tu estilo</p>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                      <div className="p-1">
+                        <div className="border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                          <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                            <span className="text-white font-bold text-sm">L</span>
+                          </div>
+                          <h3 className="font-semibold text-center mb-2">Llavero</h3>
+                          <p className="text-sm text-center text-gray-600">Accesorio con diseño exclusivo</p>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                      <div className="p-1">
+                        <div className="border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                          <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                            <span className="text-white font-bold text-sm">P</span>
+                          </div>
+                          <h3 className="font-semibold text-center mb-2">Póster</h3>
+                          <p className="text-sm text-center text-gray-600">Arte para tu pared</p>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                      <div className="p-1">
+                        <div className="border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                          <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                            <span className="text-white font-bold text-sm">S</span>
+                          </div>
+                          <h3 className="font-semibold text-center mb-2">Stickers</h3>
+                          <p className="text-sm text-center text-gray-600">Para personalizar cualquier superficie</p>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                      <div className="p-1">
+                        <div className="border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 rounded-lg h-full flex flex-col">
+                          <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                            <span className="text-white font-bold text-sm">O</span>
+                          </div>
+                          <h3 className="font-semibold text-center mb-2">Otros</h3>
+                          <p className="text-sm text-center text-gray-600">Productos personalizados a tu medida</p>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
             </section>
         </ScrollStackItem>
 
