@@ -75,7 +75,7 @@ export default function SublikatWireframe() {
         {/* These items will be part of the stack */}
         <ScrollStackItem>
           <section
-            className="border border-black p-12 text-center bg-blue-200 h-full flex flex-col justify-center items-center"
+            className="border border-black p-6 md:p-12 text-center bg-blue-200 h-full flex flex-col justify-center items-center"
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
           >
             <h1 className="text-2xl font-bold mb-4">Hero: Título Principal</h1>
@@ -93,7 +93,7 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
-            className="border border-black p-8 bg-gray-100 flex flex-col justify-center items-center h-full"
+            className="border border-black p-6 md:p-8 bg-gray-100 flex flex-col justify-center items-center h-full"
             title="Animación: el gato lee un libro o se muestra reflexivo mirando el texto. Pestañeo lento y movimiento suave de cola."
           >
             <h2 className="text-xl font-semibold mb-4 text-center">
@@ -114,7 +114,7 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
             <section
-                className="border border-black p-8 bg-gray-300 h-full flex flex-col justify-center items-center"
+                className="border border-black p-6 md:p-8 bg-gray-300 h-full flex flex-col justify-center items-center"
                 title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
             >
                 <h2 className="text-xl font-semibold mb-6 text-center">
@@ -153,7 +153,7 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
-            className="border border-black p-8 bg-gray-100 h-full flex flex-col justify-center items-center"
+            className="border border-black p-6 md:p-8 bg-gray-100 h-full flex flex-col justify-center items-center"
             title="Animación: el gato trae cartas o globos de diálogo con mensajes de clientes. Globos emergentes con efecto pop-up."
           >
             <h2 className="text-xl font-semibold mb-6 text-center">
@@ -180,7 +180,7 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
-            className="border border-black p-8 bg-gray-200 flex flex-col md:flex-row gap-6 items-center justify-center h-full"
+            className="border border-black p-6 md:p-8 bg-gray-200 flex flex-col md:flex-row gap-6 items-center justify-center h-full"
             title="Animación: el gato entrega un sobre o usa un portátil. Animación de tap con su patita sobre el formulario."
           >
             <div className="w-full md:w-1/2 max-w-md">
@@ -209,12 +209,12 @@ export default function SublikatWireframe() {
               className="h-[20%] border border-black p-6 bg-gray-100 flex items-center justify-center"
               title="Animación: el gato duerme con sus lentes puestos. Respiración sutil o ronroneo animado."
             >
-              <div className="flex justify-around items-center w-full max-w-4xl">
-                <div className="border border-black p-2 bg-white">
+              <div className="flex flex-col md:flex-row justify-around items-center w-full max-w-4xl gap-4">
+                <div className="border border-black p-2 bg-white text-center">
                   <p>Información de Contacto y Copyright</p>
                 </div>
                 <Image src="https://picsum.photos/300/200" alt="Sleeping Cat" width={300} height={200} className="w-auto h-16 object-contain rounded-lg" data-ai-hint="sleeping cat" />
-                <div className="border border-black p-2 bg-white">
+                <div className="border border-black p-2 bg-white text-center">
                   <p>Íconos de Redes Sociales</p>
                 </div>
               </div>
@@ -231,5 +231,3 @@ export default function SublikatWireframe() {
     </>
   );
 }
-
-    
