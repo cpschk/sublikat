@@ -8,22 +8,20 @@ import '@/components/scroll-stack.css';
 export default function SublikatWireframe() {
   return (
     <ScrollStack>
-      <ScrollStackItem>
-        <main className="bg-white text-black font-sans space-y-8 p-6">
-          <header
-            className="border border-black p-4 flex justify-between items-center bg-gray-100"
-            title="Animación: el gato asoma la cabeza desde el menú o logo. Animación tipo 'peek' (asomarse y esconderse)."
-          >
-            <div className="border border-black p-2 bg-white">
-              <p>[Logo Placeholder]</p>
-            </div>
-            <nav className="border border-black p-2 bg-white">
-              <p>[Menú de navegación]</p>
-            </nav>
-          </header>
-        </main>
-      </ScrollStackItem>
+      {/* This header will scroll normally */}
+      <header
+        className="border border-black p-4 flex justify-between items-center bg-gray-100 mb-8"
+        title="Animación: el gato asoma la cabeza desde el menú o logo. Animación tipo 'peek' (asomarse y esconderse)."
+      >
+        <div className="border border-black p-2 bg-white">
+          <p>[Logo Placeholder]</p>
+        </div>
+        <nav className="border border-black p-2 bg-white">
+          <p>[Menú de navegación]</p>
+        </nav>
+      </header>
 
+      {/* These items will be part of the stack */}
       <ScrollStackItem>
         <section
           className="border border-black p-12 text-center bg-gray-200"
