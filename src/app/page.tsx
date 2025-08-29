@@ -24,7 +24,7 @@ export default function SublikatWireframe() {
       {/* These items will be part of the stack */}
       <ScrollStackItem>
         <section
-          className="border border-black p-12 text-center bg-gray-200"
+          className="border border-black p-12 text-center bg-blue-200"
           title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
         >
           <h1 className="text-2xl font-bold mb-4">[Hero: Título Principal]</h1>
