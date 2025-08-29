@@ -30,7 +30,7 @@ export function GalleryPopup({ product, isOpen, onOpenChange }: GalleryPopupProp
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="w-screen max-w-full h-[90vh] rounded-lg border-0 p-6 flex flex-col">
+      <DialogContent className="w-[93vw] max-w-[93vw] h-[90vh] rounded-lg border-0 p-6 flex flex-col">
         <DialogHeader>
           <DialogTitle className="text-3xl font-headline">{product.title}</DialogTitle>
           <DialogDescription>{product.description}</DialogDescription>
