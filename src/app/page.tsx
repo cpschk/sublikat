@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import ScrollStack, {
   ScrollStackItem,
@@ -12,7 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import { Heart } from 'lucide-react';
+import { GalleryPopup, type Product } from '@/components/gallery-popup';
 
 const backgroundImages = [
   'https://placehold.co/1920x1080/E0F7FA/E0F7FA', // Light Cyan
@@ -23,8 +23,25 @@ const backgroundImages = [
   'https://placehold.co/1920x1080/F0F4C3/F0F4C3', // Light Lime
 ];
 
+const products: Product[] = [
+    { id: 'taza-ar', title: 'Taza AR', description: 'Taza con experiencia de realidad aumentada', image: 'https://picsum.photos/400/400?random=10', iconLetter: 'T' },
+    { id: 'polera-personalizada', title: 'Polera Personalizada', description: 'Diseño único para tu estilo', image: 'https://picsum.photos/400/400?random=11', iconLetter: 'P' },
+    { id: 'llavero', title: 'Llavero', description: 'Accesorio con diseño exclusivo', image: 'https://picsum.photos/400/400?random=12', iconLetter: 'L' },
+    { id: 'poster', title: 'Póster', description: 'Arte para tu pared', image: 'https://picsum.photos/400/400?random=13', iconLetter: 'P' },
+    { id: 'stickers', title: 'Stickers', description: 'Para personalizar cualquier superficie', image: 'https://picsum.photos/400/400?random=14', iconLetter: 'S' },
+    { id: 'otros', title: 'Otros', description: 'Productos personalizados a tu medida', image: 'https://picsum.photos/400/400?random=15', iconLetter: 'O' },
+];
+
 
 export default function SublikatWireframe() {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleCardClick = (product: Product) => {
+    setSelectedProduct(product);
+    setIsPopupOpen(true);
+  };
+
   return (
     <>
       <div className="background-container">
@@ -111,78 +128,20 @@ export default function SublikatWireframe() {
                   className="w-full max-w-4xl"
                 >
                   <CarouselContent>
-                    <CarouselItem className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                      <div className="p-1">
-                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 hover:shadow-xl hover:scale-105 rounded-lg flex flex-col h-80 w-60 mx-auto">
-                           <Image src="https://picsum.photos/100/100" alt="Peeking cat" width={60} height={60} className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2" data-ai-hint="peeking cat" />
-                          <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                            <span className="text-white font-bold text-sm">T</span>
-                          </div>
-                          <h3 className="font-semibold text-center mb-2">Taza AR</h3>
-                          <p className="text-sm text-center text-gray-600">Taza con experiencia de realidad aumentada</p>
-                        </div>
-                      </div>
-                    </CarouselItem>
-                    <CarouselItem className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                      <div className="p-1">
-                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 hover:shadow-xl hover:scale-105 rounded-lg flex flex-col h-80 w-60 mx-auto">
-                          <Image src="https://picsum.photos/100/100" alt="Peeking cat" width={60} height={60} className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2" data-ai-hint="peeking cat" />
-                          <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                            <span className="text-white font-bold text-sm">P</span>
-                          </div>
-                          <h3 className="font-semibold text-center mb-2">Polera Personalizada</h3>
-                          <p className="text-sm text-center text-gray-600">Diseño único para tu estilo</p>
-                        </div>
-                      </div>
-                    </CarouselItem>
-                    <CarouselItem className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                      <div className="p-1">
-                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 hover:shadow-xl hover:scale-105 rounded-lg flex flex-col h-80 w-60 mx-auto">
-                          <Image src="https://picsum.photos/100/100" alt="Peeking cat" width={60} height={60} className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2" data-ai-hint="peeking cat" />
-                          <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                            <span className="text-white font-bold text-sm">L</span>
-                          </div>
-                          <h3 className="font-semibold text-center mb-2">Llavero</h3>
-                          <p className="text-sm text-center text-gray-600">Accesorio con diseño exclusivo</p>
-                        </div>
-                      </div>
-                    </CarouselItem>
-                    <CarouselItem className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                      <div className="p-1">
-                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 hover:shadow-xl hover:scale-105 rounded-lg flex flex-col h-80 w-60 mx-auto">
-                           <Image src="https://picsum.photos/100/100" alt="Peeking cat" width={60} height={60} className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2" data-ai-hint="peeking cat" />
-                          <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                            <span className="text-white font-bold text-sm">P</span>
-                          </div>
-                          <h3 className="font-semibold text-center mb-2">Póster</h3>
-                          <p className="text-sm text-center text-gray-600">Arte para tu pared</p>
-                        </div>
-                      </div>
-                    </CarouselItem>
-                    <CarouselItem className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                      <div className="p-1">
-                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 hover:shadow-xl hover:scale-105 rounded-lg flex flex-col h-80 w-60 mx-auto">
-                           <Image src="https://picsum.photos/100/100" alt="Peeking cat" width={60} height={60} className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2" data-ai-hint="peeking cat" />
-                          <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                            <span className="text-white font-bold text-sm">S</span>
-                          </div>
-                          <h3 className="font-semibold text-center mb-2">Stickers</h3>
-                          <p className="text-sm text-center text-gray-600">Para personalizar cualquier superficie</p>
-                        </div>
-                      </div>
-                    </CarouselItem>
-                    <CarouselItem className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                      <div className="p-1">
-                        <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 hover:shadow-xl hover:scale-105 rounded-lg flex flex-col h-80 w-60 mx-auto">
-                          <Image src="https://picsum.photos/100/100" alt="Peeking cat" width={60} height={60} className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2" data-ai-hint="peeking cat" />
-                          <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                            <span className="text-white font-bold text-sm">O</span>
-                          </div>
-                          <h3 className="font-semibold text-center mb-2">Otros</h3>
-                          <p className="text-sm text-center text-gray-600">Productos personalizados a tu medida</p>
-                        </div>
-                      </div>
-                    </CarouselItem>
+                    {products.map((product) => (
+                        <CarouselItem key={product.id} className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                            <div className="p-1" onClick={() => handleCardClick(product)}>
+                                <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 hover:shadow-xl hover:scale-105 rounded-lg flex flex-col h-80 w-60 mx-auto">
+                                <Image src="https://picsum.photos/100/100" alt="Peeking cat" width={60} height={60} className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2" data-ai-hint="peeking cat" />
+                                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                                    <span className="text-white font-bold text-sm">{product.iconLetter}</span>
+                                </div>
+                                <h3 className="font-semibold text-center mb-2">{product.title}</h3>
+                                <p className="text-sm text-center text-gray-600">{product.description}</p>
+                                </div>
+                            </div>
+                        </CarouselItem>
+                    ))}
                   </CarouselContent>
                   <CarouselPrevious />
                   <CarouselNext />
@@ -263,10 +222,12 @@ export default function SublikatWireframe() {
           </div>
         </ScrollStackItem>
       </ScrollStack>
+      
+      <GalleryPopup 
+        product={selectedProduct}
+        isOpen={isPopupOpen}
+        onOpenChange={setIsPopupOpen}
+      />
     </>
   );
 }
-
-    
-
-    
