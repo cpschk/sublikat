@@ -1,0 +1,26 @@
+html,
+body {
+  overscroll-behavior: none;
+}
+
+.scroll-stack-scroller {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.scroll-stack-card {
+  position: sticky;
+  top: 20%;
+  transform-origin: center top;
+  will-change: transform, filter;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.scroll-stack-end {
+  height: 50vh;
+}
