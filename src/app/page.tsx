@@ -120,16 +120,14 @@ export default function SublikatWireframe() {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-5xl px-4">
               {products.map((product) => (
                 <div key={product.id} onClick={() => handleCardClick(product)} className="w-full cursor-pointer group relative">
-                  {product.id === 'taza-ar' && (
                     <Image
                       src="/cat.png"
                       alt="Peeking cat"
                       width={90}
                       height={90}
-                      className="absolute -top-[65px] -right-9 h-24 w-24 object-contain transition-all duration-300 z-10 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-110"
+                      className="absolute -top-[82px] -right-8 h-24 w-24 object-contain transition-all duration-300 z-10 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-110"
                       data-ai-hint="peeking cat"
                     />
-                  )}
                   <div className="border-2 border-black p-4 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-36 justify-center items-center">
                     <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-2 md:mb-3 flex items-center justify-center">
                       <span className="text-white font-bold text-sm">
