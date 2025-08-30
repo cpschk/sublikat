@@ -94,8 +94,8 @@ export default function SublikatWireframe() {
                 <Button size="lg">Explora Nuestros Productos</Button>
             </div>
             <Image 
-                src="/katchan.png" 
-                alt="Katchan, la mascota, asomándose" 
+                src="/katchantaza.png" 
+                alt="Katchan, la mascota, con una taza" 
                 width={400} 
                 height={500} 
                 className="absolute bottom-0 right-8"
