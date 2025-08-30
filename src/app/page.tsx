@@ -121,14 +121,16 @@ export default function SublikatWireframe() {
               {products.map((product) => (
                 <div key={product.id} onClick={() => handleCardClick(product)} className="w-full cursor-pointer">
                   <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 hover:bg-gray-50 hover:shadow-xl hover:scale-105 rounded-lg flex flex-col h-36 justify-center items-center">
-                    <Image
-                      src="https://picsum.photos/100/100"
-                      alt="Peeking cat"
-                      width={60}
-                      height={60}
-                      className="absolute -top-5 -right-5 h-16 w-16 object-contain transition-all duration-300 transform group-hover:scale-110"
-                      data-ai-hint="peeking cat"
-                    />
+                    {product.id === 'taza-ar' && (
+                        <Image
+                        src="/cat.png"
+                        alt="Peeking cat"
+                        width={60}
+                        height={60}
+                        className="absolute -top-5 -right-5 h-16 w-16 object-contain transition-all duration-300 transform group-hover:scale-110"
+                        data-ai-hint="peeking cat"
+                        />
+                    )}
                     <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-2 md:mb-3 flex items-center justify-center">
                       <span className="text-white font-bold text-sm">
                         {product.iconLetter}
