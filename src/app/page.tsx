@@ -5,13 +5,6 @@ import ScrollStack, {
   ScrollStackItem,
 } from '@/components/scroll-stack';
 import '@/components/scroll-stack.css';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
 import { GalleryPopup, type Product } from '@/components/gallery-popup';
 
 const backgroundImages = [
@@ -113,40 +106,41 @@ export default function SublikatWireframe() {
         <hr className="border-t-4 border-black my-8" />
 
         <ScrollStackItem>
-            <section
-                className="border border-black p-6 md:p-8 bg-gray-300 flex flex-col justify-center items-center h-96"
-                title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
-            >
-                <h2 className="text-xl font-semibold mb-6 text-center">
-                    Productos Personalizados
-                </h2>
-                <Carousel
-                  opts={{
-                    align: "start",
-                    loop: true,
-                  }}
-                  className="w-full max-w-4xl"
-                >
-                  <CarouselContent>
-                    {products.map((product) => (
-                        <CarouselItem key={product.id} className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 p-1 md:p-4">
-                            <div onClick={() => handleCardClick(product)}>
-                                <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 hover:shadow-xl hover:scale-105 rounded-lg flex flex-col h-40 w-60 mx-auto justify-center items-center">
-                                <Image src="https://picsum.photos/100/100" alt="Peeking cat" width={60} height={60} className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2" data-ai-hint="peeking cat" />
-                                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                                    <span className="text-white font-bold text-sm">{product.iconLetter}</span>
-                                </div>
-                                <h3 className="font-semibold text-center mb-2">{product.title}</h3>
-                                <p className="text-sm text-center text-gray-600">{product.description}</p>
-                                </div>
-                            </div>
-                        </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious />
-                  <CarouselNext />
-                </Carousel>
-            </section>
+          <section
+            className="border border-black p-6 md:p-8 bg-gray-300 flex flex-col justify-center items-center h-full"
+            title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
+          >
+            <h2 className="text-xl font-semibold mb-6 text-center">
+              Productos Personalizados
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl px-4">
+              {products.map((product) => (
+                <div key={product.id} onClick={() => handleCardClick(product)} className="w-full">
+                  <div className="group relative border-2 border-black p-4 bg-white transition-all duration-300 cursor-pointer hover:bg-gray-50 hover:shadow-xl hover:scale-105 rounded-lg flex flex-col h-40 justify-center items-center">
+                    <Image
+                      src="https://picsum.photos/100/100"
+                      alt="Peeking cat"
+                      width={60}
+                      height={60}
+                      className="absolute top-0 right-0 h-16 w-16 object-contain opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-2 group-hover:translate-y-2"
+                      data-ai-hint="peeking cat"
+                    />
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">
+                        {product.iconLetter}
+                      </span>
+                    </div>
+                    <h3 className="font-semibold text-center mb-2">
+                      {product.title}
+                    </h3>
+                    <p className="text-sm text-center text-gray-600">
+                      {product.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
         </ScrollStackItem>
 
         <hr className="border-t-4 border-black my-8" />
@@ -231,3 +225,5 @@ export default function SublikatWireframe() {
     </>
   );
 }
+
+    
