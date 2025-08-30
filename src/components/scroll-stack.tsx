@@ -259,9 +259,14 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       card.style.webkitTransform = 'translateZ(0)';
       card.style.perspective = '1000px';
       card.style.webkitPerspective = '1000px';
+      card.style.position = 'relative'; // Disable sticky initially to prevent jank
     });
 
     setupLenis();
+
+    requestAnimationFrame(() => {
+        cards.forEach(card => card.style.position = 'sticky');
+    });
 
     updateCardTransforms();
     
