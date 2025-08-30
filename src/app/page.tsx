@@ -124,9 +124,9 @@ export default function SublikatWireframe() {
                     <Image
                       src="/cat.png"
                       alt="Peeking cat"
-                      width={60}
-                      height={60}
-                      className="absolute -top-5 -right-5 h-16 w-16 object-contain transition-all duration-300 transform group-hover:scale-110 z-10"
+                      width={90}
+                      height={90}
+                      className="absolute -top-5 -right-5 h-24 w-24 object-contain transition-all duration-300 transform group-hover:scale-110 z-10"
                       data-ai-hint="peeking cat"
                     />
                   )}
