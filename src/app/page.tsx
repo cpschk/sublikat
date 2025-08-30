@@ -75,21 +75,22 @@ export default function SublikatWireframe() {
             className="border border-black p-6 md:p-12 text-center bg-blue-200 h-full flex flex-col justify-center items-center"
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
           >
-            <div className='h-[10%]'></div>
+            <div className='h-[10%] flex flex-col justify-center items-center'>
+              <h1 className="text-2xl font-bold mb-2">Realidad Aumentada + Personalización</h1>
+              <p className="max-w-3xl">
+                Descubre productos únicos que cobran vida con tu smartphone. Diseños personalizados que combinan arte físico con experiencias digitales inmersivas.
+              </p>
+            </div>
             <div className='h-[80%] w-full flex'>
-              <div className='w-[60%] h-full flex flex-col justify-center items-center'>
-                <h1 className="text-2xl font-bold mb-4">Realidad Aumentada + Personalización</h1>
-                <p className="mb-6 max-w-2xl">
-                  Descubre productos únicos que cobran vida con tu smartphone. Diseños personalizados que combinan arte físico con experiencias digitales inmersivas.
-                </p>
-              </div>
-              <div className='w-[40%] h-full flex justify-center items-center'>
+              <div className='w-[60%] h-full flex justify-center items-center p-4'>
                 <Image src="https://picsum.photos/800/400" alt="Hero Image" width={800} height={400} className="w-full h-auto object-cover rounded-lg max-w-3xl" data-ai-hint="abstract technology" />
               </div>
+              <div className='w-[40%] h-full flex flex-col justify-center items-center gap-4'>
+                 <Image src="https://picsum.photos/400/300" alt="Cat Image" width={400} height={300} className="w-full h-auto object-cover rounded-lg max-w-sm" data-ai-hint="happy cat" />
+                <Button size="lg">Explora Nuestros Productos</Button>
+              </div>
             </div>
-            <div className='h-[10%] flex justify-center items-center'>
-              <Button size="lg">Explora Nuestros Productos</Button>
-            </div>
+            <div className='h-[10%]'></div>
           </section>
         </ScrollStackItem>
         
