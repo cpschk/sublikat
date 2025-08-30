@@ -85,12 +85,13 @@ export default function SublikatWireframe() {
               <div className='w-[60%] h-full flex justify-center items-center p-4'>
                 <Image src="https://picsum.photos/800/400" alt="Hero Image" width={800} height={400} className="w-full h-auto object-cover rounded-lg max-w-3xl" data-ai-hint="abstract technology" />
               </div>
-              <div className='w-[40%] h-full flex flex-col justify-center items-center gap-4'>
+              <div className='w-[40%] h-full flex flex-col justify-center items-center'>
                  <Image src="https://picsum.photos/400/300" alt="Cat Image" width={400} height={300} className="w-full h-auto object-cover rounded-lg max-w-sm" data-ai-hint="happy cat" />
-                <Button size="lg">Explora Nuestros Productos</Button>
               </div>
             </div>
-            <div className='h-[10%]'></div>
+            <div className='h-[10%] flex justify-center items-center'>
+                <Button size="lg">Explora Nuestros Productos</Button>
+            </div>
           </section>
         </ScrollStackItem>
         
