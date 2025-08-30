@@ -72,13 +72,13 @@ export default function SublikatWireframe() {
         {/* These items will be part of the stack */}
         <ScrollStackItem>
           <section
-            className="border border-black p-6 md:p-12 text-center bg-blue-200/80 h-full flex flex-col justify-center items-center"
+            className="relative border border-black p-6 md:p-12 text-center bg-blue-200/80 h-full flex flex-col justify-center items-center"
             style={{ backgroundImage: 'url(/hero_living.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
           >
             <div className='h-[10%] flex flex-col justify-center items-center'>
-              <h1 className="text-2xl font-bold mb-2">Realidad Aumentada + Personalización</h1>
-              <p className="max-w-3xl">
+              <h1 className="text-4xl md:text-6xl font-bold mb-2">Realidad Aumentada + Personalización</h1>
+              <p className="max-w-3xl text-lg md:text-xl">
                 Descubre productos únicos que cobran vida con tu smartphone. Diseños personalizados que combinan arte físico con experiencias digitales inmersivas.
               </p>
             </div>
@@ -90,9 +90,17 @@ export default function SublikatWireframe() {
                  <Image src="https://picsum.photos/400/300" alt="Cat Image" width={400} height={300} className="w-full h-auto object-cover rounded-lg max-w-sm" data-ai-hint="happy cat" />
               </div>
             </div>
-            <div className='h-[10%] flex justify-center items-center bg-white border border-black'>
+            <div className='h-[10%] w-full flex justify-center items-center'>
                 <Button size="lg">Explora Nuestros Productos</Button>
             </div>
+            <Image 
+                src="https://picsum.photos/200/250" 
+                alt="Peeking Cat" 
+                width={200} 
+                height={250} 
+                className="absolute bottom-0 right-20"
+                data-ai-hint="peeking cat"
+            />
           </section>
         </ScrollStackItem>
         
@@ -239,7 +247,3 @@ export default function SublikatWireframe() {
     </>
   );
 }
-
-    
-
-    
