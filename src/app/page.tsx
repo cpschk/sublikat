@@ -55,7 +55,7 @@ export default function SublikatWireframe() {
         ))}
       </div>
 
-      <ScrollStack stackPosition="0%" itemStackDistance={0} itemDistance={0}>
+      <ScrollStack stackPosition="0%" itemStackDistance={0} itemDistance={400}>
         {/* This header will scroll normally */}
         <header
           className="border border-black p-4 flex justify-between items-center bg-gray-100 mb-8"
