@@ -114,7 +114,7 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
             <section
-                className="border border-black p-6 md:p-8 bg-gray-300 flex flex-col justify-center items-center"
+                className="border border-black p-6 md:p-8 bg-gray-300 flex flex-col justify-center items-center h-96"
                 title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
             >
                 <h2 className="text-xl font-semibold mb-6 text-center">
@@ -231,6 +231,3 @@ export default function SublikatWireframe() {
     </>
   );
 }
-
-    
-    
