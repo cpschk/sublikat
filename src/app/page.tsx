@@ -126,7 +126,7 @@ export default function SublikatWireframe() {
                       alt="Peeking cat"
                       width={90}
                       height={90}
-                      className="absolute -top-[60px] -right-8 h-24 w-24 object-contain transition-all duration-300 transform group-hover:scale-110 z-10"
+                      className="absolute -top-[82px] -right-8 h-24 w-24 object-contain transition-all duration-300 z-10 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-110"
                       data-ai-hint="peeking cat"
                     />
                   )}
@@ -231,5 +231,3 @@ export default function SublikatWireframe() {
     </>
   );
 }
-
-    
