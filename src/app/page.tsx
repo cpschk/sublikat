@@ -72,7 +72,8 @@ export default function SublikatWireframe() {
         {/* These items will be part of the stack */}
         <ScrollStackItem>
           <section
-            className="border border-black p-6 md:p-12 text-center bg-blue-200 h-full flex flex-col justify-center items-center"
+            className="border border-black p-6 md:p-12 text-center bg-blue-200/80 h-full flex flex-col justify-center items-center"
+            style={{ backgroundImage: 'url(/hero_living.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
           >
             <div className='h-[10%] flex flex-col justify-center items-center'>
