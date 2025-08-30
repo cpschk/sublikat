@@ -90,12 +90,12 @@ export default function SublikatWireframe() {
                  <Image src="https://picsum.photos/400/300" alt="Cat Image" width={400} height={300} className="w-full h-auto object-cover rounded-lg max-w-sm" data-ai-hint="happy cat" />
               </div>
             </div>
-            <div className='h-[10%] w-full flex justify-center items-center'>
+            <div className='h-[10%] w-full flex justify-center items-center bg-white'>
                 <Button size="lg">Explora Nuestros Productos</Button>
             </div>
             <Image 
-                src="https://picsum.photos/200/250" 
-                alt="Peeking Cat" 
+                src="/katchan.png" 
+                alt="Katchan, la mascota, asomándose" 
                 width={200} 
                 height={250} 
                 className="absolute bottom-0 right-20"
