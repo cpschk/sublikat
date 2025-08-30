@@ -125,10 +125,10 @@ export default function SublikatWireframe() {
                       alt="Peeking cat"
                       width={90}
                       height={90}
-                      className="absolute -top-[65px] -right-9 h-24 w-24 object-contain transition-all duration-300 z-10 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-110"
+                      className="absolute -top-[65px] -right-9 h-24 w-24 object-contain transition-transform duration-300 ease-out transform translate-y-full z-0 group-hover:translate-y-0 group-hover:z-20"
                       data-ai-hint="peeking cat"
                     />
-                  <div className="border-2 border-black p-4 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-36 justify-center items-center">
+                  <div className="border-2 border-black p-4 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-36 justify-center items-center relative z-10">
                     <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-2 md:mb-3 flex items-center justify-center">
                       <span className="text-white font-bold text-sm">
                         {product.iconLetter}
