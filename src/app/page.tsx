@@ -77,8 +77,8 @@ export default function SublikatWireframe() {
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
           >
             <div className='h-[10%] flex flex-col justify-center items-center'>
-              <h1 className="text-4xl md:text-6xl font-bold mb-2">Realidad Aumentada + Personalización</h1>
-              <p className="max-w-3xl text-lg md:text-xl">
+              <h1 className="text-3xl md:text-6xl font-bold mb-2">Realidad Aumentada + Personalización</h1>
+              <p className="max-w-3xl text-base md:text-xl">
                 Descubre productos únicos que cobran vida con tu smartphone. Diseños personalizados que combinan arte físico con experiencias digitales inmersivas.
               </p>
             </div>
@@ -87,7 +87,7 @@ export default function SublikatWireframe() {
                 <Image src="https://picsum.photos/800/400" alt="Hero Image" width={800} height={400} className="w-full h-auto object-cover rounded-lg max-w-3xl" data-ai-hint="abstract technology" />
               </div>
               <div className='w-[40%] h-full flex flex-col justify-center items-center'>
-                 <Image src="https://picsum.photos/400/300" alt="Cat Image" width={400} height={300} className="w-full h-auto object-cover rounded-lg max-w-sm" data-ai-hint="happy cat" />
+                 
               </div>
             </div>
             <div className='h-[10%] w-full flex justify-start items-center bg-white px-8'>
