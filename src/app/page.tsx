@@ -75,14 +75,12 @@ export default function SublikatWireframe() {
             className="border border-black p-6 md:p-12 text-center bg-blue-200 h-full flex flex-col justify-center items-center"
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
           >
-            <h1 className="text-2xl font-bold mb-4">Hero: Título Principal</h1>
-            <p className="mb-6">
-              Aquí va la descripción del concepto de AR y personalización. ¡Haz que tus ideas cobren vida!
+            <h1 className="text-2xl font-bold mb-4">Realidad Aumentada + Personalización</h1>
+            <p className="mb-6 max-w-2xl">
+              Descubre productos únicos que cobran vida con tu smartphone. Diseños personalizados que combinan arte físico con experiencias digitales inmersivas.
             </p>
             <Image src="https://picsum.photos/800/400" alt="Hero Image" width={800} height={400} className="w-full h-auto object-cover rounded-lg mb-6 max-w-3xl" data-ai-hint="abstract technology" />
-            <div className="border border-black p-4 inline-block bg-white">
-              <p>Botón de Llamada a la Acción (CTA)</p>
-            </div>
+            <Button size="lg">Explora Nuestros Productos</Button>
           </section>
         </ScrollStackItem>
         
