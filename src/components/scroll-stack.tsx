@@ -252,22 +252,9 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       if (i < cards.length - 1) {
         card.style.marginBottom = `${itemDistance}px`;
       }
-      card.style.willChange = 'transform, filter';
-      card.style.transformOrigin = 'top center';
-      card.style.backfaceVisibility = 'hidden';
-      card.style.transform = 'translateZ(0)';
-      card.style.webkitTransform = 'translateZ(0)';
-      card.style.perspective = '1000px';
-      card.style.webkitPerspective = '1000px';
-      card.style.position = 'relative'; // Disable sticky initially to prevent jank
     });
 
     setupLenis();
-
-    requestAnimationFrame(() => {
-        cards.forEach(card => card.style.position = 'sticky');
-    });
-
     updateCardTransforms();
     
     // Set initial background
