@@ -123,7 +123,7 @@ export default function SublikatWireframe() {
           >
             
             <div className='h-[90%] w-full flex p-6 md:p-12'>
-              <div className='w-[60%] h-full flex flex-col justify-center items-start'>
+              <div className='w-[60%] h-full flex flex-col justify-center items-center'>
                 <div
                   className={`transition-opacity duration-1000 ease-in-out ${isTextVisible ? 'opacity-100' : 'opacity-0'}`}
                 >
@@ -132,10 +132,12 @@ export default function SublikatWireframe() {
                       Descubre productos únicos que cobran vida con tu smartphone. Diseños personalizados que combinan arte físico con experiencias digitales inmersivas.
                   </p>
                 </div>
-                 <div
-                  className={`transition-all duration-1000 ease-in-out ${areElementsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}
-                >
-                  <Button size="lg">Explora Nuestros Productos</Button>
+                <div className="w-full flex justify-center mt-4">
+                  <div
+                    className={`transition-all duration-1000 ease-in-out ${areElementsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}
+                  >
+                    <Button size="lg">Explora Nuestros Productos</Button>
+                  </div>
                 </div>
               </div>
               <div className='w-[40%] h-full flex flex-col justify-center items-center'>
