@@ -184,7 +184,7 @@ export default function SublikatWireframe() {
             <div className="relative z-10 w-full flex flex-col justify-center">
               <div className="flex flex-col md:flex-row w-full items-start">
                 <div className="w-full md:w-3/5">
-                  <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl mb-8">
+                  <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl">
                     <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-center">
                       Quiénes Somos
                     </h2>
@@ -249,9 +249,9 @@ export default function SublikatWireframe() {
 
         <hr className="border-t-4 border-black my-8" />
 
-        <ScrollStackItem>
+        <ScrollStackItem itemClassName="scroll-stack-card--opaque">
           <section
-            className="border border-black p-6 md:p-8 flex flex-col justify-center items-center"
+            className="p-6 md:p-8 flex flex-col justify-center items-center"
             title="Animación: el gato trae cartas o globos de diálogo con mensajes de clientes. Globos emergentes con efecto pop-up."
           >
             <h2 className="text-xl font-semibold mb-6 text-center">
