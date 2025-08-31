@@ -208,7 +208,7 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
-            className="relative h-full flex flex-col justify-center items-center p-6 md:p-8"
+            className="relative flex flex-col justify-center items-center p-6 md:p-8"
             style={{ backgroundImage: 'url(/gallery.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
           >
@@ -329,5 +329,7 @@ export default function SublikatWireframe() {
     </>
   );
 }
+
+    
 
     
