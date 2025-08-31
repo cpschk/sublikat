@@ -15,7 +15,7 @@ body {
   position: sticky;
   top: 0;
   width: 100vw;
-  height: 99vh;
+  height: 102vh;
   margin: 0;
   transform-origin: center top;
   will-change: transform, filter;
