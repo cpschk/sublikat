@@ -191,13 +191,16 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
-            className="border border-black p-6 md:p-8 bg-gray-300 flex flex-col justify-center items-center"
+            className="relative h-full flex flex-col justify-center items-center p-6 md:p-8"
+            style={{ backgroundImage: 'url(/gallery.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
           >
-            <h2 className="text-xl font-semibold mb-6 text-center">
-              Productos Personalizados
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-5xl px-4">
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl w-full max-w-6xl mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold font-headline text-center">
+                Productos Personalizados
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-5xl mx-auto">
               {products.map((product) => (
                 <div key={product.id} onClick={() => handleCardClick(product)} className="w-full cursor-pointer group relative">
                     <Image
@@ -319,5 +322,7 @@ export default function SublikatWireframe() {
 
 
 
+
+    
 
     
