@@ -33,29 +33,6 @@ const products: Product[] = [
 export default function SublikatWireframe() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [isHeroVisible, setIsHeroVisible] = useState(false);
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsHeroVisible(entry.isIntersecting);
-      },
-      {
-        threshold: 0.5, // Trigger when 50% of the element is visible
-      }
-    );
-
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
-
-    return () => {
-      if (heroRef.current) {
-        observer.unobserve(heroRef.current);
-      }
-    };
-  }, []);
 
   const handleCardClick = (product: Product) => {
     setSelectedProduct(product);
@@ -95,7 +72,6 @@ export default function SublikatWireframe() {
         {/* These items will be part of the stack */}
         <ScrollStackItem>
           <section
-            ref={heroRef}
             className="relative text-left bg-blue-200/80 h-full flex flex-col justify-center items-center"
             style={{ backgroundImage: 'url(/hero_living.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
@@ -119,7 +95,7 @@ export default function SublikatWireframe() {
                 alt="Katchan, la mascota de SubliCat" 
                 width={500} 
                 height={625} 
-                className={`absolute bottom-0 right-2 md:right-8 w-72 h-auto md:w-96 lg:w-[600px] transition-opacity duration-1000 ease-in-out ${isHeroVisible ? 'opacity-100' : 'opacity-0'}`}
+                className="absolute bottom-0 right-2 md:right-8 w-72 h-auto md:w-96 lg:w-[600px]"
                 data-ai-hint="peeking cat"
             />
           </section>
