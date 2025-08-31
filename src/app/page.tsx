@@ -122,13 +122,13 @@ export default function SublikatWireframe() {
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
           >
             <div className={`absolute inset-0 bg-black/10 backdrop-blur-sm transition-opacity duration-1000 ${isTextVisible ? 'opacity-100' : 'opacity-0'}`} />
-            <div className='h-[90%] w-full flex p-6 md:p-12'>
+            <div className='relative z-10 h-[90%] w-full flex p-6 md:p-12'>
               <div className='w-full lg:w-[70%] h-full flex flex-col justify-center items-center mt-[-50px]'>
                 <div
                   className={`transition-opacity duration-1000 ease-in-out ${isTextVisible ? 'opacity-100' : 'opacity-0'}`}
                 >
-                  <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-2">Realidad Aumentada + Personalización</h1>
-                  <p className="max-w-3xl text-base md:text-xl lg:text-2xl mb-4">
+                  <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-2 text-white">Realidad Aumentada + Personalización</h1>
+                  <p className="max-w-3xl text-base md:text-xl lg:text-2xl mb-4 text-white">
                       Descubre productos únicos que cobran vida con tu smartphone. Diseños personalizados que combinan arte físico con experiencias digitales inmersivas.
                   </p>
                 </div>
@@ -298,4 +298,3 @@ export default function SublikatWireframe() {
       />
     </>
   );
-}
