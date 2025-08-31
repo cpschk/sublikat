@@ -160,19 +160,16 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
-            className="border border-black p-6 md:p-8 bg-gray-100 flex flex-col justify-center items-center h-full"
+            className="relative border border-black p-6 md:p-8 flex flex-col justify-center items-center h-full"
+            style={{ backgroundImage: 'url(/aboutus.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato lee un libro o se muestra reflexivo mirando el texto. Pestañeo lento y movimiento suave de cola."
           >
-            <h2 className="text-xl font-semibold mb-4 text-center">
-              Historia: Quiénes Somos
-            </h2>
-            <div className="flex flex-col md:flex-row gap-6 items-center w-full max-w-4xl px-4">
-              <div className="w-full md:w-1/2">
-                <Image src="/aboutus.png" alt="About us" width={600} height={600} className="w-full h-auto object-cover rounded-lg" data-ai-hint="creative team" />
-              </div>
-              <div className="w-full md:w-1/2">
-                <p>Somos un equipo apasionado por la creatividad y la tecnología. Nuestra misión es darte las herramientas para que puedas expresar tu estilo único en productos que te acompañen todos los días. Creemos en la magia de la personalización.</p>
-              </div>
+            <div className="absolute inset-0 bg-white/70 backdrop-blur-sm"></div>
+            <div className="relative z-10 w-full max-w-4xl px-4 text-center">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                Historia: Quiénes Somos
+                </h2>
+                <p className="text-base md:text-lg max-w-2xl mx-auto">Somos un equipo apasionado por la creatividad y la tecnología. Nuestra misión es darte las herramientas para que puedas expresar tu estilo único en productos que te acompañen todos los días. Creemos en la magia de la personalización.</p>
             </div>
           </section>
         </ScrollStackItem>
@@ -300,3 +297,4 @@ export default function SublikatWireframe() {
   );
 
     
+
