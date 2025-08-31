@@ -127,8 +127,8 @@ export default function SublikatWireframe() {
                 <div
                   className={`transition-opacity duration-1000 ease-in-out ${isTextVisible ? 'opacity-100' : 'opacity-0'}`}
                 >
-                  <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-2 text-white">Realidad Aumentada + Personalización</h1>
-                  <p className="max-w-3xl text-base md:text-xl lg:text-2xl mb-4 text-white">
+                  <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-2">Realidad Aumentada + Personalización</h1>
+                  <p className="max-w-3xl text-base md:text-xl lg:text-2xl mb-4">
                       Descubre productos únicos que cobran vida con tu smartphone. Diseños personalizados que combinan arte físico con experiencias digitales inmersivas.
                   </p>
                 </div>
@@ -298,3 +298,5 @@ export default function SublikatWireframe() {
       />
     </>
   );
+
+    
