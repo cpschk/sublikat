@@ -171,13 +171,18 @@ export default function SublikatWireframe() {
                   Historia: Quiénes Somos
                 </h2>
               </div>
-              <div className="max-w-prose self-center md:self-start md:ml-12">
-                <p className="mb-4 text-base md:text-lg text-left text-justify">
-                  En Sublikat, creemos que los objetos cotidianos pueden convertirse en experiencias mágicas. Fundada en 2023, nuestra misión es combinar el arte físico con la tecnología de realidad aumentada para crear productos que no solo se ven bien, sino que también cuentan historias interactivas.
-                </p>
-                <p className="text-base md:text-lg text-left text-justify">
-                  Cada producto es diseñado con atención al detalle, permitiendo a nuestros clientes personalizar no solo la apariencia, sino también la experiencia digital que lo acompaña. Desde tazas que cobran vida hasta pósters que cuentan historias animadas, estamos redefiniendo lo que significa poseer un objeto personalizado.
-                </p>
+              <div className="flex flex-col md:flex-row w-full">
+                <div className="w-full md:w-1/2 pr-4">
+                  <p className="mb-4 text-base md:text-lg text-left text-justify">
+                    En Sublikat, creemos que los objetos cotidianos pueden convertirse en experiencias mágicas. Fundada en 2023, nuestra misión es combinar el arte físico con la tecnología de realidad aumentada para crear productos que no solo se ven bien, sino que también cuentan historias interactivas.
+                  </p>
+                  <p className="text-base md:text-lg text-left text-justify">
+                    Cada producto es diseñado con atención al detalle, permitiendo a nuestros clientes personalizar no solo la apariencia, sino también la experiencia digital que lo acompaña. Desde tazas que cobran vida hasta pósters que cuentan historias animadas, estamos redefiniendo lo que significa poseer un objeto personalizado.
+                  </p>
+                </div>
+                <div className="w-full md:w-1/2">
+                  {/* This is the empty right column */}
+                </div>
               </div>
             </div>
           </section>
@@ -306,6 +311,7 @@ export default function SublikatWireframe() {
   );
 
     
+
 
 
 
