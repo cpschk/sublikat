@@ -165,7 +165,7 @@ export default function SublikatWireframe() {
             title="Animación: el gato lee un libro o se muestra reflexivo mirando el texto. Pestañeo lento y movimiento suave de cola."
           >
             <div className="relative z-10 w-full flex flex-col">
-              <div className="flex flex-col md:flex-row w-full items-center">
+              <div className="flex flex-col md:flex-row w-full items-start">
                 <div className="w-full md:w-3/5">
                   <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl">
                     <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-center">
@@ -318,3 +318,6 @@ export default function SublikatWireframe() {
 
 
 
+
+
+    
