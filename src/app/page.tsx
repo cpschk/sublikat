@@ -251,7 +251,7 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
-            className="border border-black p-6 md:p-8 bg-gray-100 h-full flex flex-col justify-center items-center"
+            className="border border-black p-6 md:p-8 bg-gray-100 flex flex-col justify-center items-center"
             title="Animación: el gato trae cartas o globos de diálogo con mensajes de clientes. Globos emergentes con efecto pop-up."
           >
             <h2 className="text-xl font-semibold mb-6 text-center">
