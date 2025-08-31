@@ -121,7 +121,7 @@ export default function SublikatWireframe() {
             style={{ backgroundImage: 'url(/hero_living.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
           >
-            
+            <div className={`absolute inset-0 bg-black/10 backdrop-blur-sm transition-opacity duration-1000 ${isTextVisible ? 'opacity-100' : 'opacity-0'}`} />
             <div className='h-[90%] w-full flex p-6 md:p-12'>
               <div className='w-full lg:w-[70%] h-full flex flex-col justify-center items-center mt-[-50px]'>
                 <div
