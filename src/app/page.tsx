@@ -121,8 +121,8 @@ export default function SublikatWireframe() {
             style={{ backgroundImage: 'url(/hero_living.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
           >
-            
-            <div className='h-[90%] w-full flex p-6 md:p-12'>
+            <div className={`absolute inset-0 bg-black/10 backdrop-blur-sm transition-opacity duration-1000 ${isTextVisible ? 'opacity-100' : 'opacity-0'}`} />
+            <div className='relative z-10 h-[90%] w-full flex p-6 md:p-12'>
               <div className='w-full lg:w-[70%] h-full flex flex-col justify-center items-center mt-[-50px]'>
                 <div
                   className={`transition-opacity duration-1000 ease-in-out ${isTextVisible ? 'opacity-100' : 'opacity-0'}`}
@@ -160,18 +160,28 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
-            className="border border-black p-6 md:p-8 bg-gray-100 flex flex-col justify-center items-center h-full"
+            className="relative h-full flex flex-col justify-center p-6 md:p-8"
+            style={{ backgroundImage: 'url(/aboutus.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato lee un libro o se muestra reflexivo mirando el texto. Pestañeo lento y movimiento suave de cola."
           >
-            <h2 className="text-xl font-semibold mb-4 text-center">
-              Historia: Quiénes Somos
-            </h2>
-            <div className="flex flex-col md:flex-row gap-6 items-center w-full max-w-4xl px-4">
-              <div className="w-full md:w-1/2">
-                <Image src="https://picsum.photos/600/600" alt="About us" width={600} height={600} className="w-full h-auto object-cover rounded-lg" data-ai-hint="creative team" />
-              </div>
-              <div className="w-full md:w-1/2">
-                <p>Somos un equipo apasionado por la creatividad y la tecnología. Nuestra misión es darte las herramientas para que puedas expresar tu estilo único en productos que te acompañen todos los días. Creemos en la magia de la personalización.</p>
+            <div className="relative z-10 w-full flex flex-col">
+              <div className="flex flex-col md:flex-row w-full items-start">
+                <div className="w-full md:w-3/5">
+                  <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl">
+                    <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-center">
+                      Historia: Quiénes Somos
+                    </h2>
+                    <p className="mb-4 text-base md:text-lg text-left text-justify">
+                      En Sublikat, creemos que los objetos cotidianos pueden convertirse en experiencias mágicas. Fundada en 2023, nuestra misión es combinar el arte físico con la tecnología de realidad aumentada para crear productos que no solo se ven bien, sino que también cuentan historias interactivas.
+                    </p>
+                    <p className="text-base md:text-lg text-left text-justify">
+                      Cada producto es diseñado con atención al detalle, permitiendo a nuestros clientes personalizar no solo la apariencia, sino también la experiencia digital que lo acompaña. Desde tazas que cobran vida hasta pósters que cuentan historias animadas, estamos redefiniendo lo que significa poseer un objeto personalizado.
+                    </p>
+                  </div>
+                </div>
+                <div className="w-full md:w-2/5">
+                  {/* This is the empty right column, it will show the background image */}
+                </div>
               </div>
             </div>
           </section>
@@ -181,13 +191,16 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
-            className="border border-black p-6 md:p-8 bg-gray-300 flex flex-col justify-center items-center"
+            className="relative h-full flex flex-col justify-center items-center p-6 md:p-8"
+            style={{ backgroundImage: 'url(/gallery.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
           >
-            <h2 className="text-xl font-semibold mb-6 text-center">
-              Productos Personalizados
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-5xl px-4">
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl w-full max-w-6xl mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold font-headline text-center">
+                Productos Personalizados
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-5xl mx-auto">
               {products.map((product) => (
                 <div key={product.id} onClick={() => handleCardClick(product)} className="w-full cursor-pointer group relative">
                     <Image
@@ -298,4 +311,18 @@ export default function SublikatWireframe() {
       />
     </>
   );
-}
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+    
