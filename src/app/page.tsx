@@ -77,8 +77,8 @@ export default function SublikatWireframe() {
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
           >
             
-            <div className='h-[90%] w-full flex'>
-              <div className='w-[60%] h-full flex flex-col justify-center items-start p-6 md:p-12'>
+            <div className='h-[90%] w-full flex p-6 md:p-12'>
+              <div className='w-[60%] h-full flex flex-col justify-center items-start'>
                 <h1 className="text-3xl md:text-6xl font-bold mb-2">Realidad Aumentada + Personalización</h1>
                 <p className="max-w-3xl text-base md:text-xl mb-4">
                     Descubre productos únicos que cobran vida con tu smartphone. Diseños personalizados que combinan arte físico con experiencias digitales inmersivas.
@@ -91,8 +91,8 @@ export default function SublikatWireframe() {
             </div>
             
             <Image 
-                src="/katchantaza.png" 
-                alt="Katchan, la mascota, con una taza" 
+                src="/katchan.png" 
+                alt="Katchan, la mascota de SubliCat" 
                 width={500} 
                 height={625} 
                 className="absolute bottom-0 right-2 md:right-8 w-72 h-auto md:w-96 lg:w-[600px]"
