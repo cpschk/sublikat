@@ -160,31 +160,35 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
-            className="border border-black p-6 md:p-8 bg-gray-100 flex flex-col md:flex-row gap-6 items-center justify-center h-full"
+            className="border border-black p-6 md:p-8 bg-gray-100 flex flex-col gap-6 justify-center h-full"
             title="Animación: el gato lee un libro o se muestra reflexivo mirando el texto. Pestañeo lento y movimiento suave de cola."
           >
-            <div className="w-full md:w-1/2 max-w-md">
-              <h2 className="text-xl font-semibold mb-6 text-center">
-                Historia: Quiénes Somos
-              </h2>
-              <div className="border border-black p-4 bg-white">
-                <p className="mb-4">
-                  En Sublikat, creemos que los objetos cotidianos pueden convertirse en experiencias mágicas. Fundada en 2023, nuestra misión es combinar el arte físico con la tecnología de realidad aumentada para crear productos que no solo se ven bien, sino que también cuentan historias interactivas.
-                </p>
-                <p>
-                  Cada producto es diseñado con atención al detalle, permitiendo a nuestros clientes personalizar no solo la apariencia, sino también la experiencia digital que lo acompaña. Desde tazas que cobran vida hasta pósters que cuentan historias animadas, estamos redefiniendo lo que significa poseer un objeto personalizado.
-                </p>
-              </div>
+            <div className="w-full">
+                <h2 className="text-xl font-semibold mb-6 text-center">
+                    Historia: Quiénes Somos
+                </h2>
             </div>
-            <div className="w-full md:w-1/2 max-w-md">
-              <Image
-                src="https://picsum.photos/600/400"
-                alt="About us"
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover rounded-lg"
-                data-ai-hint="creative team"
-              />
+            <div className="flex flex-col md:flex-row gap-6 items-center justify-center w-full">
+                <div className="w-full md:w-1/2 max-w-md">
+                  <div className="border border-black p-4 bg-white">
+                    <p className="mb-4">
+                      En Sublikat, creemos que los objetos cotidianos pueden convertirse en experiencias mágicas. Fundada en 2023, nuestra misión es combinar el arte físico con la tecnología de realidad aumentada para crear productos que no solo se ven bien, sino que también cuentan historias interactivas.
+                    </p>
+                    <p>
+                      Cada producto es diseñado con atención al detalle, permitiendo a nuestros clientes personalizar no solo la apariencia, sino también la experiencia digital que lo acompaña. Desde tazas que cobran vida hasta pósters que cuentan historias animadas, estamos redefiniendo lo que significa poseer un objeto personalizado.
+                    </p>
+                  </div>
+                </div>
+                <div className="w-full md:w-1/2 max-w-md">
+                  <Image
+                    src="https://picsum.photos/600/400"
+                    alt="About us"
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-cover rounded-lg"
+                    data-ai-hint="creative team"
+                  />
+                </div>
             </div>
           </section>
         </ScrollStackItem>
@@ -312,5 +316,6 @@ export default function SublikatWireframe() {
   );
 
     
+
 
 
