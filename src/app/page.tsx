@@ -168,7 +168,7 @@ export default function SublikatWireframe() {
             </h2>
             <div className="flex flex-col md:flex-row gap-6 items-center w-full max-w-4xl px-4">
               <div className="w-full md:w-1/2">
-                <Image src="https://picsum.photos/600/600" alt="About us" width={600} height={600} className="w-full h-auto object-cover rounded-lg" data-ai-hint="creative team" />
+                <Image src="/aboutus.png" alt="About us" width={600} height={600} className="w-full h-auto object-cover rounded-lg" data-ai-hint="creative team" />
               </div>
               <div className="w-full md:w-1/2">
                 <p>Somos un equipo apasionado por la creatividad y la tecnología. Nuestra misión es darte las herramientas para que puedas expresar tu estilo único en productos que te acompañen todos los días. Creemos en la magia de la personalización.</p>
