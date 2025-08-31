@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import ScrollStack, {
   ScrollStackItem,
@@ -33,6 +33,50 @@ const products: Product[] = [
 export default function SublikatWireframe() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isTextVisible, setIsTextVisible] = useState(false);
+  const [areElementsVisible, setAreElementsVisible] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Animate text fade-in
+          const textTimer = setTimeout(() => {
+            setIsTextVisible(true);
+          }, 100);
+
+          // Animate cat and button slide-in after text
+          const elementsTimer = setTimeout(() => {
+            setAreElementsVisible(true);
+          }, 600);
+          
+          // We only want to animate once
+          if (heroRef.current) {
+            observer.unobserve(heroRef.current);
+          }
+
+          return () => {
+            clearTimeout(textTimer);
+            clearTimeout(elementsTimer);
+          };
+        }
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+      }
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => {
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
+      }
+    };
+  }, []);
 
   const handleCardClick = (product: Product) => {
     setSelectedProduct(product);
@@ -55,7 +99,7 @@ export default function SublikatWireframe() {
         ))}
       </div>
 
-      <ScrollStack stackPosition="0%" itemStackDistance={0} itemDistance={400}>
+      <ScrollStack stackPosition="10%" itemStackDistance={0} itemDistance={400}>
         {/* This header will scroll normally */}
         <header
           className="border border-black p-4 flex justify-between items-center bg-gray-100 mb-8"
@@ -72,17 +116,43 @@ export default function SublikatWireframe() {
         {/* These items will be part of the stack */}
         <ScrollStackItem>
           <section
-            className="border border-black p-6 md:p-12 text-center bg-blue-200 h-full flex flex-col justify-center items-center"
+            ref={heroRef}
+            className="relative text-left h-full flex flex-col justify-center items-center overflow-hidden"
+            style={{ backgroundImage: 'url(/hero_living.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
           >
-            <h1 className="text-2xl font-bold mb-4">Hero: Título Principal</h1>
-            <p className="mb-6">
-              Aquí va la descripción del concepto de AR y personalización. ¡Haz que tus ideas cobren vida!
-            </p>
-            <Image src="https://picsum.photos/800/400" alt="Hero Image" width={800} height={400} className="w-full h-auto object-cover rounded-lg mb-6 max-w-3xl" data-ai-hint="abstract technology" />
-            <div className="border border-black p-4 inline-block bg-white">
-              <p>Botón de Llamada a la Acción (CTA)</p>
+            
+            <div className='h-[90%] w-full flex p-6 md:p-12'>
+              <div className='w-full lg:w-[70%] h-full flex flex-col justify-center items-center mt-[-50px]'>
+                <div
+                  className={`transition-opacity duration-1000 ease-in-out ${isTextVisible ? 'opacity-100' : 'opacity-0'}`}
+                >
+                  <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-2">Realidad Aumentada + Personalización</h1>
+                  <p className="max-w-3xl text-base md:text-xl lg:text-2xl mb-4">
+                      Descubre productos únicos que cobran vida con tu smartphone. Diseños personalizados que combinan arte físico con experiencias digitales inmersivas.
+                  </p>
+                </div>
+                <div className="w-full flex justify-start md:justify-center mt-4 md:pl-0">
+                  <div
+                    className={`transition-all duration-1000 ease-in-out pl-1.5 md:pl-0 ${areElementsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}
+                  >
+                    <Button className="md:size-lg lg:text-lg">Explora Nuestros Productos</Button>
+                  </div>
+                </div>
+              </div>
+              <div className='w-0 lg:w-[30%] h-full flex flex-col justify-center items-center'>
+                 
+              </div>
             </div>
+            
+            <Image 
+                src="/katchancoffe.png" 
+                alt="Katchan, la mascota de SubliCat" 
+                width={500} 
+                height={625} 
+                className={`absolute bottom-0 right-[-1.25rem] md:right-8 w-44 h-auto md:w-56 lg:w-[360px] transition-all duration-1000 ease-in-out ${areElementsVisible ? 'translate-x-0' : 'translate-x-full'}`}
+                data-ai-hint="peeking cat"
+            />
           </section>
         </ScrollStackItem>
         
@@ -229,5 +299,3 @@ export default function SublikatWireframe() {
     </>
   );
 }
-
-    
