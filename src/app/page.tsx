@@ -177,7 +177,7 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
-            className="relative flex flex-col justify-center p-4"
+            className="relative flex flex-col p-4 justify-center"
             style={{ backgroundImage: 'url(/aboutus.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato lee un libro o se muestra reflexivo mirando el texto. Pestañeo lento y movimiento suave de cola."
           >
@@ -251,7 +251,7 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
-            className="border border-black p-6 md:p-8 bg-gray-100 flex flex-col justify-center items-center h-[90vh]"
+            className="border border-black p-6 md:p-8 flex flex-col justify-center items-center h-[90vh] bg-gray-100"
             title="Animación: el gato trae cartas o globos de diálogo con mensajes de clientes. Globos emergentes con efecto pop-up."
           >
             <h2 className="text-xl font-semibold mb-6 text-center">
