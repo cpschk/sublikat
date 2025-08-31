@@ -195,37 +195,37 @@ export default function SublikatWireframe() {
             style={{ backgroundImage: 'url(/gallery.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
           >
-            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl w-full max-w-6xl">
-              <h2 className="text-3xl md:text-4xl font-bold font-headline mb-8 text-center">
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl w-full max-w-6xl mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold font-headline text-center">
                 Productos Personalizados
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-5xl mx-auto">
-                {products.map((product) => (
-                  <div key={product.id} onClick={() => handleCardClick(product)} className="w-full cursor-pointer group relative">
-                      <Image
-                        src="/cat.png"
-                        alt="Peeking cat"
-                        width={90}
-                        height={90}
-                        className="absolute -top-[65px] -right-9 h-24 w-24 object-contain transition-all duration-200 ease-out transform opacity-0 -translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 z-20"
-                        data-ai-hint="peeking cat"
-                      />
-                    <div className="border-2 border-black p-4 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-36 justify-center items-center relative z-10">
-                      <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-2 md:mb-3 flex items-center justify-center">
-                        <span className="text-white font-bold text-sm">
-                          {product.iconLetter}
-                        </span>
-                      </div>
-                      <h3 className="font-semibold text-center text-sm md:text-base mb-1 md:mb-2">
-                        {product.title}
-                      </h3>
-                      <p className="text-xs md:text-sm text-center text-gray-600">
-                        {product.description}
-                      </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-5xl mx-auto">
+              {products.map((product) => (
+                <div key={product.id} onClick={() => handleCardClick(product)} className="w-full cursor-pointer group relative">
+                    <Image
+                      src="/cat.png"
+                      alt="Peeking cat"
+                      width={90}
+                      height={90}
+                      className="absolute -top-[65px] -right-9 h-24 w-24 object-contain transition-all duration-200 ease-out transform opacity-0 -translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 z-20"
+                      data-ai-hint="peeking cat"
+                    />
+                  <div className="border-2 border-black p-4 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-36 justify-center items-center relative z-10">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-2 md:mb-3 flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">
+                        {product.iconLetter}
+                      </span>
                     </div>
+                    <h3 className="font-semibold text-center text-sm md:text-base mb-1 md:mb-2">
+                      {product.title}
+                    </h3>
+                    <p className="text-xs md:text-sm text-center text-gray-600">
+                      {product.description}
+                    </p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </section>
         </ScrollStackItem>
