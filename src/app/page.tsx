@@ -123,7 +123,7 @@ export default function SublikatWireframe() {
           >
             
             <div className='h-[90%] w-full flex p-6 md:p-12'>
-              <div className='w-full lg:w-[70%] h-full flex flex-col justify-center items-center'>
+              <div className='w-full lg:w-[70%] h-full flex flex-col justify-center items-center mt-[-50px]'>
                 <div
                   className={`transition-opacity duration-1000 ease-in-out ${isTextVisible ? 'opacity-100' : 'opacity-0'}`}
                 >
@@ -134,9 +134,9 @@ export default function SublikatWireframe() {
                 </div>
                 <div className="w-full flex justify-start md:justify-center mt-4 md:pl-0">
                   <div
-                    className={`transition-all duration-1000 ease-in-out pl-4 md:pl-0 ${areElementsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}
+                    className={`transition-all duration-1000 ease-in-out pl-1.5 md:pl-0 ${areElementsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}
                   >
-                    <Button size="lg" className="md:size-lg lg:text-lg">Explora Nuestros Productos</Button>
+                    <Button className="md:size-lg lg:text-lg">Explora Nuestros Productos</Button>
                   </div>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export default function SublikatWireframe() {
                 alt="Katchan, la mascota de SubliCat" 
                 width={500} 
                 height={625} 
-                className={`absolute bottom-0 right-0 md:right-8 w-44 h-auto md:w-56 lg:w-[360px] transition-all duration-1000 ease-in-out ${areElementsVisible ? 'translate-x-0' : 'translate-x-full'}`}
+                className={`absolute bottom-0 right-[-4.5rem] md:right-8 w-44 h-auto md:w-56 lg:w-[360px] transition-all duration-1000 ease-in-out ${areElementsVisible ? 'translate-x-0' : 'translate-x-full'}`}
                 data-ai-hint="peeking cat"
             />
           </section>
