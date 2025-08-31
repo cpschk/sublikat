@@ -35,21 +35,46 @@ export default function SublikatWireframe() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [areElementsVisible, setAreElementsVisible] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Animate text fade-in
-    const textTimer = setTimeout(() => {
-      setIsTextVisible(true);
-    }, 100); // Small delay to ensure CSS transition applies
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Animate text fade-in
+          const textTimer = setTimeout(() => {
+            setIsTextVisible(true);
+          }, 100);
 
-    // Animate cat and button slide-in after text
-    const elementsTimer = setTimeout(() => {
-      setAreElementsVisible(true);
-    }, 600); // 500ms after text starts fading in
+          // Animate cat and button slide-in after text
+          const elementsTimer = setTimeout(() => {
+            setAreElementsVisible(true);
+          }, 600);
+          
+          // We only want to animate once
+          if (heroRef.current) {
+            observer.unobserve(heroRef.current);
+          }
+
+          return () => {
+            clearTimeout(textTimer);
+            clearTimeout(elementsTimer);
+          };
+        }
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+      }
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
 
     return () => {
-      clearTimeout(textTimer);
-      clearTimeout(elementsTimer);
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
+      }
     };
   }, []);
 
@@ -91,6 +116,7 @@ export default function SublikatWireframe() {
         {/* These items will be part of the stack */}
         <ScrollStackItem>
           <section
+            ref={heroRef}
             className="relative text-left bg-blue-200/80 h-full flex flex-col justify-center items-center overflow-hidden"
             style={{ backgroundImage: 'url(/hero_living.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
