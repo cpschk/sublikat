@@ -195,7 +195,7 @@ export default function SublikatWireframe() {
             style={{ backgroundImage: 'url(/gallery.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
           >
-            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl w-full max-w-6xl mb-8">
+            <div className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl w-full max-w-6xl mb-8">
               <h2 className="text-3xl md:text-4xl font-bold font-headline text-center">
                 Productos Personalizados
               </h2>
