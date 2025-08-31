@@ -91,7 +91,7 @@ export default function SublikatWireframe() {
             </div>
             
             <Image 
-                src="/katchan.png" 
+                src="/katchancoffe.png" 
                 alt="Katchan, la mascota de SubliCat" 
                 width={500} 
                 height={625} 
