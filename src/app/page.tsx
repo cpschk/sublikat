@@ -132,11 +132,11 @@ export default function SublikatWireframe() {
                       Descubre productos únicos que cobran vida con tu smartphone. Diseños personalizados que combinan arte físico con experiencias digitales inmersivas.
                   </p>
                 </div>
-                <div className="w-full flex justify-start md:justify-center mt-4 pl-4 md:pl-0">
+                <div className="w-full flex justify-start md:justify-center mt-4 md:pl-0">
                   <div
-                    className={`transition-all duration-1000 ease-in-out ${areElementsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}
+                    className={`transition-all duration-1000 ease-in-out pl-4 md:pl-0 ${areElementsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}
                   >
-                    <Button size="lg" className="lg:text-lg">Explora Nuestros Productos</Button>
+                    <Button size="lg" className="md:size-lg lg:text-lg">Explora Nuestros Productos</Button>
                   </div>
                 </div>
               </div>
