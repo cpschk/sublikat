@@ -211,16 +211,16 @@ export default function SublikatWireframe() {
                       className="absolute -top-[65px] -right-9 h-24 w-24 object-contain transition-all duration-200 ease-out transform opacity-0 -translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 z-20"
                       data-ai-hint="peeking cat"
                     />
-                  <div className="border-2 border-black p-4 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-32 justify-center items-center relative z-10">
-                    <div className="w-10 h-10 md:w-16 md:h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-1 md:mb-3 flex items-center justify-center">
+                  <div className="border-2 border-black p-2 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-28 justify-center items-center relative z-10">
+                    <div className="w-8 h-8 md:w-16 md:h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-1 flex items-center justify-center">
                       <span className="text-white font-bold text-sm">
                         {product.iconLetter}
                       </span>
                     </div>
-                    <h3 className="font-semibold text-center text-xs md:text-base mb-1">
+                    <h3 className="font-semibold text-center text-[0.6rem] md:text-base mb-0.5">
                       {product.title}
                     </h3>
-                    <p className="text-xs text-center text-gray-600">
+                    <p className="text-[0.6rem] text-center text-gray-600">
                       {product.description}
                     </p>
                   </div>
