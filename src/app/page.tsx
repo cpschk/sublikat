@@ -258,16 +258,16 @@ export default function SublikatWireframe() {
               Testimonios de Clientes
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl px-4">
-              <div className="border border-black p-4 bg-white rounded-lg text-center flex flex-col items-center">
-                <Image src="https://picsum.photos/200/200?random=4" alt="Client 1" width={200} height={200} className="w-24 h-24 object-cover rounded-full mx-auto mb-4" data-ai-hint="happy person" />
+              <div className="border border-black p-4 bg-white rounded-lg flex flex-row md:flex-col items-center text-left md:text-center">
+                <Image src="https://picsum.photos/200/200?random=4" alt="Client 1" width={200} height={200} className="w-16 h-16 md:w-24 md:h-24 object-cover rounded-full mr-4 md:mr-0 md:mb-4" data-ai-hint="happy person" />
                 <p>"¡Me encantó el resultado! Mi taza quedó increíble."</p>
               </div>
-              <div className="border border-black p-4 bg-white rounded-lg text-center flex flex-col items-center">
-                  <Image src="https://picsum.photos/200/200?random=5" alt="Client 2" width={200} height={200} className="w-24 h-24 object-cover rounded-full mx-auto mb-4" data-ai-hint="smiling customer" />
+              <div className="border border-black p-4 bg-white rounded-lg flex flex-row md:flex-col items-center text-left md:text-center">
+                  <Image src="https://picsum.photos/200/200?random=5" alt="Client 2" width={200} height={200} className="w-16 h-16 md:w-24 md:h-24 object-cover rounded-full mr-4 md:mr-0 md:mb-4" data-ai-hint="smiling customer" />
                 <p>"El proceso fue súper fácil y divertido. Lo recomiendo."</p>
               </div>
-              <div className="border border-black p-4 bg-white rounded-lg text-center flex flex-col items-center">
-                <Image src="https://picsum.photos/200/200?random=6" alt="Client 3" width={200} height={200} className="w-24 h-24 object-cover rounded-full mx-auto mb-4" data-ai-hint="satisfied user" />
+              <div className="border border-black p-4 bg-white rounded-lg flex flex-row md:flex-col items-center text-left md:text-center">
+                <Image src="https://picsum.photos/200/200?random=6" alt="Client 3" width={200} height={200} className="w-16 h-16 md:w-24 md:h-24 object-cover rounded-full mr-4 md:mr-0 md:mb-4" data-ai-hint="satisfied user" />
                 <p>"La calidad es excelente y la función AR es genial."</p>
               </div>
             </div>
