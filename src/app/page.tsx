@@ -72,12 +72,12 @@ export default function SublikatWireframe() {
         {/* These items will be part of the stack */}
         <ScrollStackItem>
           <section
-            className="relative border border-black p-6 md:p-12 text-left bg-blue-200/80 h-full flex flex-col justify-center items-center"
+            className="relative text-left bg-blue-200/80 h-full flex flex-col justify-center items-center"
             style={{ backgroundImage: 'url(/hero_living.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
           >
             
-            <div className='h-[90%] w-full flex'>
+            <div className='h-[90%] w-full flex p-6 md:p-12'>
               <div className='w-[60%] h-full flex flex-col justify-center items-start'>
                 <h1 className="text-3xl md:text-6xl font-bold mb-2">Realidad Aumentada + Personalización</h1>
                 <p className="max-w-3xl text-base md:text-xl mb-4">
