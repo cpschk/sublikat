@@ -150,7 +150,7 @@ export default function SublikatWireframe() {
                 alt="Katchan, la mascota de SubliCat" 
                 width={500} 
                 height={625} 
-                className={`absolute bottom-0 right-[-4.5rem] md:right-8 w-44 h-auto md:w-56 lg:w-[360px] transition-all duration-1000 ease-in-out ${areElementsVisible ? 'translate-x-0' : 'translate-x-full'}`}
+                className={`absolute bottom-0 right-[-2.5rem] md:right-8 w-44 h-auto md:w-56 lg:w-[360px] transition-all duration-1000 ease-in-out ${areElementsVisible ? 'translate-x-0' : 'translate-x-full'}`}
                 data-ai-hint="peeking cat"
             />
           </section>
