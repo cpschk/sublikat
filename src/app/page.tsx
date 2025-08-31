@@ -9,7 +9,7 @@ import { GalleryPopup, type Product } from '@/components/gallery-popup';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ContactForm } from '@/components/contact-form';
-import { Logo } from '@/components/logo';
+import { Header } from '@/components/header';
 
 const backgroundImages = [
   'https://placehold.co/1920x1080/E0F7FA/E0F7FA', // Light Cyan
@@ -117,22 +117,12 @@ export default function SublikatWireframe() {
       </div>
 
       <ScrollStack stackPosition={stackPosition} itemStackDistance={0} itemDistance={400}>
-        {/* This header will scroll normally */}
-        <header
-          className="border border-black p-4 flex justify-between items-center bg-gray-100 mb-8"
-          title="Animación: el gato asoma la cabeza desde el menú o logo. Animación tipo 'peek' (asomarse y esconderse)."
-        >
-          <div className="border border-black p-2 bg-white">
-            <p>[Logo Placeholder]</p>
-          </div>
-          <nav className="border border-black p-2 bg-white">
-            <p>[Menú de navegación]</p>
-          </nav>
-        </header>
+        <Header />
 
         {/* These items will be part of the stack */}
         <ScrollStackItem>
           <section
+            id="inicio"
             ref={heroRef}
             className="relative text-left h-full flex flex-col justify-center items-center overflow-hidden"
             style={{ backgroundImage: 'url(/hero_living.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
@@ -177,6 +167,7 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
+            id="quienes-somos"
             className="relative flex flex-col p-4 justify-center"
             style={{ backgroundImage: 'url(/aboutus.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato lee un libro o se muestra reflexivo mirando el texto. Pestañeo lento y movimiento suave de cola."
@@ -208,6 +199,7 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
+            id="productos"
             className="relative flex flex-col p-6 md:p-8 justify-center items-center"
             style={{ backgroundImage: 'url(/gallery.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
@@ -251,6 +243,7 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem itemClassName="scroll-stack-card--opaque">
           <section
+            id="testimonios"
             className="p-6 md:p-8 flex flex-col justify-center items-center"
             title="Animación: el gato trae cartas o globos de diálogo con mensajes de clientes. Globos emergentes con efecto pop-up."
           >
@@ -278,6 +271,7 @@ export default function SublikatWireframe() {
 
         <ScrollStackItem>
           <section
+            id="contacto"
             className="border border-black p-6 md:p-8 bg-gray-200 flex flex-col md:flex-row gap-6 items-center justify-center h-full"
             title="Animación: el gato entrega un sobre o usa un portátil. Animación de tap con su patita sobre el formulario."
           >
