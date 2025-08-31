@@ -33,6 +33,25 @@ const products: Product[] = [
 export default function SublikatWireframe() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isTextVisible, setIsTextVisible] = useState(false);
+  const [areElementsVisible, setAreElementsVisible] = useState(false);
+
+  useEffect(() => {
+    // Animate text fade-in
+    const textTimer = setTimeout(() => {
+      setIsTextVisible(true);
+    }, 100); // Small delay to ensure CSS transition applies
+
+    // Animate cat and button slide-in after text
+    const elementsTimer = setTimeout(() => {
+      setAreElementsVisible(true);
+    }, 600); // 500ms after text starts fading in
+
+    return () => {
+      clearTimeout(textTimer);
+      clearTimeout(elementsTimer);
+    };
+  }, []);
 
   const handleCardClick = (product: Product) => {
     setSelectedProduct(product);
@@ -72,18 +91,26 @@ export default function SublikatWireframe() {
         {/* These items will be part of the stack */}
         <ScrollStackItem>
           <section
-            className="relative text-left bg-blue-200/80 h-full flex flex-col justify-center items-center"
+            className="relative text-left bg-blue-200/80 h-full flex flex-col justify-center items-center overflow-hidden"
             style={{ backgroundImage: 'url(/hero_living.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
           >
             
             <div className='h-[90%] w-full flex p-6 md:p-12'>
               <div className='w-[60%] h-full flex flex-col justify-center items-start'>
-                <h1 className="text-3xl md:text-6xl font-bold mb-2">Realidad Aumentada + Personalización</h1>
-                <p className="max-w-3xl text-base md:text-xl mb-4">
-                    Descubre productos únicos que cobran vida con tu smartphone. Diseños personalizados que combinan arte físico con experiencias digitales inmersivas.
-                </p>
-                 <Button size="lg">Explora Nuestros Productos</Button>
+                <div
+                  className={`transition-opacity duration-1000 ease-in-out ${isTextVisible ? 'opacity-100' : 'opacity-0'}`}
+                >
+                  <h1 className="text-3xl md:text-6xl font-bold mb-2">Realidad Aumentada + Personalización</h1>
+                  <p className="max-w-3xl text-base md:text-xl mb-4">
+                      Descubre productos únicos que cobran vida con tu smartphone. Diseños personalizados que combinan arte físico con experiencias digitales inmersivas.
+                  </p>
+                </div>
+                 <div
+                  className={`transition-all duration-1000 ease-in-out ${areElementsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}
+                >
+                  <Button size="lg">Explora Nuestros Productos</Button>
+                </div>
               </div>
               <div className='w-[40%] h-full flex flex-col justify-center items-center'>
                  
@@ -95,7 +122,7 @@ export default function SublikatWireframe() {
                 alt="Katchan, la mascota de SubliCat" 
                 width={500} 
                 height={625} 
-                className="absolute bottom-0 right-2 md:right-8 w-72 h-auto md:w-96 lg:w-[600px]"
+                className={`absolute bottom-0 right-2 md:right-8 w-72 h-auto md:w-96 lg:w-[600px] transition-all duration-1000 ease-in-out ${areElementsVisible ? 'translate-x-0' : 'translate-x-full'}`}
                 data-ai-hint="peeking cat"
             />
           </section>
