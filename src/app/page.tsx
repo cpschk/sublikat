@@ -96,7 +96,7 @@ export default function SublikatWireframe() {
                 alt="Katchan, la mascota, con una taza" 
                 width={400} 
                 height={500} 
-                className="absolute bottom-0 right-8"
+                className="absolute bottom-[10%] right-8"
                 data-ai-hint="peeking cat"
             />
           </section>
