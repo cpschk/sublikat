@@ -200,7 +200,7 @@ export default function SublikatWireframe() {
                 Productos Personalizados
               </h2>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 w-full max-w-5xl mx-auto">
               {products.map((product) => (
                 <div key={product.id} onClick={() => handleCardClick(product)} className="w-full cursor-pointer group relative">
                     <Image
@@ -211,16 +211,16 @@ export default function SublikatWireframe() {
                       className="absolute -top-[65px] -right-9 h-24 w-24 object-contain transition-all duration-200 ease-out transform opacity-0 -translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 z-20"
                       data-ai-hint="peeking cat"
                     />
-                  <div className="border-2 border-black p-4 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-36 justify-center items-center relative z-10">
-                    <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-2 md:mb-3 flex items-center justify-center">
+                  <div className="border-2 border-black p-4 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-32 justify-center items-center relative z-10">
+                    <div className="w-10 h-10 md:w-16 md:h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-1 md:mb-3 flex items-center justify-center">
                       <span className="text-white font-bold text-sm">
                         {product.iconLetter}
                       </span>
                     </div>
-                    <h3 className="font-semibold text-center text-sm md:text-base mb-1 md:mb-2">
+                    <h3 className="font-semibold text-center text-xs md:text-base mb-1">
                       {product.title}
                     </h3>
-                    <p className="text-xs md:text-sm text-center text-gray-600">
+                    <p className="text-xs text-center text-gray-600">
                       {product.description}
                     </p>
                   </div>
