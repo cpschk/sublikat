@@ -36,6 +36,23 @@ export default function SublikatWireframe() {
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [areElementsVisible, setAreElementsVisible] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
+  const [stackPosition, setStackPosition] = useState('10%');
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setStackPosition('5%');
+      } else {
+        setStackPosition('10%');
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Set initial value
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -99,7 +116,7 @@ export default function SublikatWireframe() {
         ))}
       </div>
 
-      <ScrollStack stackPosition="10%" itemStackDistance={0} itemDistance={400}>
+      <ScrollStack stackPosition={stackPosition} itemStackDistance={0} itemDistance={400}>
         {/* This header will scroll normally */}
         <header
           className="border border-black p-4 flex justify-between items-center bg-gray-100 mb-8"
@@ -312,3 +329,5 @@ export default function SublikatWireframe() {
     </>
   );
 }
+
+    
