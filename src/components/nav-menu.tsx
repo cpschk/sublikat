@@ -17,26 +17,27 @@ export const NavMenu = ({ isMobile = false }) => {
     const scroller = document.querySelector('.scroll-stack-scroller');
 
     if (section && scroller) {
-      // We need to find the scrollstackitem parent to scroll to the correct position
       let parent = section.parentElement;
-      while(parent && !parent.classList.contains('scroll-stack-card')) {
+      while (parent && !parent.classList.contains('scroll-stack-card')) {
         parent = parent.parentElement;
       }
 
       if (parent) {
-         scroller.scrollTo({
-            top: parent.offsetTop,
-            behavior: 'smooth',
+        // Dispatch a custom event with the target offsetTop.
+        // The ScrollStack component will listen for this event.
+        const event = new CustomEvent('scroll-to-section', {
+          detail: { top: parent.offsetTop },
         });
+        window.dispatchEvent(event);
       }
-
     }
+    
     // Close sheet if on mobile
     if (isMobile) {
-        const closeButton = document.querySelector('[data-radix-dialog-close]');
-        if (closeButton instanceof HTMLElement) {
-            closeButton.click();
-        }
+      const closeButton = document.querySelector(
+        '[data-radix-dialog-close]'
+      ) as HTMLElement | null;
+      closeButton?.click();
     }
   };
 

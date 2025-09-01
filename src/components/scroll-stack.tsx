@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ReactNode, useLayoutEffect, useRef, useCallback } from 'react';
+import React, { ReactNode, useLayoutEffect, useRef, useCallback, useEffect } from 'react';
 import Lenis from 'lenis';
 import './scroll-stack.css';
 
@@ -232,6 +232,23 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     lenisRef.current = lenis;
     return lenis;
   }, [handleScroll]);
+
+    // Effect to handle navigation from NavMenu
+  useEffect(() => {
+    const handleScrollTo = (event: Event) => {
+      const customEvent = event as CustomEvent<{ top: number }>;
+      if (lenisRef.current && typeof customEvent.detail.top === 'number') {
+        lenisRef.current.scrollTo(customEvent.detail.top, {
+          // lock: true // You might need this if scrolling is jerky
+        });
+      }
+    };
+
+    window.addEventListener('scroll-to-section', handleScrollTo);
+    return () => {
+      window.removeEventListener('scroll-to-section', handleScrollTo);
+    };
+  }, []);
 
   useLayoutEffect(() => {
     const scroller = scrollerRef.current;
