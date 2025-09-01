@@ -40,7 +40,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
   stackPosition = '20%',
   scaleEndPosition = '10%',
   baseScale = 0.85,
-  scaleDuration = 0.5,
   rotationAmount = 0,
   blurAmount = 0,
   onStackComplete,
@@ -233,7 +232,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     return lenis;
   }, [handleScroll]);
 
-  // Effect to handle navigation from NavMenu
   useEffect(() => {
     const handleScrollTo = (event: Event) => {
       if (!lenisRef.current || !cardsRef.current.length) return;
@@ -241,22 +239,25 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       const customEvent = event as CustomEvent<{ index: number }>;
       const index = customEvent.detail.index;
       const targetCard = cardsRef.current[index];
-      
+
       if (typeof index === 'number' && targetCard) {
-        lenisRef.current.scrollTo(targetCard, { 
-            lock: true,
-            duration: 2,
-            offset: -80,
-         });
+        // We use the card's offsetTop as the target for Lenis.
+        // Lenis is smart enough to handle scrolling up or down to this absolute position.
+        // The offset ensures the header is not covering the content.
+        lenisRef.current.scrollTo(targetCard.offsetTop, {
+          lock: true,
+          duration: 2,
+          offset: -80, // Adjust this offset to account for the sticky header height
+        });
       }
     };
-  
+
     window.addEventListener('scroll-to-section', handleScrollTo);
-  
+
     return () => {
       window.removeEventListener('scroll-to-section', handleScrollTo);
     };
-  }, []); // Re-run this effect if the refs change.
+  }, []); // Empty dependency array ensures this runs once on mount.
 
 
   useLayoutEffect(() => {
@@ -311,7 +312,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     stackPosition,
     scaleEndPosition,
     baseScale,
-    scaleDuration,
     rotationAmount,
     blurAmount,
     onStackComplete,
