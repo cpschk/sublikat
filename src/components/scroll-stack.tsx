@@ -245,7 +245,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         lenis.scrollTo(0, { immediate: true, force: true });
         
         // 2. After a tiny delay to ensure the jump has registered, scroll to the target
-        // This needs to be in a timeout to ensure it runs in the next event loop tick
         setTimeout(() => {
             lenis.scrollTo(targetCard.offsetTop, {
                 lock: true,
@@ -261,7 +260,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     return () => {
       window.removeEventListener('scroll-to-section', handleScrollTo);
     };
-  }, [handleScroll]); // Re-bind listener if handleScroll changes
+  }, []);
 
 
   useLayoutEffect(() => {
