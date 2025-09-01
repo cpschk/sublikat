@@ -173,11 +173,11 @@ export default function SublikatWireframe() {
             <div className="relative z-10 w-full flex flex-col justify-center">
               <div className="flex flex-col md:flex-row w-full items-start">
                 <div className="w-full md:w-3/5">
-                  <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl">
-                    <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-center">
+                  <div className="bg-transparent p-4 rounded-xl">
+                    <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-center" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
                       Quiénes Somos
                     </h2>
-                    <p className="mb-4 text-base md:text-lg text-left text-justify">
+                    <p className="mb-4 text-base md:text-lg text-left text-justify" style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.5)' }}>
                       En SubliKat transformamos ideas en productos únicos mediante sublimación y estampado.
                     </p>
                   </div>
