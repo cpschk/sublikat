@@ -236,11 +236,13 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
   // Effect to handle navigation from NavMenu
   useEffect(() => {
     const handleScrollTo = (event: Event) => {
+      if (!lenisRef.current || !cardsRef.current.length) return;
+
       const customEvent = event as CustomEvent<{ index: number }>;
       const index = customEvent.detail.index;
       const targetCard = cardsRef.current[index];
-
-      if (lenisRef.current && typeof index === 'number' && targetCard) {
+      
+      if (typeof index === 'number' && targetCard) {
         lenisRef.current.scrollTo(targetCard, { 
             lock: true,
             duration: 2,
@@ -248,13 +250,14 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
          });
       }
     };
-
+  
     window.addEventListener('scroll-to-section', handleScrollTo);
-
+  
     return () => {
       window.removeEventListener('scroll-to-section', handleScrollTo);
     };
-  }, [handleScroll]); 
+  }, []); // Re-run this effect if the refs change.
+
 
   useLayoutEffect(() => {
     const scroller = scrollerRef.current;
@@ -331,5 +334,3 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
 };
 
 export default ScrollStack;
-
-    
