@@ -276,12 +276,12 @@ export default function SublikatWireframe() {
             style={{ backgroundColor: "hsl(25, 100%, 95%)" }}
           >
             <Image
-              src="/orange_cat_sign.png"
-              alt="Gato de SubliCat señalando"
+              src="/katchanpedido.png"
+              alt="Gato de SubliCat junto a un pedido"
               width={200}
               height={200}
               className="w-48 h-auto"
-              data-ai-hint="pointing cat"
+              data-ai-hint="cat order"
             />
             <h2 
               className="text-3xl md:text-4xl lg:text-5xl font-bold font-headline"
