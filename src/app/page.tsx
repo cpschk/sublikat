@@ -134,16 +134,13 @@ export default function SublikatWireframe() {
                 <div
                   className={`transition-opacity duration-1000 ease-in-out ${isTextVisible ? 'opacity-100' : 'opacity-0'}`}
                 >
-                  <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-2">Realidad Aumentada + Personalización</h1>
-                  <p className="max-w-3xl text-base md:text-xl lg:text-2xl mb-4">
-                      Descubre productos únicos que cobran vida con tu smartphone. Diseños personalizados que combinan arte físico con experiencias digitales inmersivas.
-                  </p>
+                  <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-2">Personaliza tus recuerdos con SubliKat</h1>
                 </div>
                 <div className="w-full flex justify-start md:justify-center mt-4 md:pl-0">
                   <div
                     className={`transition-all duration-1000 ease-in-out pl-1.5 md:pl-0 ${areElementsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}
                   >
-                    <Button size="lg" className="text-lg border-2 border-primary-foreground/50 shadow-lg hover:shadow-xl transition-shadow duration-300">Explora Nuestros Productos</Button>
+                    <Button size="lg" className="text-lg border-2 border-primary-foreground/50 shadow-lg hover:shadow-xl transition-shadow duration-300">Haz tu pedido ahora</Button>
                   </div>
                 </div>
               </div>
