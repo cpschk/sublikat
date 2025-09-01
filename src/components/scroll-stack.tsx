@@ -233,17 +233,18 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     return lenis;
   }, [handleScroll]);
 
-    // Effect to handle navigation from NavMenu
+  // Effect to handle navigation from NavMenu
   useEffect(() => {
     const handleScrollTo = (event: Event) => {
       const customEvent = event as CustomEvent<{ index: number }>;
       const index = customEvent.detail.index;
-
+      
       if (lenisRef.current && typeof index === 'number' && cardsRef.current[index]) {
         const targetCard = cardsRef.current[index];
         lenisRef.current.scrollTo(targetCard.offsetTop, {
-          offset: 0,
           duration: 2,
+          // Adding a small offset might help if there are fixed headers, but let's try 0 first.
+          offset: 0, 
         });
       }
     };
@@ -252,7 +253,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     return () => {
       window.removeEventListener('scroll-to-section', handleScrollTo);
     };
-  }, []);
+  }, []); // Empty dependency array means this runs once and cleans up on unmount.
 
   useLayoutEffect(() => {
     const scroller = scrollerRef.current;
