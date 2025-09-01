@@ -144,12 +144,12 @@ export default function SublikatWireframe() {
               </div>
               <div className='w-full md:w-1/2 h-full flex justify-center items-center mt-8 md:mt-0'>
                 <Image 
-                  src="/orange_cat_taza.png"
-                  alt="Katchan, la mascota de SubliCat con una taza"
+                  src="/katchan.png"
+                  alt="Katchan, la mascota de SubliCat"
                   width={500}
                   height={500}
                   className={`transition-all duration-1000 ease-in-out ${areElementsVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
-                  data-ai-hint="cat holding mug"
+                  data-ai-hint="orange cat mascot"
                 />
               </div>
             </div>
@@ -358,5 +358,3 @@ export default function SublikatWireframe() {
     </>
   );
 }
-
-    
