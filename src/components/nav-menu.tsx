@@ -14,10 +14,10 @@ const navItems = [
 export const NavMenu = ({ isMobile = false }) => {
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
-    const scroller = document.querySelector('.scroll-stack-scroller');
 
-    if (section && scroller) {
+    if (section) {
       let parent = section.parentElement;
+      // Traverse up to find the scroll-stack-card container
       while (parent && !parent.classList.contains('scroll-stack-card')) {
         parent = parent.parentElement;
       }
@@ -35,7 +35,7 @@ export const NavMenu = ({ isMobile = false }) => {
     // Close sheet if on mobile
     if (isMobile) {
       const closeButton = document.querySelector(
-        '[data-radix-dialog-close]'
+        'button[data-radix-dialog-close]'
       ) as HTMLElement | null;
       closeButton?.click();
     }
