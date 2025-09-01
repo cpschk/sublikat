@@ -21,12 +21,12 @@ const backgroundImages = [
 ];
 
 const products: Product[] = [
-    { id: 'taza-ar', title: 'Taza AR', description: 'Taza con experiencia de realidad aumentada', images: ['https://picsum.photos/600/600?random=10', 'https://picsum.photos/600/600?random=20', 'https://picsum.photos/600/600?random=30', 'https://picsum.photos/600/600?random=40'], iconLetter: 'T' },
-    { id: 'polera-personalizada', title: 'Polera Personalizada', description: 'Diseño único para tu estilo', images: ['https://picsum.photos/600/600?random=11', 'https://picsum.photos/600/600?random=21', 'https://picsum.photos/600/600?random=31'], iconLetter: 'P' },
-    { id: 'llavero', title: 'Llavero', description: 'Accesorio con diseño exclusivo', images: ['https://picsum.photos/600/600?random=12', 'https://picsum.photos/600/600?random=22'], iconLetter: 'L' },
-    { id: 'poster', title: 'Póster', description: 'Arte para tu pared', images: ['https://picsum.photos/600/600?random=13', 'https://picsum.photos/600/600?random=23', 'https://picsum.photos/600/600?random=33', 'https://picsum.photos/600/600?random=43', 'https://picsum.photos/600/600?random=53'], iconLetter: 'P' },
-    { id: 'stickers', title: 'Stickers', description: 'Para personalizar cualquier superficie', images: ['https://picsum.photos/600/600?random=14', 'https://picsum.photos/600/600?random=24', 'https://picsum.photos/600/600?random=34'], iconLetter: 'S' },
-    { id: 'otros', title: 'Otros', description: 'Productos personalizados a tu medida', images: ['https://picsum.photos/600/600?random=15'], iconLetter: 'O' },
+    { id: 'tazones', title: 'Tazones personalizados', description: '', images: ['https://picsum.photos/600/600?random=10', 'https://picsum.photos/600/600?random=20', 'https://picsum.photos/600/600?random=30', 'https://picsum.photos/600/600?random=40'], iconLetter: 'T' },
+    { id: 'poleras', title: 'Poleras estampadas', description: '', images: ['https://picsum.photos/600/600?random=11', 'https://picsum.photos/600/600?random=21', 'https://picsum.photos/600/600?random=31'], iconLetter: 'P' },
+    { id: 'llaveros', title: 'Llaveros únicos', description: '', images: ['https://picsum.photos/600/600?random=12', 'https://picsum.photos/600/600?random=22'], iconLetter: 'L' },
+    { id: 'carcasas', title: 'Carcasas para celular', description: '', images: ['https://picsum.photos/600/600?random=13', 'https://picsum.photos/600/600?random=23', 'https://picsum.photos/600/600?random=33', 'https://picsum.photos/600/600?random=43', 'https://picsum.photos/600/600?random=53'], iconLetter: 'C' },
+    { id: 'relojes', title: 'Relojes de pared', description: '', images: ['https://picsum.photos/600/600?random=14', 'https://picsum.photos/600/600?random=24', 'https://picsum.photos/600/600?random=34'], iconLetter: 'R' },
+    { id: 'cuadros', title: 'Cuadros decorativos', description: '', images: ['https://picsum.photos/600/600?random=15'], iconLetter: 'C' },
 ];
 
 
@@ -223,9 +223,11 @@ export default function SublikatWireframe() {
                     <h3 className="font-semibold text-center text-[0.6rem] md:text-base mb-0.5">
                       {product.title}
                     </h3>
-                    <p className="text-[0.6rem] text-center text-gray-600">
-                      {product.description}
-                    </p>
+                    {product.description && (
+                      <p className="text-[0.6rem] text-center text-gray-600">
+                        {product.description}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
