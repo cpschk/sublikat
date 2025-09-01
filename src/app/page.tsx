@@ -116,7 +116,7 @@ export default function SublikatWireframe() {
         ))}
       </div>
 
-      <ScrollStack stackPosition={stackPosition} itemStackDistance={0} itemDistance={400} itemScale={0}>
+      <ScrollStack stackPosition={stackPosition} itemStackDistance={0} itemDistance={400} itemScale={0} baseScale={1}>
         <Header />
 
         {/* These items will be part of the stack */}
@@ -324,4 +324,5 @@ export default function SublikatWireframe() {
   );
 }
 
+    
     
