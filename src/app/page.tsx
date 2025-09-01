@@ -143,7 +143,7 @@ export default function SublikatWireframe() {
                   <div
                     className={`transition-all duration-1000 ease-in-out pl-1.5 md:pl-0 ${areElementsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}
                   >
-                    <Button className="md:size-lg lg:text-lg">Explora Nuestros Productos</Button>
+                    <Button size="lg" className="text-lg border-2 border-primary-foreground/50 shadow-lg hover:shadow-xl transition-shadow duration-300">Explora Nuestros Productos</Button>
                   </div>
                 </div>
               </div>
@@ -278,12 +278,7 @@ export default function SublikatWireframe() {
             <div className="w-full md:w-1/2 max-w-md">
               <h2 className="text-xl font-semibold mb-6 text-center">Formulario de Contacto</h2>
               <div className="border border-black p-4 bg-white">
-                <p>
-                  [Placeholder para campos del formulario (nombre, email, mensaje)]
-                </p>
-              </div>
-              <div className="border border-black p-2 mt-4 inline-block bg-white">
-                <p>Botón de Enviar</p>
+                <ContactForm />
               </div>
             </div>
             <div className="w-full md:w-1/2 max-w-md">
@@ -323,6 +318,3 @@ export default function SublikatWireframe() {
     </>
   );
 }
-
-    
-    

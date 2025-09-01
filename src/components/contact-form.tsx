@@ -104,7 +104,12 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full" disabled={isSubmitting}>
+        <Button 
+          type="submit" 
+          className="w-full border-2 border-primary-foreground/50 shadow-lg hover:shadow-xl transition-shadow duration-300" 
+          disabled={isSubmitting}
+          size="lg"
+        >
           {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           Send Message
         </Button>
