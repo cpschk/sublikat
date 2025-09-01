@@ -177,10 +177,7 @@ export default function SublikatWireframe() {
                       Quiénes Somos
                     </h2>
                     <p className="mb-4 text-base md:text-lg text-left text-justify">
-                      En Sublikat, creemos que los objetos cotidianos pueden convertirse en experiencias mágicas. Fundada en 2023, nuestra misión es combinar el arte físico con la tecnología de realidad aumentada para crear productos que no solo se ven bien, sino que también cuentan historias interactivas.
-                    </p>
-                    <p className="text-base md:text-lg text-left text-justify">
-                      Cada producto es diseñado con atención al detalle, permitiendo a nuestros clientes personalizar no solo la apariencia, sino también la experiencia digital que lo acompaña. Desde tazas que cobran vida hasta pósters que cuentan historias animadas, estamos redefiniendo lo que significa poseer un objeto personalizado.
+                      En SubliKat transformamos ideas en productos únicos mediante sublimación y estampado.
                     </p>
                   </div>
                 </div>
