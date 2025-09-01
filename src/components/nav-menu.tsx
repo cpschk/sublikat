@@ -12,20 +12,15 @@ const navItems = [
 ];
 
 export const NavMenu = ({ isMobile = false }) => {
-  const scrollToSection = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) {
-      // Find the parent scroll-stack-card to get the correct offsetTop
-      const card = section.closest('.scroll-stack-card') as HTMLElement | null;
-      if (card) {
-        window.dispatchEvent(
-          new CustomEvent('scroll-to-section', { detail: { top: card.offsetTop } })
-        );
-      }
-    }
+  const scrollToSection = (index: number) => {
+    window.dispatchEvent(
+      new CustomEvent('scroll-to-section', { detail: { index } })
+    );
 
     if (isMobile) {
-      const closeButton = document.querySelector('button[data-radix-dialog-close]') as HTMLElement | null;
+      const closeButton = document.querySelector(
+        'button[data-radix-dialog-close]'
+      ) as HTMLElement | null;
       closeButton?.click();
     }
   };
@@ -37,11 +32,11 @@ export const NavMenu = ({ isMobile = false }) => {
         isMobile && 'flex-col items-start'
       )}
     >
-      {navItems.map((item) => (
+      {navItems.map((item, index) => (
         <Button
           key={item.id}
           variant="ghost"
-          onClick={() => scrollToSection(item.id)}
+          onClick={() => scrollToSection(index)}
           className={cn(isMobile && 'w-full justify-start text-lg')}
         >
           {item.label}
