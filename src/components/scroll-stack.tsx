@@ -253,7 +253,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     return () => {
       window.removeEventListener('scroll-to-section', handleScrollTo);
     };
-  }, [handleScroll]); // Dependency on handleScroll ensures the listener is fresh.
+  }, [handleScroll]);
 
   useLayoutEffect(() => {
     const scroller = scrollerRef.current;
