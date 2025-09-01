@@ -1,6 +1,12 @@
 import { Menu } from 'lucide-react';
 import { Button } from './ui/button';
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from './ui/sheet';
 import { Logo } from './logo';
 import { NavMenu } from './nav-menu';
 
@@ -21,6 +27,9 @@ export const Header = () => {
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Menú de Navegación</SheetTitle>
+              </SheetHeader>
               <div className="flex flex-col gap-6 pt-6">
                 <Logo />
                 <NavMenu isMobile />
