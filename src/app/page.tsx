@@ -244,7 +244,7 @@ export default function SublikatWireframe() {
         <ScrollStackItem itemClassName="scroll-stack-card--opaque">
           <section
             id="testimonios"
-            className="p-6 md:p-8 flex flex-col justify-center items-center"
+            className="p-6 md:p-8 flex flex-col justify-center items-center h-full"
             title="Animación: el gato trae cartas o globos de diálogo con mensajes de clientes. Globos emergentes con efecto pop-up."
           >
             <h2 className="text-xl font-semibold mb-6 text-center">
@@ -270,20 +270,35 @@ export default function SublikatWireframe() {
         <hr className="border-t-4 border-black my-8" />
 
         <ScrollStackItem>
-          <section
-            id="contacto"
-            className="border border-black p-6 md:p-8 bg-gray-200 flex flex-col md:flex-row gap-6 items-center justify-center h-full"
-            title="Animación: el gato entrega un sobre o usa un portátil. Animación de tap con su patita sobre el formulario."
+           <section
+            id="cta_section"
+            className="relative flex flex-col gap-6 items-center justify-center h-full text-center p-6 md:p-8"
+            style={{ backgroundColor: "hsl(25, 100%, 95%)" }}
           >
-            <div className="w-full md:w-1/2 max-w-md">
-              <h2 className="text-xl font-semibold mb-6 text-center">Formulario de Contacto</h2>
-              <div className="border border-black p-4 bg-white">
-                <ContactForm />
-              </div>
-            </div>
-            <div className="w-full md:w-1/2 max-w-md">
-              <Image src="https://picsum.photos/600/500" alt="Contact us" width={600} height={500} className="w-full h-auto object-cover rounded-lg" data-ai-hint="cat mail" />
-            </div>
+            <Image
+              src="/orange_cat_sign.png"
+              alt="Gato de SubliCat señalando"
+              width={200}
+              height={200}
+              className="w-48 h-auto"
+              data-ai-hint="pointing cat"
+            />
+            <h2 
+              className="text-3xl md:text-4xl lg:text-5xl font-bold font-headline"
+              style={{ color: 'hsl(232, 42%, 17%)' }}
+            >
+              ¡Crea tu recuerdo ahora!
+            </h2>
+            <Button
+              size="lg"
+              className="rounded-full px-10 py-6 text-lg font-bold"
+              style={{ 
+                backgroundColor: 'hsl(161, 100%, 78%)',
+                color: 'hsl(232, 42%, 17%)'
+              }}
+            >
+              Empezar a crear
+            </Button>
           </section>
         </ScrollStackItem>
 
