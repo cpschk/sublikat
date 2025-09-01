@@ -295,19 +295,30 @@ export default function SublikatWireframe() {
         <hr className="border-t-4 border-black my-8" />
 
         <ScrollStackItem>
-          <section
+           <section
             id="contacto"
-            className="border border-black p-6 md:p-8 bg-gray-200 flex flex-col md:flex-row gap-6 items-center justify-center h-full"
-            title="Animación: el gato entrega un sobre o usa un portátil. Animación de tap con su patita sobre el formulario."
+            className="p-6 md:p-8 bg-gray-50 flex flex-col gap-6 items-center justify-center h-full"
+            title="Animación: el gato señala un cartel con entusiasmo."
           >
-            <div className="w-full md:w-1/2 max-w-md">
-              <h2 className="text-xl font-semibold mb-6 text-center">Formulario de Contacto</h2>
-              <div className="border border-black p-4 bg-white">
-                <ContactForm />
-              </div>
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-primary" style={{ color: 'hsl(232, 42%, 17%)' }}>
+                Haz tu pedido con SubliKat
+              </h2>
             </div>
-            <div className="w-full md:w-1/2 max-w-md">
-              <Image src="https://picsum.photos/600/500" alt="Contact us" width={600} height={500} className="w-full h-auto object-cover rounded-lg" data-ai-hint="cat mail" />
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" style={{ backgroundColor: 'hsl(161, 100%, 78%)', color: 'black' }}>Comprar</Button>
+              <Button size="lg" style={{ backgroundColor: 'hsl(161, 100%, 78%)', color: 'black' }}>Pedir presupuesto</Button>
+              <Button size="lg" style={{ backgroundColor: 'hsl(161, 100%, 78%)', color: 'black' }}>Hacer pedido</Button>
+            </div>
+             <div className="mt-6">
+                <Image 
+                  src="https://picsum.photos/300/300"
+                  alt="Gato de SubliCat con un cartel" 
+                  width={300}
+                  height={300}
+                  className="w-48 h-auto md:w-64"
+                  data-ai-hint="cat holding sign"
+                />
             </div>
           </section>
         </ScrollStackItem>
