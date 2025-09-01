@@ -253,7 +253,7 @@ export default function SublikatWireframe() {
                 <p>"¡Me encantó el resultado! Mi taza quedó increíble."</p>
               </div>
               <div className="border border-black p-4 bg-white rounded-lg flex flex-row md:flex-col items-center text-left md:text-center">
-                  <Image src="https://picsum.photos/200/200?random=5" alt="Client 2" width={200} height={200} className="w-16 h-16 md:w-24 md:h-24 object-cover rounded-full mr-4 md:mr-0 md:mb-4" data-ai-hint="smiling customer" />
+                  <Image src="https://picsum.photos/200/200?random=5" alt="Client 2" width={200} height={200} className="w-16 h-16 md:w-24 md:h-24 object-cover rounded-full mr-4 md:mr-0 md-mb-4" data-ai-hint="smiling customer" />
                 <p>"El proceso fue súper fácil y divertido. Lo recomiendo."</p>
               </div>
               <div className="border border-black p-4 bg-white rounded-lg flex flex-row md:flex-col items-center text-left md:text-center">
@@ -363,3 +363,5 @@ export default function SublikatWireframe() {
     </>
   );
 }
+
+    
