@@ -14,22 +14,18 @@ const navItems = [
 export const NavMenu = ({ isMobile = false }) => {
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
+    if (!section) return;
 
-    if (section) {
-      let parent = section.parentElement;
-      // Traverse up to find the scroll-stack-card container
-      while (parent && !parent.classList.contains('scroll-stack-card')) {
-        parent = parent.parentElement;
-      }
+    // Find the parent scroll-stack-card container
+    const cardContainer = section.closest('.scroll-stack-card') as HTMLElement | null;
 
-      if (parent) {
-        // Dispatch a custom event with the target offsetTop.
-        // The ScrollStack component will listen for this event.
-        const event = new CustomEvent('scroll-to-section', {
-          detail: { top: parent.offsetTop },
-        });
-        window.dispatchEvent(event);
-      }
+    if (cardContainer) {
+      // Dispatch a custom event with the target offsetTop.
+      // The ScrollStack component will listen for this event.
+      const event = new CustomEvent('scroll-to-section', {
+        detail: { top: cardContainer.offsetTop },
+      });
+      window.dispatchEvent(event);
     }
     
     // Close sheet if on mobile
