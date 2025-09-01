@@ -249,7 +249,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
             lenis.scrollTo(targetCard.offsetTop, {
                 lock: true,
                 duration: 2,
-                offset: -100, // Adjust this offset to account for the sticky header height
+                offset: -50, // Adjust this offset to account for the sticky header height
             });
         }, 0);
       }
