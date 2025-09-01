@@ -239,7 +239,8 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       const customEvent = event as CustomEvent<{ top: number }>;
       if (lenisRef.current && typeof customEvent.detail.top === 'number') {
         lenisRef.current.scrollTo(customEvent.detail.top, {
-          // lock: true // You might need this if scrolling is jerky
+          offset: 0, // Adjust offset if necessary
+          duration: 2, // Adjust duration for scroll speed
         });
       }
     };

@@ -15,7 +15,13 @@ export const NavMenu = ({ isMobile = false }) => {
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Find the parent scroll-stack-card to get the correct offsetTop
+      const card = section.closest('.scroll-stack-card') as HTMLElement | null;
+      if (card) {
+        window.dispatchEvent(
+          new CustomEvent('scroll-to-section', { detail: { top: card.offsetTop } })
+        );
+      }
     }
 
     if (isMobile) {
