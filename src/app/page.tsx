@@ -273,7 +273,11 @@ export default function SublikatWireframe() {
            <section
             id="cta_section"
             className="relative flex flex-col gap-6 items-center justify-center h-full text-center p-6 md:p-8"
-            style={{ backgroundColor: "hsl(25, 100%, 95%)" }}
+            style={{ 
+              backgroundImage: 'url(/background_cta.jpg)', 
+              backgroundSize: 'cover', 
+              backgroundPosition: 'center' 
+            }}
           >
             <Image
               src="/katchanpedido.png"
