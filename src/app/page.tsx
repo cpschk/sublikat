@@ -10,6 +10,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ContactForm } from '@/components/contact-form';
 import { Header } from '@/components/header';
+import { Logo } from '@/components/logo';
 
 const backgroundImages = [
   'https://placehold.co/1920x1080/E0F7FA/E0F7FA', // Light Cyan
@@ -312,7 +313,7 @@ export default function SublikatWireframe() {
             </div>
              <div className="mt-6">
                 <Image 
-                  src="https://picsum.photos/300/300"
+                  src="/orange_cat_sign.png"
                   alt="Gato de SubliCat con un cartel" 
                   width={300}
                   height={300}
@@ -328,20 +329,28 @@ export default function SublikatWireframe() {
         <ScrollStackItem>
           <div className="h-full flex flex-col">
             <div className="h-[80%]"></div>
-            <footer
-              className="h-[20%] border border-black p-6 bg-gray-100 flex items-center justify-center"
-              title="Animación: el gato duerme con sus lentes puestos. Respiración sutil o ronroneo animado."
-            >
-              <div className="flex flex-col md:flex-row justify-around items-center w-full max-w-4xl gap-4">
-                <div className="border border-black p-2 bg-white text-center">
-                  <p>Información de Contacto y Copyright</p>
+              <footer
+                className="h-[20%] p-6 flex items-center justify-center text-white"
+                style={{ backgroundColor: 'hsl(232, 42%, 17%)' }}
+                title="Animación: el gato duerme con sus lentes puestos. Respiración sutil o ronroneo animado."
+              >
+                <div className="flex flex-col md:flex-row justify-around items-center w-full max-w-4xl gap-4">
+                  <Logo />
+                  <div className="flex gap-4">
+                    <a href="#" className="hover:underline">Términos</a>
+                    <a href="#" className="hover:underline">Privacidad</a>
+                    <a href="#" className="hover:underline">Contacto</a>
+                  </div>
+                  <Image 
+                    src="/orange_cat_sleeping.png" 
+                    alt="Gato durmiendo" 
+                    width={150} 
+                    height={100} 
+                    className="w-auto h-16 object-contain"
+                    data-ai-hint="sleeping cat"
+                  />
                 </div>
-                <Image src="https://picsum.photos/300/200" alt="Sleeping Cat" width={300} height={200} className="w-auto h-16 object-contain rounded-lg" data-ai-hint="sleeping cat" />
-                <div className="border border-black p-2 bg-white text-center">
-                  <p>Íconos de Redes Sociales</p>
-                </div>
-              </div>
-            </footer>
+              </footer>
           </div>
         </ScrollStackItem>
       </ScrollStack>
