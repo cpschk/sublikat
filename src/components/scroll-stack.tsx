@@ -234,30 +234,34 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
 
   useEffect(() => {
     const handleScrollTo = (event: Event) => {
-      if (!lenisRef.current || !cardsRef.current.length) return;
-
       const customEvent = event as CustomEvent<{ index: number }>;
       const index = customEvent.detail.index;
+      
+      const lenis = lenisRef.current;
       const targetCard = cardsRef.current[index];
 
-      if (typeof index === 'number' && targetCard) {
-        // We use the card's offsetTop as the target for Lenis.
-        // Lenis is smart enough to handle scrolling up or down to this absolute position.
-        // The offset ensures the header is not covering the content.
-        lenisRef.current.scrollTo(targetCard.offsetTop, {
-          lock: true,
-          duration: 2,
-          offset: -80, // Adjust this offset to account for the sticky header height
-        });
+      if (lenis && typeof index === 'number' && targetCard) {
+        // 1. Instantly jump to the top
+        lenis.scrollTo(0, { immediate: true, force: true });
+        
+        // 2. After a tiny delay to ensure the jump has registered, scroll to the target
+        // This needs to be in a timeout to ensure it runs in the next event loop tick
+        setTimeout(() => {
+            lenis.scrollTo(targetCard.offsetTop, {
+                lock: true,
+                duration: 2,
+                offset: -80, // Adjust this offset to account for the sticky header height
+            });
+        }, 0);
       }
     };
-
+    
     window.addEventListener('scroll-to-section', handleScrollTo);
 
     return () => {
       window.removeEventListener('scroll-to-section', handleScrollTo);
     };
-  }, []); // Empty dependency array ensures this runs once on mount.
+  }, [handleScroll]); // Re-bind listener if handleScroll changes
 
 
   useLayoutEffect(() => {
