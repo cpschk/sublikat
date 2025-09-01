@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ReactNode, useLayoutEffect, useRef, useCallback } from 'react';
+import React, { ReactNode, useLayoutEffect, useRef, useCallback, useEffect } from 'react';
 import Lenis from 'lenis';
 import './scroll-stack.css';
 
@@ -40,7 +40,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
   stackPosition = '20%',
   scaleEndPosition = '10%',
   baseScale = 0.85,
-  scaleDuration = 0.5,
   rotationAmount = 0,
   blurAmount = 0,
   onStackComplete,
@@ -233,6 +232,37 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     return lenis;
   }, [handleScroll]);
 
+  useEffect(() => {
+    const handleScrollTo = (event: Event) => {
+      const customEvent = event as CustomEvent<{ index: number }>;
+      const index = customEvent.detail.index;
+      
+      const lenis = lenisRef.current;
+      const targetCard = cardsRef.current[index];
+
+      if (lenis && typeof index === 'number' && targetCard) {
+        // 1. Instantly jump to the top
+        lenis.scrollTo(0, { immediate: true, force: true });
+        
+        // 2. After a tiny delay to ensure the jump has registered, scroll to the target
+        setTimeout(() => {
+            lenis.scrollTo(targetCard.offsetTop, {
+                lock: true,
+                duration: 2,
+                offset: -50, // Adjust this offset to account for the sticky header height
+            });
+        }, 0);
+      }
+    };
+    
+    window.addEventListener('scroll-to-section', handleScrollTo);
+
+    return () => {
+      window.removeEventListener('scroll-to-section', handleScrollTo);
+    };
+  }, []);
+
+
   useLayoutEffect(() => {
     const scroller = scrollerRef.current;
     if (!scroller) return;
@@ -285,7 +315,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     stackPosition,
     scaleEndPosition,
     baseScale,
-    scaleDuration,
     rotationAmount,
     blurAmount,
     onStackComplete,

@@ -15,7 +15,7 @@ body {
   position: sticky;
   top: 0;
   width: 100vw;
-  height: 100vh;
+  height: 102vh;
   margin: 0;
   transform-origin: center top;
   will-change: transform, filter;
@@ -29,10 +29,8 @@ body {
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
-@media (max-width: 767px) {
-  .scroll-stack-card {
-    height: 95vh;
-  }
+.scroll-stack-card--opaque {
+    background: white;
 }
 
 .scroll-stack-end {
