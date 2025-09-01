@@ -238,11 +238,10 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     const handleScrollTo = (event: Event) => {
       const customEvent = event as CustomEvent<{ index: number }>;
       const index = customEvent.detail.index;
-
       const targetCard = cardsRef.current[index];
 
       if (lenisRef.current && typeof index === 'number' && targetCard) {
-        lenisRef.current.scrollTo(targetCard.offsetTop, { 
+        lenisRef.current.scrollTo(targetCard, { 
             lock: true,
             duration: 2,
             offset: -80,
@@ -255,7 +254,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     return () => {
       window.removeEventListener('scroll-to-section', handleScrollTo);
     };
-  }, [handleScroll]); // THE CRUCIAL DEPENDENCY
+  }, [handleScroll]); 
 
   useLayoutEffect(() => {
     const scroller = scrollerRef.current;
