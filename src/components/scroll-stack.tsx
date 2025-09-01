@@ -239,11 +239,11 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       const customEvent = event as CustomEvent<{ index: number }>;
       const index = customEvent.detail.index;
 
-      if (lenisRef.current && typeof index === 'number' && cardsRef.current[index]) {
+      if (typeof index === 'number' && cardsRef.current[index]) {
         const targetCard = cardsRef.current[index];
-        lenisRef.current.scrollTo(targetCard.offsetTop, {
+        lenisRef.current?.scrollTo(targetCard.offsetTop, {
           duration: 2,
-          offset: 0,
+          offset: -80, // Small offset to avoid overlapping header
         });
       }
     };
