@@ -264,6 +264,35 @@ export default function SublikatWireframe() {
         </ScrollStackItem>
 
         <hr className="border-t-4 border-black my-8" />
+        
+        <ScrollStackItem>
+          <section 
+            id="emociones"
+            className="p-6 md:p-8 flex flex-col justify-center items-center"
+            style={{ backgroundImage: 'url(https://placehold.co/1920x1080/FFFFFF/FFFFFF)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
+            title="Animación: el gato abraza un marco de fotos o se sonroja. Efectos de partículas de corazón."
+          >
+            <div className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl w-full max-w-6xl mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold font-headline text-center italic" style={{ color: 'hsl(25, 100%, 55%)' }}>
+                Más que objetos, recuerdos que emocionan
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl px-4">
+              <Card className="flex flex-col items-center text-center p-4 border-2 border-gray-200">
+                <Image src="https://picsum.photos/400/300?random=51" alt="Regalo para mamá" width={400} height={300} className="rounded-lg mb-4" data-ai-hint="family photo frame" />
+                <h3 className="text-xl font-semibold mb-2">Un regalo para mamá</h3>
+                <Image src="https://picsum.photos/100/100?random=61" alt="Gato abrazando marco" width={100} height={100} className="object-contain" data-ai-hint="cat hugging" />
+              </Card>
+              <Card className="flex flex-col items-center text-center p-4 border-2 border-gray-200">
+                <Image src="https://picsum.photos/400/300?random=52" alt="Detalle para tu pareja" width={400} height={300} className="rounded-lg mb-4" data-ai-hint="couple mug" />
+                <h3 className="text-xl font-semibold mb-2">Un detalle para tu pareja</h3>
+                <Image src="https://picsum.photos/100/100?random=62" alt="Gato sonrojado" width={100} height={100} className="object-contain" data-ai-hint="blushing cat" />
+              </Card>
+            </div>
+          </section>
+        </ScrollStackItem>
+
+        <hr className="border-t-4 border-black my-8" />
 
         <ScrollStackItem>
           <section
