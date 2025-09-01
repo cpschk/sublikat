@@ -126,38 +126,33 @@ export default function SublikatWireframe() {
             id="inicio"
             ref={heroRef}
             className="relative text-left h-full flex flex-col justify-center items-center overflow-hidden"
-            style={{ backgroundImage: 'url(/hero_living.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+            style={{ background: 'linear-gradient(to bottom, #FFD1A8, #FFFFFF)' }}
             title="Animación: el gato señala el botón principal con entusiasmo. Rebote suave del botón mientras el gato lo mira."
           >
-            <div className={`absolute inset-0 bg-black/10 backdrop-blur-sm transition-opacity duration-1000 ${isTextVisible ? 'opacity-100' : 'opacity-0'}`} />
-            <div className='relative z-10 h-[90%] w-full flex p-6 md:p-12'>
-              <div className='w-full lg:w-[70%] h-full flex flex-col justify-center items-center mt-[-50px]'>
+            <div className='relative z-10 h-full w-full flex flex-col md:flex-row p-6 md:p-12 items-center'>
+              <div className='w-full md:w-1/2 h-full flex flex-col justify-center items-start'>
                 <div
                   className={`transition-opacity duration-1000 ease-in-out ${isTextVisible ? 'opacity-100' : 'opacity-0'}`}
                 >
-                  <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-2">Personaliza tus recuerdos con SubliKat</h1>
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6" style={{color: '#F56505'}}>Personaliza tus recuerdos con SubliKat</h1>
                 </div>
-                <div className="w-full flex justify-start md:justify-center mt-4 md:pl-0">
-                  <div
-                    className={`transition-all duration-1000 ease-in-out pl-1.5 md:pl-0 ${areElementsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}
-                  >
-                    <Button size="lg" className="text-lg border-2 border-primary-foreground/50 shadow-lg hover:shadow-xl transition-shadow duration-300">Haz tu pedido ahora</Button>
-                  </div>
+                <div
+                  className={`transition-all duration-1000 ease-in-out ${areElementsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                >
+                  <Button size="lg" className="text-lg text-black font-bold shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-full" style={{backgroundColor: '#86EFAC'}}>Haz tu pedido ahora</Button>
                 </div>
               </div>
-              <div className='w-0 lg:w-[30%] h-full flex flex-col justify-center items-center'>
-                 
+              <div className='w-full md:w-1/2 h-full flex justify-center items-center mt-8 md:mt-0'>
+                <Image 
+                  src="/orange_cat_taza.png"
+                  alt="Katchan, la mascota de SubliCat con una taza"
+                  width={500}
+                  height={500}
+                  className={`transition-all duration-1000 ease-in-out ${areElementsVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
+                  data-ai-hint="cat holding mug"
+                />
               </div>
             </div>
-            
-            <Image 
-                src="/katchancoffe.png" 
-                alt="Katchan, la mascota de SubliCat" 
-                width={500} 
-                height={625} 
-                className={`absolute bottom-0 right-[-1.25rem] md:right-8 w-44 h-auto md:w-56 lg:w-[360px] transition-all duration-1000 ease-in-out ${areElementsVisible ? 'translate-x-0' : 'translate-x-full'}`}
-                data-ai-hint="peeking cat"
-            />
           </section>
         </ScrollStackItem>
         
@@ -257,7 +252,7 @@ export default function SublikatWireframe() {
                 <p>"El proceso fue súper fácil y divertido. Lo recomiendo."</p>
               </div>
               <div className="border border-black p-4 bg-white rounded-lg flex flex-row md:flex-col items-center text-left md:text-center">
-                <Image src="https://picsum.photos/200/200?random=6" alt="Client 3" width={200} height={200} className="w-16 h-16 md:w-24 md:h-24 object-cover rounded-full mr-4 md:mr-0 md:mb-4" data-ai-hint="satisfied user" />
+                <Image src="https://picsum.photos/200/200?random=6" alt="Client 3" width={200} height={200} className="w-16 h-16 md:w-24 md:h-24 object-cover rounded-full mr-4 md:mr-0 md-mb-4" data-ai-hint="satisfied user" />
                 <p>"La calidad es excelente y la función AR es genial."</p>
               </div>
             </div>
