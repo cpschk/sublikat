@@ -17,8 +17,6 @@ export const NavMenu = ({ isMobile = false }) => {
     const scroller = document.querySelector('.scroll-stack-scroller');
 
     if (section && scroller) {
-      const sectionTop = section.closest('.scroll-stack-card')?.offsetTop || 0;
-      
       // We need to find the scrollstackitem parent to scroll to the correct position
       let parent = section.parentElement;
       while(parent && !parent.classList.contains('scroll-stack-card')) {
