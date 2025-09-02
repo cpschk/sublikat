@@ -198,7 +198,7 @@ export default function SublikatWireframe() {
           <section
             id="quienes-somos"
             className="relative flex flex-col p-4 justify-center h-full"
-            style={{ backgroundImage: 'url(/gato_taller.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+            style={{ backgroundImage: 'url(/aboutus.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato lee un libro o se muestra reflexivo mirando el texto. Pestañeo lento y movimiento suave de cola."
           >
             <div className="relative z-10 w-full flex flex-col justify-center">
