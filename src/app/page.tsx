@@ -30,10 +30,10 @@ const products: Product[] = [
 ];
 
 const ctaCardImages = [
-  'carcasacat.png', // Card 3 (Left-most)
-  'tazacat.png',    // Card 5 (Right-most)
-  'poleracat.png',  // Card 2 (Left-inner)
-  'relojcat.png',   // Card 4 (Right-inner)
+  'carcasacat.png', // Card 3 (Left-most) -> index 0
+  'poleracat.png',  // Card 2 (Left-inner) -> index 1
+  'relojcat.png',   // Card 4 (Right-inner) -> index 2
+  'tazacat.png',    // Card 5 (Right-most) -> index 3
 ];
 
 export default function SublikatWireframe() {
@@ -198,7 +198,7 @@ export default function SublikatWireframe() {
           <section
             id="quienes-somos"
             className="relative flex flex-col p-4 justify-center h-full"
-            style={{ backgroundImage: 'url(/aboutus.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+            style={{ backgroundImage: 'url(/gato_taller.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato lee un libro o se muestra reflexivo mirando el texto. Pestañeo lento y movimiento suave de cola."
           >
             <div className="relative z-10 w-full flex flex-col justify-center">
@@ -233,8 +233,8 @@ export default function SublikatWireframe() {
             style={{ backgroundImage: 'url(/gallery.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
           >
-            <div className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl w-full max-w-6xl mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold font-headline text-center">
+            <div className="bg-white/80 backdrop-blur-sm p-4 md:p-8 rounded-xl w-full max-w-6xl mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold font-headline text-center">
                 Productos Personalizados
               </h2>
             </div>
