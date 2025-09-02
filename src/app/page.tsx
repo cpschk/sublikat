@@ -192,15 +192,12 @@ export default function SublikatWireframe() {
           <section
             id="quienes-somos"
             className="relative flex flex-col p-4 justify-center h-full"
-            style={{ backgroundImage: 'url(/gato_taller.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+            style={{ backgroundImage: 'url(/aboutus.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato lee un libro o se muestra reflexivo mirando el texto. Pestañeo lento y movimiento suave de cola."
           >
             <div className="relative z-10 w-full flex flex-col justify-center">
               <div className="flex flex-col md:flex-row w-full items-start">
-                <div className="w-full md:w-2/3">
-                  {/* This is the empty left column, it will show the background image */}
-                </div>
-                <div className="w-full md:w-1/3">
+                <div className="w-full md:w-2/2">
                   <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl">
                     <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-center">
                       Quiénes Somos
@@ -212,6 +209,9 @@ export default function SublikatWireframe() {
                       Cada producto es diseñado con atención al detalle, permitiendo a nuestros clientes personalizar no solo la apariencia, sino también la experiencia digital que lo acompaña. Desde tazas que cobran vida hasta pósters que cuentan historias animadas, estamos redefiniendo lo que significa poseer un objeto personalizado.
                     </p>
                   </div>
+                </div>
+                <div className="w-full md:w-2/3">
+                  {/* This is the empty left column, it will show the background image */}
                 </div>
               </div>
             </div>
