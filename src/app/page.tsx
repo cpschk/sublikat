@@ -32,8 +32,8 @@ const products: Product[] = [
 const ctaCardImages = [
   'carcasacat.png',
   'poleracat.png',
-  'tazacat.png',
   'relojcat.png',
+  'tazacat.png',
 ];
 
 export default function SublikatWireframe() {
