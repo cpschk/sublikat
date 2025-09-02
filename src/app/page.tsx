@@ -233,7 +233,7 @@ export default function SublikatWireframe() {
             style={{ backgroundImage: 'url(/gallery.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
           >
-            <div className="bg-white/80 backdrop-blur-sm p-4 md:p-8 rounded-xl w-full max-w-6xl mb-6">
+            <div className="bg-white/80 backdrop-blur-sm p-4 md:p-6 rounded-xl w-full max-w-6xl mb-6">
               <h2 className="text-2xl md:text-4xl font-bold font-headline text-center">
                 Productos Personalizados
               </h2>
@@ -249,8 +249,8 @@ export default function SublikatWireframe() {
                       className="absolute -top-[65px] -right-9 h-24 w-24 object-contain transition-all duration-200 ease-out transform opacity-0 -translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 z-20"
                       data-ai-hint="peeking cat"
                     />
-                  <div className="border-2 border-black p-2 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-28 justify-center items-center relative z-10">
-                    <div className="w-8 h-8 md:w-16 md:h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-1 flex items-center justify-center">
+                  <div className="border-2 border-black p-1 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-24 justify-center items-center relative z-10">
+                    <div className="w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-1 flex items-center justify-center">
                       <span className="text-white font-bold text-sm">
                         {product.iconLetter}
                       </span>
