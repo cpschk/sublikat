@@ -249,7 +249,7 @@ export default function SublikatWireframe() {
                       className="absolute -top-[65px] -right-9 h-24 w-24 object-contain transition-all duration-200 ease-out transform opacity-0 -translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 z-20"
                       data-ai-hint="peeking cat"
                     />
-                  <div className="border-2 border-black p-1 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-24 md:h-28 justify-center items-center relative z-10">
+                  <div className="border-2 border-black p-1 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-24 md:h-40 justify-center items-center relative z-10">
                     <div className="w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-1 flex items-center justify-center">
                       <span className="text-white font-bold text-sm">
                         {product.iconLetter}
