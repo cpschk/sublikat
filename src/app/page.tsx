@@ -30,10 +30,10 @@ const products: Product[] = [
 ];
 
 const ctaCardImages = [
-  'carcasacat.png',
-  'poleracat.png',
-  'tazacat.png',
-  'relojcat.png',
+  'carcasacat.png', // Card 3
+  'poleracat.png',  // Card 2
+  'relojcat.png',   // Card 4
+  'tazacat.png',    // Card 5
 ];
 
 export default function SublikatWireframe() {
@@ -320,13 +320,13 @@ export default function SublikatWireframe() {
                   className={`absolute top-0 left-0 w-full h-auto transition-all duration-1000 ease-in-out ${
                     isCtaVisible
                       ? `opacity-100 ${
-                          i === 0 ? 'translate-x-[-120%] rotate-[-25deg]' : ''
+                          i === 0 ? 'translate-x-[-120%] rotate-[-25deg]' : '' // Card 3 (carcasacat)
                         } ${
-                          i === 1 ? 'translate-x-[-60%] rotate-[-15deg]' : ''
+                          i === 1 ? 'translate-x-[-60%] rotate-[-15deg]' : '' // Card 2 (poleracat)
                         } ${
-                          i === 2 ? 'translate-x-[60%] rotate-[15deg]' : ''
+                          i === 2 ? 'translate-x-[60%] rotate-[15deg]' : '' // Card 4 (relojcat)
                         } ${
-                          i === 3 ? 'translate-x-[120%] rotate-[25deg]' : ''
+                          i === 3 ? 'translate-x-[120%] rotate-[25deg]' : '' // Card 5 (tazacat)
                         }`
                       : 'opacity-0 translate-x-0 translate-y-0 rotate-0 scale-90'
                   }`}
