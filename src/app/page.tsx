@@ -374,7 +374,7 @@ export default function SublikatWireframe() {
                 </div>
                 <Image src="https://picsum.photos/300/200" alt="Sleeping Cat" width={300} height={200} className="w-auto h-16 object-contain rounded-lg" data-ai-hint="sleeping cat" />
                 <div className="border border-black p-2 bg-white text-center">
-                  <p>Íconos de Redes Sociales</p>p>
+                  <p>Íconos de Redes Sociales</p>
                 </div>
               </div>
             </footer>
@@ -389,4 +389,3 @@ export default function SublikatWireframe() {
       />
     </>
   );
-}
