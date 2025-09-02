@@ -274,7 +274,7 @@ export default function SublikatWireframe() {
             id="cta_section"
             className="relative flex flex-col gap-6 items-center justify-center h-full text-center p-6 md:p-8"
             style={{ 
-              backgroundImage: 'url(/background_cta.jpg)', 
+              backgroundImage: 'url(/escritorio.png)', 
               backgroundSize: 'cover', 
               backgroundPosition: 'center' 
             }}
