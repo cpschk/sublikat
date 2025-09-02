@@ -29,6 +29,12 @@ const products: Product[] = [
     { id: 'cuadros', title: 'Cuadros: arte que inspira', description: 'Cuadros decorativos', images: ['https://picsum.photos/600/600?random=15'], iconLetter: 'C' },
 ];
 
+const ctaCardImages = [
+  'carcasacat.jpg',
+  'poleracat.jpg',
+  'tazacat.jpg',
+  'relojcat.jpg',
+];
 
 export default function SublikatWireframe() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -192,7 +198,7 @@ export default function SublikatWireframe() {
           <section
             id="quienes-somos"
             className="relative flex flex-col p-4 justify-center h-full"
-            style={{ backgroundImage: 'url(/aboutus.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+            style={{ backgroundImage: 'url(/gato_taller.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato lee un libro o se muestra reflexivo mirando el texto. Pestañeo lento y movimiento suave de cola."
           >
             <div className="relative z-10 w-full flex flex-col justify-center">
@@ -304,10 +310,10 @@ export default function SublikatWireframe() {
             }}
           >
             <div className="relative w-32 h-32 md:w-48 md:h-48 lg:w-56 lg:h-56">
-              {[...Array(4)].map((_, i) => (
+              {ctaCardImages.map((imageName, i) => (
                 <Image
                   key={i}
-                  src="/katchanpedido.png"
+                  src={`/${imageName}`}
                   alt=""
                   width={200}
                   height={200}
@@ -325,7 +331,7 @@ export default function SublikatWireframe() {
                       : 'opacity-0 translate-x-0 translate-y-0 rotate-0 scale-90'
                   }`}
                   style={{ transitionDelay: `${100 * i}ms` }}
-                  data-ai-hint="cat order"
+                  data-ai-hint="product item"
                 />
               ))}
               <Image
