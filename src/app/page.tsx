@@ -30,10 +30,10 @@ const products: Product[] = [
 ];
 
 const ctaCardImages = [
-  'carcasacat.png', // Card 3 (Left-most) -> index 0
-  'poleracat.png',  // Card 2 (Left-inner) -> index 1
-  'relojcat.png',   // Card 4 (Right-inner) -> index 2
-  'tazacat.png',    // Card 5 (Right-most) -> index 3
+  'carcasacat.png',
+  'poleracat.png',
+  'relojcat.png',
+  'tazacat.png',
 ];
 
 export default function SublikatWireframe() {
@@ -249,7 +249,7 @@ export default function SublikatWireframe() {
                       className="absolute -top-[65px] -right-9 h-24 w-24 object-contain transition-all duration-200 ease-out transform opacity-0 -translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 z-20"
                       data-ai-hint="peeking cat"
                     />
-                  <div className="border-2 border-black p-1 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-24 justify-center items-center relative z-10">
+                  <div className="border-2 border-black p-1 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-24 md:h-28 justify-center items-center relative z-10">
                     <div className="w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-1 flex items-center justify-center">
                       <span className="text-white font-bold text-sm">
                         {product.iconLetter}
@@ -322,11 +322,11 @@ export default function SublikatWireframe() {
                       ? `opacity-100 ${
                           i === 0 ? 'translate-x-[-120%] rotate-[-25deg]' : '' // Card 3 (carcasacat)
                         } ${
-                          i === 1 ? 'translate-x-[120%] rotate-[25deg]' : '' // Card 5 (tazacat)
+                          i === 1 ? 'translate-x-[-60%] rotate-[-15deg]' : '' // Card 2 (poleracat)
                         } ${
-                          i === 2 ? 'translate-x-[-60%] rotate-[-15deg]' : '' // Card 2 (poleracat)
+                          i === 2 ? 'translate-x-[60%] rotate-[15deg]' : '' // Card 4 (relojcat)
                         } ${
-                          i === 3 ? 'translate-x-[60%] rotate-[15deg]' : '' // Card 4 (relojcat)
+                          i === 3 ? 'translate-x-[120%] rotate-[25deg]' : '' // Card 5 (tazacat)
                         }`
                       : 'opacity-0 translate-x-0 translate-y-0 rotate-0 scale-90'
                   }`}
