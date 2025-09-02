@@ -198,7 +198,7 @@ export default function SublikatWireframe() {
           <section
             id="quienes-somos"
             className="relative flex flex-col p-4 justify-center h-full"
-            style={{ backgroundImage: 'url(/gato_taller.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+            style={{ backgroundImage: 'url(/aboutus.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato lee un libro o se muestra reflexivo mirando el texto. Pestañeo lento y movimiento suave de cola."
           >
             <div className="relative z-10 w-full flex flex-col justify-center">
@@ -322,11 +322,11 @@ export default function SublikatWireframe() {
                       ? `opacity-100 ${
                           i === 0 ? 'translate-x-[-120%] rotate-[-25deg]' : '' // Card 3 (carcasacat)
                         } ${
-                          i === 1 ? 'translate-x-[-60%] rotate-[-15deg]' : '' // Card 2 (poleracat)
+                          i === 1 ? 'translate-x-[120%] rotate-[25deg]' : '' // Card 5 (tazacat)
                         } ${
-                          i === 2 ? 'translate-x-[60%] rotate-[15deg]' : '' // Card 4 (relojcat)
+                          i === 2 ? 'translate-x-[-60%] rotate-[-15deg]' : '' // Card 2 (poleracat)
                         } ${
-                          i === 3 ? 'translate-x-[120%] rotate-[25deg]' : '' // Card 5 (tazacat)
+                          i === 3 ? 'translate-x-[60%] rotate-[15deg]' : '' // Card 4 (relojcat)
                         }`
                       : 'opacity-0 translate-x-0 translate-y-0 rotate-0 scale-90'
                   }`}
@@ -364,6 +364,7 @@ export default function SublikatWireframe() {
             </div>
           </section>
         </ScrollStackItem>
+
 
         <hr className="border-t-4 border-black my-8" />
 
