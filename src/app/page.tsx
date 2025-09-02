@@ -35,7 +35,9 @@ export default function SublikatWireframe() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [areElementsVisible, setAreElementsVisible] = useState(false);
+  const [isCtaVisible, setIsCtaVisible] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
   const [stackPosition, setStackPosition] = useState('10%');
 
   useEffect(() => {
@@ -55,7 +57,7 @@ export default function SublikatWireframe() {
 
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const heroObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           // Animate text fade-in
@@ -70,7 +72,7 @@ export default function SublikatWireframe() {
           
           // We only want to animate once
           if (heroRef.current) {
-            observer.unobserve(heroRef.current);
+            heroObserver.unobserve(heroRef.current);
           }
 
           return () => {
@@ -84,13 +86,34 @@ export default function SublikatWireframe() {
       }
     );
 
+    const ctaObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsCtaVisible(true);
+          if (ctaRef.current) {
+            ctaObserver.unobserve(ctaRef.current);
+          }
+        }
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the element is visible
+      }
+    );
+
     if (heroRef.current) {
-      observer.observe(heroRef.current);
+      heroObserver.observe(heroRef.current);
+    }
+    
+    if (ctaRef.current) {
+      ctaObserver.observe(ctaRef.current);
     }
 
     return () => {
       if (heroRef.current) {
-        observer.unobserve(heroRef.current);
+        heroObserver.unobserve(heroRef.current);
+      }
+      if (ctaRef.current) {
+        ctaObserver.unobserve(ctaRef.current);
       }
     };
   }, []);
@@ -272,21 +295,49 @@ export default function SublikatWireframe() {
         <ScrollStackItem>
            <section
             id="cta_section"
-            className="relative flex flex-col gap-6 items-center justify-center h-full text-center p-6 md:p-8"
+            ref={ctaRef}
+            className="relative flex flex-col gap-6 items-center justify-center h-full text-center p-6 md:p-8 overflow-hidden"
             style={{ 
               backgroundImage: 'url(/escritorio.png)', 
               backgroundSize: 'cover', 
               backgroundPosition: 'center' 
             }}
           >
-            <Image
-              src="/katchanpedido.png"
-              alt="Gato de SubliCat junto a un pedido"
-              width={200}
-              height={200}
-              className="w-48 h-auto"
-              data-ai-hint="cat order"
-            />
+            <div className="relative w-48 h-48 mb-4">
+              {[...Array(4)].map((_, i) => (
+                <Image
+                  key={i}
+                  src="/katchanpedido.png"
+                  alt=""
+                  width={200}
+                  height={200}
+                  className={`absolute top-0 left-0 w-full h-auto transition-all duration-1000 ease-in-out ${
+                    isCtaVisible
+                      ? `opacity-100 ${
+                          i === 0 ? 'translate-x-[-80%] translate-y-[-20%] rotate-[-15deg]' : ''
+                        } ${
+                          i === 1 ? 'translate-x-[80%] translate-y-[-20%] rotate-[15deg]' : ''
+                        } ${
+                          i === 2 ? 'translate-x-[-50%] translate-y-[80%] rotate-[-10deg]' : ''
+                        } ${
+                          i === 3 ? 'translate-x-[50%] translate-y-[80%] rotate-[10deg]' : ''
+                        }`
+                      : 'opacity-0 translate-x-0 translate-y-0 rotate-0'
+                  }`}
+                  style={{ transitionDelay: `${100 * i}ms` }}
+                  data-ai-hint="cat order"
+                />
+              ))}
+              <Image
+                src="/katchanpedido.png"
+                alt="Gato de SubliCat junto a un pedido"
+                width={200}
+                height={200}
+                className={`relative z-10 w-full h-auto transition-transform duration-500 ease-out ${isCtaVisible ? 'scale-100' : 'scale-75'}`}
+                data-ai-hint="cat order"
+              />
+            </div>
+
             <h2 
               className="text-3xl md:text-4xl lg:text-5xl font-bold font-headline"
               style={{ color: 'hsl(232, 42%, 17%)' }}
