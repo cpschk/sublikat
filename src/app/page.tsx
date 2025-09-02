@@ -192,13 +192,13 @@ export default function SublikatWireframe() {
           <section
             id="quienes-somos"
             className="relative flex flex-col p-4 justify-center h-full"
-            style={{ backgroundImage: 'url(/aboutus.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+            style={{ backgroundImage: 'url(/gato_taller.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato lee un libro o se muestra reflexivo mirando el texto. Pestañeo lento y movimiento suave de cola."
           >
             <div className="relative z-10 w-full flex flex-col justify-center">
               <div className="flex flex-col md:flex-row w-full items-start">
                 <div className="w-full md:w-2/3">
-                  {/* This is the empty right column, it will show the background image */}
+                  {/* This is the empty left column, it will show the background image */}
                 </div>
                 <div className="w-full md:w-1/3">
                   <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl">
@@ -296,14 +296,14 @@ export default function SublikatWireframe() {
            <section
             id="cta_section"
             ref={ctaRef}
-            className="relative flex flex-col gap-6 items-center justify-center h-full text-center p-6 md:p-8 overflow-hidden"
+            className="relative flex flex-col gap-8 items-center justify-center h-full text-center p-6 md:p-8 overflow-hidden"
             style={{ 
               backgroundImage: 'url(/escritorio.png)', 
               backgroundSize: 'cover', 
               backgroundPosition: 'center' 
             }}
           >
-            <div className="relative w-48 h-48 mb-4">
+            <div className="relative w-48 h-48">
               {[...Array(4)].map((_, i) => (
                 <Image
                   key={i}
@@ -314,13 +314,13 @@ export default function SublikatWireframe() {
                   className={`absolute top-0 left-0 w-full h-auto transition-all duration-1000 ease-in-out ${
                     isCtaVisible
                       ? `opacity-100 ${
-                          i === 0 ? 'translate-x-[-90%] rotate-[-20deg]' : ''
+                          i === 0 ? 'translate-x-[-120%] rotate-[-25deg]' : ''
                         } ${
-                          i === 1 ? 'translate-x-[-30%] rotate-[-10deg]' : ''
+                          i === 1 ? 'translate-x-[-60%] rotate-[-15deg]' : ''
                         } ${
-                          i === 2 ? 'translate-x-[30%] rotate-[10deg]' : ''
+                          i === 2 ? 'translate-x-[60%] rotate-[15deg]' : ''
                         } ${
-                          i === 3 ? 'translate-x-[90%] rotate-[20deg]' : ''
+                          i === 3 ? 'translate-x-[120%] rotate-[25deg]' : ''
                         }`
                       : 'opacity-0 translate-x-0 translate-y-0 rotate-0 scale-90'
                   }`}
@@ -337,23 +337,25 @@ export default function SublikatWireframe() {
                 data-ai-hint="cat order"
               />
             </div>
-
-            <h2 
-              className="text-3xl md:text-4xl lg:text-5xl font-bold font-headline"
-              style={{ color: 'hsl(232, 42%, 17%)' }}
-            >
-              ¡Crea tu recuerdo ahora!
-            </h2>
-            <Button
-              size="lg"
-              className="rounded-full px-10 py-6 text-lg font-bold"
-              style={{ 
-                backgroundColor: 'hsl(161, 100%, 78%)',
-                color: 'hsl(232, 42%, 17%)'
-              }}
-            >
-              Empezar a crear
-            </Button>
+            
+            <div className="relative z-20 bg-white p-6 rounded-lg border-2 border-black shadow-lg">
+              <h2 
+                className="text-3xl md:text-4xl lg:text-5xl font-bold font-headline mb-4"
+                style={{ color: 'hsl(232, 42%, 17%)' }}
+              >
+                ¡Crea tu recuerdo ahora!
+              </h2>
+              <Button
+                size="lg"
+                className="rounded-full px-10 py-6 text-lg font-bold"
+                style={{ 
+                  backgroundColor: 'hsl(161, 100%, 78%)',
+                  color: 'hsl(232, 42%, 17%)'
+                }}
+              >
+                Empezar a crear
+              </Button>
+            </div>
           </section>
         </ScrollStackItem>
 
@@ -372,7 +374,7 @@ export default function SublikatWireframe() {
                 </div>
                 <Image src="https://picsum.photos/300/200" alt="Sleeping Cat" width={300} height={200} className="w-auto h-16 object-contain rounded-lg" data-ai-hint="sleeping cat" />
                 <div className="border border-black p-2 bg-white text-center">
-                  <p>Íconos de Redes Sociales</p>
+                  <p>Íconos de Redes Sociales</p>p>
                 </div>
               </div>
             </footer>
