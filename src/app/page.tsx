@@ -21,21 +21,29 @@ const backgroundImages = [
 ];
 
 const products: Product[] = [
-    { id: 'taza-ar', title: 'Taza AR', description: 'Taza con experiencia de realidad aumentada', images: ['https://picsum.photos/600/600?random=10', 'https://picsum.photos/600/600?random=20', 'https://picsum.photos/600/600?random=30', 'https://picsum.photos/600/600?random=40'], iconLetter: 'T' },
-    { id: 'polera-personalizada', title: 'Polera Personalizada', description: 'Diseño único para tu estilo', images: ['https://picsum.photos/600/600?random=11', 'https://picsum.photos/600/600?random=21', 'https://picsum.photos/600/600?random=31'], iconLetter: 'P' },
-    { id: 'llavero', title: 'Llavero', description: 'Accesorio con diseño exclusivo', images: ['https://picsum.photos/600/600?random=12', 'https://picsum.photos/600/600?random=22'], iconLetter: 'L' },
-    { id: 'poster', title: 'Póster', description: 'Arte para tu pared', images: ['https://picsum.photos/600/600?random=13', 'https://picsum.photos/600/600?random=23', 'https://picsum.photos/600/600?random=33', 'https://picsum.photos/600/600?random=43', 'https://picsum.photos/600/600?random=53'], iconLetter: 'P' },
-    { id: 'stickers', title: 'Stickers', description: 'Para personalizar cualquier superficie', images: ['https://picsum.photos/600/600?random=14', 'https://picsum.photos/600/600?random=24', 'https://picsum.photos/600/600?random=34'], iconLetter: 'S' },
-    { id: 'otros', title: 'Otros', description: 'Productos personalizados a tu medida', images: ['https://picsum.photos/600/600?random=15'], iconLetter: 'O' },
+    { id: 'tazones', title: 'Tazones: un sorbo de recuerdos', description: 'Tazones personalizados', images: ['https://picsum.photos/600/600?random=10', 'https://picsum.photos/600/600?random=20', 'https://picsum.photos/600/600?random=30', 'https://picsum.photos/600/600?random=40'], iconLetter: 'T' },
+    { id: 'poleras', title: 'Poleras: viste tu historia', description: 'Poleras estampadas', images: ['https://picsum.photos/600/600?random=11', 'https://picsum.photos/600/600?random=21', 'https://picsum.photos/600/600?random=31'], iconLetter: 'P' },
+    { id: 'llaveros', title: 'Llaveros: lleva contigo un momento', description: 'Llaveros únicos', images: ['https://picsum.photos/600/600?random=12', 'https://picsum.photos/600/600?random=22'], iconLetter: 'L' },
+    { id: 'carcasas', title: 'Carcasas: protege tu mundo', description: 'Carcasas para celular', images: ['https://picsum.photos/600/600?random=13', 'https://picsum.photos/600/600?random=23', 'https://picsum.photos/600/600?random=33', 'https://picsum.photos/600/600?random=43', 'https://picsum.photos/600/600?random=53'], iconLetter: 'C' },
+    { id: 'relojes', title: 'Relojes: el tiempo a tu manera', description: 'Relojes de pared', images: ['https://picsum.photos/600/600?random=14', 'https://picsum.photos/600/600?random=24', 'https://picsum.photos/600/600?random=34'], iconLetter: 'R' },
+    { id: 'cuadros', title: 'Cuadros: arte que inspira', description: 'Cuadros decorativos', images: ['https://picsum.photos/600/600?random=15'], iconLetter: 'C' },
 ];
 
+const ctaCardImages = [
+  'carcasacat.png',
+  'poleracat.png',
+  'relojcat.png',
+  'tazacat.png',
+];
 
 export default function SublikatWireframe() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [areElementsVisible, setAreElementsVisible] = useState(false);
+  const [isCtaVisible, setIsCtaVisible] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
   const [stackPosition, setStackPosition] = useState('10%');
 
   useEffect(() => {
@@ -55,7 +63,7 @@ export default function SublikatWireframe() {
 
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const heroObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           // Animate text fade-in
@@ -70,7 +78,7 @@ export default function SublikatWireframe() {
           
           // We only want to animate once
           if (heroRef.current) {
-            observer.unobserve(heroRef.current);
+            heroObserver.unobserve(heroRef.current);
           }
 
           return () => {
@@ -84,13 +92,34 @@ export default function SublikatWireframe() {
       }
     );
 
+    const ctaObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsCtaVisible(true);
+          if (ctaRef.current) {
+            ctaObserver.unobserve(ctaRef.current);
+          }
+        }
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the element is visible
+      }
+    );
+
     if (heroRef.current) {
-      observer.observe(heroRef.current);
+      heroObserver.observe(heroRef.current);
+    }
+    
+    if (ctaRef.current) {
+      ctaObserver.observe(ctaRef.current);
     }
 
     return () => {
       if (heroRef.current) {
-        observer.unobserve(heroRef.current);
+        heroObserver.unobserve(heroRef.current);
+      }
+      if (ctaRef.current) {
+        ctaObserver.unobserve(ctaRef.current);
       }
     };
   }, []);
@@ -143,7 +172,7 @@ export default function SublikatWireframe() {
                   <div
                     className={`transition-all duration-1000 ease-in-out pl-1.5 md:pl-0 ${areElementsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}
                   >
-                    <Button className="md:size-lg lg:text-lg">Explora Nuestros Productos</Button>
+                    <Button size="lg" className="text-lg border-2 border-primary-foreground/50 shadow-lg hover:shadow-xl transition-shadow duration-300">Explora Nuestros Productos</Button>
                   </div>
                 </div>
               </div>
@@ -168,14 +197,14 @@ export default function SublikatWireframe() {
         <ScrollStackItem>
           <section
             id="quienes-somos"
-            className="relative flex flex-col p-4 justify-center"
+            className="relative flex flex-col p-4 justify-center h-full"
             style={{ backgroundImage: 'url(/aboutus.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato lee un libro o se muestra reflexivo mirando el texto. Pestañeo lento y movimiento suave de cola."
           >
             <div className="relative z-10 w-full flex flex-col justify-center">
               <div className="flex flex-col md:flex-row w-full items-start">
-                <div className="w-full md:w-3/5">
-                  <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl">
+                <div className="w-full md:w-2/3">
+                  <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl">
                     <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-center">
                       Quiénes Somos
                     </h2>
@@ -187,8 +216,8 @@ export default function SublikatWireframe() {
                     </p>
                   </div>
                 </div>
-                <div className="w-full md:w-2/5">
-                  {/* This is the empty right column, it will show the background image */}
+                <div className="w-full md:w-1/3">
+                  {/* This is the empty left column, it will show the background image */}
                 </div>
               </div>
             </div>
@@ -200,12 +229,12 @@ export default function SublikatWireframe() {
         <ScrollStackItem>
           <section
             id="productos"
-            className="relative flex flex-col p-6 md:p-8 justify-center items-center"
+            className="relative flex flex-col p-6 md:p-8 justify-start items-center h-auto md:h-full"
             style={{ backgroundImage: 'url(/gallery.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
           >
-            <div className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl w-full max-w-6xl mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold font-headline text-center">
+            <div className="bg-white/80 backdrop-blur-sm p-4 md:p-6 rounded-xl w-full max-w-6xl mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold font-headline text-center">
                 Productos Personalizados
               </h2>
             </div>
@@ -220,8 +249,8 @@ export default function SublikatWireframe() {
                       className="absolute -top-[65px] -right-9 h-24 w-24 object-contain transition-all duration-200 ease-out transform opacity-0 -translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 z-20"
                       data-ai-hint="peeking cat"
                     />
-                  <div className="border-2 border-black p-2 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-28 justify-center items-center relative z-10">
-                    <div className="w-8 h-8 md:w-16 md:h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-1 flex items-center justify-center">
+                  <div className="border-2 border-black p-1 bg-white transition-all duration-300 group-hover:bg-gray-50 group-hover:shadow-xl group-hover:scale-105 rounded-lg flex flex-col h-24 md:h-40 justify-center items-center relative z-10">
+                    <div className="w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg mx-auto mb-1 flex items-center justify-center">
                       <span className="text-white font-bold text-sm">
                         {product.iconLetter}
                       </span>
@@ -244,7 +273,7 @@ export default function SublikatWireframe() {
         <ScrollStackItem itemClassName="scroll-stack-card--opaque">
           <section
             id="testimonios"
-            className="p-6 md:p-8 flex flex-col justify-center items-center"
+            className="p-6 md:p-8 flex flex-col justify-center items-center h-full"
             title="Animación: el gato trae cartas o globos de diálogo con mensajes de clientes. Globos emergentes con efecto pop-up."
           >
             <h2 className="text-xl font-semibold mb-6 text-center">
@@ -270,27 +299,72 @@ export default function SublikatWireframe() {
         <hr className="border-t-4 border-black my-8" />
 
         <ScrollStackItem>
-          <section
-            id="contacto"
-            className="border border-black p-6 md:p-8 bg-gray-200 flex flex-col md:flex-row gap-6 items-center justify-center h-full"
-            title="Animación: el gato entrega un sobre o usa un portátil. Animación de tap con su patita sobre el formulario."
+           <section
+            id="cta_section"
+            ref={ctaRef}
+            className="relative flex flex-col gap-8 items-center justify-center h-full text-center p-6 md:p-8 overflow-hidden"
+            style={{ 
+              backgroundImage: 'url(/escritorio.png)', 
+              backgroundSize: 'cover', 
+              backgroundPosition: 'center' 
+            }}
           >
-            <div className="w-full md:w-1/2 max-w-md">
-              <h2 className="text-xl font-semibold mb-6 text-center">Formulario de Contacto</h2>
-              <div className="border border-black p-4 bg-white">
-                <p>
-                  [Placeholder para campos del formulario (nombre, email, mensaje)]
-                </p>
-              </div>
-              <div className="border border-black p-2 mt-4 inline-block bg-white">
-                <p>Botón de Enviar</p>
-              </div>
+            <div className="relative w-32 h-32 md:w-48 md:h-48 lg:w-56 lg:h-56">
+              {ctaCardImages.map((imageName, i) => (
+                <Image
+                  key={i}
+                  src={`/${imageName}`}
+                  alt=""
+                  width={200}
+                  height={200}
+                  className={`absolute top-0 left-0 w-full h-auto transition-all duration-1000 ease-in-out ${
+                    isCtaVisible
+                      ? `opacity-100 ${
+                          i === 0 ? 'translate-x-[-120%] rotate-[-25deg]' : '' // Card 3 (carcasacat)
+                        } ${
+                          i === 1 ? 'translate-x-[-60%] rotate-[-15deg]' : '' // Card 2 (poleracat)
+                        } ${
+                          i === 2 ? 'translate-x-[60%] rotate-[15deg]' : '' // Card 4 (relojcat)
+                        } ${
+                          i === 3 ? 'translate-x-[120%] rotate-[25deg]' : '' // Card 5 (tazacat)
+                        }`
+                      : 'opacity-0 translate-x-0 translate-y-0 rotate-0 scale-90'
+                  }`}
+                  style={{ transitionDelay: `${100 * i}ms` }}
+                  data-ai-hint="product item"
+                />
+              ))}
+              <Image
+                src="/cuadrocat.png"
+                alt="Cuadro personalizado de SubliCat"
+                width={200}
+                height={200}
+                className={`relative z-10 w-full h-auto transition-transform duration-500 ease-out ${isCtaVisible ? 'scale-100' : 'scale-75'}`}
+                data-ai-hint="product item"
+              />
             </div>
-            <div className="w-full md:w-1/2 max-w-md">
-              <Image src="https://picsum.photos/600/500" alt="Contact us" width={600} height={500} className="w-full h-auto object-cover rounded-lg" data-ai-hint="cat mail" />
+            
+            <div className="relative z-20 bg-white p-6 rounded-lg border-2 border-black shadow-lg">
+              <h2 
+                className="text-3xl md:text-4xl lg:text-5xl font-bold font-headline mb-4"
+                style={{ color: 'hsl(232, 42%, 17%)' }}
+              >
+                ¡Crea tu recuerdo ahora!
+              </h2>
+              <Button
+                size="lg"
+                className="rounded-full px-10 py-6 text-lg font-bold"
+                style={{ 
+                  backgroundColor: 'hsl(161, 100%, 78%)',
+                  color: 'hsl(232, 42%, 17%)'
+                }}
+              >
+                Empezar a crear
+              </Button>
             </div>
           </section>
         </ScrollStackItem>
+
 
         <hr className="border-t-4 border-black my-8" />
 
@@ -323,6 +397,3 @@ export default function SublikatWireframe() {
     </>
   );
 }
-
-    
-    
