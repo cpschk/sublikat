@@ -335,12 +335,12 @@ export default function SublikatWireframe() {
                 />
               ))}
               <Image
-                src="/katchanpedido.png"
-                alt="Gato de SubliCat junto a un pedido"
+                src="/cuadrocat.png"
+                alt="Cuadro personalizado de SubliCat"
                 width={200}
                 height={200}
                 className={`relative z-10 w-full h-auto transition-transform duration-500 ease-out ${isCtaVisible ? 'scale-100' : 'scale-75'}`}
-                data-ai-hint="cat order"
+                data-ai-hint="product item"
               />
             </div>
             
