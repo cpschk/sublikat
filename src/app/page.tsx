@@ -203,7 +203,7 @@ export default function SublikatWireframe() {
           >
             <div className="relative z-10 w-full flex flex-col justify-center">
               <div className="flex flex-col md:flex-row w-full items-start">
-                <div className="w-full md:w-1/3">
+                <div className="w-full md:w-2/3">
                   <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl">
                     <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-center">
                       Quiénes Somos
@@ -216,7 +216,7 @@ export default function SublikatWireframe() {
                     </p>
                   </div>
                 </div>
-                <div className="w-full md:w-2/3">
+                <div className="w-full md:w-1/3">
                   {/* This is the empty left column, it will show the background image */}
                 </div>
               </div>
