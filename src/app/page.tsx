@@ -229,7 +229,7 @@ export default function SublikatWireframe() {
         <ScrollStackItem>
           <section
             id="productos"
-            className="relative flex flex-col p-6 md:p-8 justify-start items-center h-full"
+            className="relative flex flex-col p-6 md:p-8 justify-start items-center h-auto md:h-full"
             style={{ backgroundImage: 'url(/gallery.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
             title="Animación: el gato interactúa con productos (sostiene taza, usa polera, duerme sobre llavero). Cambio de pose al hacer hover sobre cada producto."
           >
@@ -322,11 +322,11 @@ export default function SublikatWireframe() {
                       ? `opacity-100 ${
                           i === 0 ? 'translate-x-[-120%] rotate-[-25deg]' : '' // Card 3 (carcasacat)
                         } ${
-                          i === 1 ? 'translate-x-[120%] rotate-[25deg]' : '' // Card 5 (tazacat)
+                          i === 1 ? 'translate-x-[-60%] rotate-[-15deg]' : '' // Card 2 (poleracat)
                         } ${
-                          i === 2 ? 'translate-x-[-60%] rotate-[-15deg]' : '' // Card 2 (poleracat)
+                          i === 2 ? 'translate-x-[60%] rotate-[15deg]' : '' // Card 4 (relojcat)
                         } ${
-                          i === 3 ? 'translate-x-[60%] rotate-[15deg]' : '' // Card 4 (relojcat)
+                          i === 3 ? 'translate-x-[120%] rotate-[25deg]' : '' // Card 5 (tazacat)
                         }`
                       : 'opacity-0 translate-x-0 translate-y-0 rotate-0 scale-90'
                   }`}
